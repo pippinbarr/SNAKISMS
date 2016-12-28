@@ -8,7 +8,10 @@ BasicGame.Preloader = function (game) {
 BasicGame.Preloader.prototype = {
 
 	preload: function () {
-
+		this.load.image('head','assets/images/head.png');
+		this.load.image('body','assets/images/body.png');
+		this.load.image('apple','assets/images/apple.png');
+		this.load.image('wall','assets/images/wall.png');
 	},
 
 	create: function () {
@@ -20,7 +23,7 @@ BasicGame.Preloader.prototype = {
 		if (this.ready == false)
 		{
 			this.ready = true;
-			this.state.start('MainMenu');
+			this.state.start('Snake');
 		}
 
 	}
