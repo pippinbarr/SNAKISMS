@@ -27,19 +27,23 @@ BasicGame.Snake = function (game) {
 
 var GRID_SIZE = 20;
 var SNAKE_START_LENGTH = 4;
-var SNAKE_TICK = 0.05;
+var SNAKE_TICK = 0.075;
+
 var next;
+var bodyPiecesToAdd = 0;
 
 BasicGame.Snake.prototype = {
 
   create: function () {
-    head = this.game.add.sprite(0,0,'apple');
+    head = this.game.add.sprite(0,0,'head');
     snake = [];
     snake.unshift(head);
 
     for (var i = 0; i < SNAKE_START_LENGTH; i++) {
-      snake.unshift(this.game.add.sprite(-GRID_SIZE - i*GRID_SIZE,0,'body'));
+      snake.unshift(this.game.add.sprite(-(i+1)*GRID_SIZE,0,'body'));
     }
+
+    apple = this.game.add.sprite(10*GRID_SIZE,10*GRID_SIZE,'apple');
 
     cursors = this.game.input.keyboard.createCursorKeys();
     next = new Phaser.Point(GRID_SIZE,0);
@@ -56,30 +60,38 @@ BasicGame.Snake.prototype = {
   },
 
   tick: function () {
+    if (bodyPiecesToAdd > 0) {
+      snake.unshift(this.game.add.sprite(0,0,'body'))
+      bodyPiecesToAdd = Math.max(0,bodyPiecesToAdd-1);
+    }
     for (var i = 0; i < snake.length - 1; i++) {
       snake[i].x = snake[i+1].x;
       snake[i].y = snake[i+1].y;
     }
-    head.position.x += next.x;
-    head.position.y += next.y;
+    head.x += next.x;
+    head.y += next.y;
+
+    if (head.x == apple.x && head.y == apple.y) {
+      apple.visible = false;
+      bodyPiecesToAdd += 3;
+    }
 
     this.ticker.add(Phaser.Timer.SECOND * SNAKE_TICK, this.tick, this);
   },
 
   handleInput: function () {
-    if (cursors.left.isDown) {
+    if (cursors.left.isDown && next.x == 0) {
       next = new Phaser.Point(-GRID_SIZE,0);
     }
-    else if (cursors.right.isDown) {
+    else if (cursors.right.isDown && next.x == 0) {
       next = new Phaser.Point(GRID_SIZE,0);
     }
-    else if (cursors.up.isDown) {
+    else if (cursors.up.isDown && next.y == 0) {
       next = new Phaser.Point(0,-GRID_SIZE);
     }
-    else if (cursors.down.isDown) {
+    else if (cursors.down.isDown && next.y == 0) {
       next = new Phaser.Point(0,GRID_SIZE);
     }
-
   }
 
 };
