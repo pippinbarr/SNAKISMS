@@ -28,31 +28,38 @@ BasicGame.Snake = function (game) {
 var GRID_SIZE = 20;
 var SNAKE_START_LENGTH = 4;
 var SNAKE_TICK = 0.075;
+var NEW_BODY_PIECES_PER_APPLE = 3;
 
 var next;
 var bodyPiecesToAdd = 0;
 
+var dead = false;
+
 BasicGame.Snake.prototype = {
 
   create: function () {
-    head = this.game.add.sprite(0,0,'head');
+
+    // Create the snake
     snake = [];
+
+    head = this.game.add.sprite(0,0,'head');
     snake.unshift(head);
 
     for (var i = 0; i < SNAKE_START_LENGTH; i++) {
       snake.unshift(this.game.add.sprite(-(i+1)*GRID_SIZE,0,'body'));
     }
 
+    // Create the apple
     apple = this.game.add.sprite(10*GRID_SIZE,10*GRID_SIZE,'apple');
 
+    // Set up for input
     cursors = this.game.input.keyboard.createCursorKeys();
     next = new Phaser.Point(GRID_SIZE,0);
 
+    // Create the update tick
     this.ticker = this.game.time.create(false);
     this.ticker.add(Phaser.Timer.SECOND * SNAKE_TICK, this.tick, this);
     this.ticker.start();
-
-    console.log(snake);
   },
 
   update: function () {
@@ -60,26 +67,57 @@ BasicGame.Snake.prototype = {
   },
 
   tick: function () {
+    if (dead) return;
+    this.addBodyPieces();
+    this.updateSnakePosition();
+    this.checkAppleCollision();
+    this.checkBodyCollision();
+
+    // Call next tick
+    this.ticker.add(Phaser.Timer.SECOND * SNAKE_TICK, this.tick, this);
+  },
+
+  addBodyPieces: function () {
     if (bodyPiecesToAdd > 0) {
       snake.unshift(this.game.add.sprite(0,0,'body'))
       bodyPiecesToAdd = Math.max(0,bodyPiecesToAdd-1);
     }
+  },
+
+  updateSnakePosition: function () {
     for (var i = 0; i < snake.length - 1; i++) {
       snake[i].x = snake[i+1].x;
       snake[i].y = snake[i+1].y;
     }
     head.x += next.x;
     head.y += next.y;
+  },
 
-    if (head.x == apple.x && head.y == apple.y) {
-      apple.visible = false;
-      bodyPiecesToAdd += 3;
+  checkAppleCollision: function () {
+    if (head.position.equals(apple.position)) {
+      apple.x = Math.floor(Math.random() * (this.game.width/GRID_SIZE)) * GRID_SIZE;
+      apple.y = Math.floor(Math.random() * (this.game.height/GRID_SIZE)) * GRID_SIZE;
+      bodyPiecesToAdd += NEW_BODY_PIECES_PER_APPLE;
     }
+  },
 
-    this.ticker.add(Phaser.Timer.SECOND * SNAKE_TICK, this.tick, this);
+  checkBodyCollision: function () {
+    for (var i = 0; i < snake.length - 1; i++) {
+      if (head.position.equals(snake[i].position)) {
+        this.die();
+      }
+    }
+  },
+
+  die: function () {
+    dead = true;
+    next = new Phaser.Point(0,0);
   },
 
   handleInput: function () {
+    if (dead) return;
+
+    // Check which key is down and set the next direction appropriately
     if (cursors.left.isDown && next.x == 0) {
       next = new Phaser.Point(-GRID_SIZE,0);
     }
