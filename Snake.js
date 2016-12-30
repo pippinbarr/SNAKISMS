@@ -29,10 +29,12 @@ var GRID_SIZE = 20;
 var SNAKE_START_LENGTH = 4;
 var SNAKE_TICK = 0.075;
 var NEW_BODY_PIECES_PER_APPLE = 3;
+var SNAKE_FLICKER_SPEED = 0.2;
 
 var next;
 var bodyPiecesToAdd = 0;
 
+var score = 0;
 var dead = false;
 
 BasicGame.Snake.prototype = {
@@ -49,6 +51,8 @@ BasicGame.Snake.prototype = {
       snake.unshift(this.game.add.sprite(-(i+1)*GRID_SIZE,0,'body'));
     }
 
+    walls = [];
+
     // Create the apple
     apple = this.game.add.sprite(10*GRID_SIZE,10*GRID_SIZE,'apple');
 
@@ -57,9 +61,9 @@ BasicGame.Snake.prototype = {
     next = new Phaser.Point(GRID_SIZE,0);
 
     // Create the update tick
-    this.ticker = this.game.time.create(false);
-    this.ticker.add(Phaser.Timer.SECOND * SNAKE_TICK, this.tick, this);
-    this.ticker.start();
+    ticker = this.game.time.create(false);
+    ticker.add(Phaser.Timer.SECOND * SNAKE_TICK, this.tick, this);
+    ticker.start();
   },
 
   update: function () {
@@ -67,14 +71,21 @@ BasicGame.Snake.prototype = {
   },
 
   tick: function () {
-    if (dead) return;
+
+    // Call next tick
+    ticker.add(Phaser.Timer.SECOND * SNAKE_TICK, this.tick, this);
+
+    if (dead) {
+      snake.forEach(function (bit) {
+        bit.visible = !bit.visible;
+      });
+      return;
+    }
+
     this.addBodyPieces();
     this.updateSnakePosition();
     this.checkAppleCollision();
     this.checkBodyCollision();
-
-    // Call next tick
-    this.ticker.add(Phaser.Timer.SECOND * SNAKE_TICK, this.tick, this);
   },
 
   addBodyPieces: function () {
@@ -130,6 +141,5 @@ BasicGame.Snake.prototype = {
     else if (cursors.down.isDown && next.y == 0) {
       next = new Phaser.Point(0,GRID_SIZE);
     }
-  }
-
+  },
 };
