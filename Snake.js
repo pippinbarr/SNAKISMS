@@ -30,6 +30,8 @@ var SNAKE_START_LENGTH = 4;
 var SNAKE_TICK = 0.075;
 var NEW_BODY_PIECES_PER_APPLE = 3;
 var SNAKE_FLICKER_SPEED = 0.2;
+var APPLE_SCORE = 10;
+var MAX_SCORE_LENGTH = 10;
 
 var next;
 var bodyPiecesToAdd = 0;
@@ -60,6 +62,19 @@ BasicGame.Snake.prototype = {
     cursors = this.game.input.keyboard.createCursorKeys();
     next = new Phaser.Point(GRID_SIZE,0);
 
+    // Set up for score
+    score = 0;
+    scoreText = new Array(MAX_SCORE_LENGTH);
+    scoreString = pad(score,MAX_SCORE_LENGTH);
+
+    for (var i = 0; i < scoreText.length; i++) {
+      scoreText[i] = this.game.add.bitmapText(this.game.width - 1.5*GRID_SIZE - (scoreText.length - i)*GRID_SIZE, GRID_SIZE, 'atari','',40);
+      scoreText[i].anchor.x = 0.5;
+      scoreText[i].tint = 0xffffff;
+      scoreText[i].scale.y = 24/40;
+    }
+    this.setScoreText();
+
     // Create the update tick
     ticker = this.game.time.create(false);
     ticker.add(Phaser.Timer.SECOND * SNAKE_TICK, this.tick, this);
@@ -70,8 +85,23 @@ BasicGame.Snake.prototype = {
     this.handleInput();
   },
 
-  tick: function () {
+  setScoreText: function () {
+    scoreString = pad(score,MAX_SCORE_LENGTH);
 
+    nonZeroSeen = false;
+    for (var i = 0; i < scoreString.length; i++) {
+      var scoreNum = scoreString.charAt(i)
+      if (scoreNum == 0 && !nonZeroSeen) {
+        scoreText[i].text = '';
+        continue;
+      }
+      nonZeroSeen = true;
+      scoreText[i].text = scoreNum;
+    }
+    if (!nonZeroSeen) scoreText[scoreText.length-1].text = '0';
+  },
+
+  tick: function () {
     // Call next tick
     ticker.add(Phaser.Timer.SECOND * SNAKE_TICK, this.tick, this);
 
@@ -109,6 +139,8 @@ BasicGame.Snake.prototype = {
       apple.x = Math.floor(Math.random() * (this.game.width/GRID_SIZE)) * GRID_SIZE;
       apple.y = Math.floor(Math.random() * (this.game.height/GRID_SIZE)) * GRID_SIZE;
       bodyPiecesToAdd += NEW_BODY_PIECES_PER_APPLE;
+      score += APPLE_SCORE;
+      this.setScoreText();
     }
   },
 
@@ -143,3 +175,9 @@ BasicGame.Snake.prototype = {
     }
   },
 };
+
+function pad(num, size) {
+    var s = num+"";
+    while (s.length < size) s = "0" + s;
+    return s;
+}
