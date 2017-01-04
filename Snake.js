@@ -46,42 +46,11 @@ BasicGame.Snake.prototype = {
     NUM_ROWS = this.game.height/GRID_SIZE;
     NUM_COLS = this.game.width/GRID_SIZE;
 
-    // Create the snake
-    snake = [];
-    snakeGroup = this.game.add.group();
-
-    head = this.game.add.sprite(0,0,'head',snakeGroup);
-    snake.unshift(head);
-
-    for (var i = 0; i < SNAKE_START_LENGTH; i++) {
-      var snakeBit = snakeGroup.create(-(i+1)*GRID_SIZE,0,'body');
-      snake.unshift(snakeBit);
-    }
-
-    walls = [];
-
-    // Create the apple
-    apple = this.game.add.sprite(10*GRID_SIZE,10*GRID_SIZE,'apple');
-
-    // Set up for input
-    cursors = this.game.input.keyboard.createCursorKeys();
-    next = new Phaser.Point(GRID_SIZE,0);
-
-    // Set up for text
-
-    text = [];
-    textGroup = this.game.add.group();
-    for (var y = 0; y < NUM_ROWS; y++) {
-      text.push([]);
-      for (var x = 0; x < NUM_COLS; x++) {
-        var charSize = 24;
-        var char = this.game.add.bitmapText(GRID_SIZE/2 + x*GRID_SIZE, y*GRID_SIZE, 'atari','',charSize,textGroup);
-        char.anchor.x = 0.5;
-        char.tint = 0xffffff;
-        char.scale.y = 24/charSize;
-        text[y].push(char);
-      }
-    }
+    this.createWalls();
+    this.createSnake();
+    this.createApple();
+    this.createInput();
+    this.createText();
 
     // Set up for score
     score = 1000;
@@ -101,6 +70,64 @@ BasicGame.Snake.prototype = {
     ticker = this.game.time.create(false);
     ticker.add(Phaser.Timer.SECOND * SNAKE_TICK, this.tick, this);
     ticker.start();
+  },
+
+  createWalls: function () {
+    // Create the walls
+    WALL_LEFT = 1;
+    WALL_RIGHT = NUM_COLS-2;
+    WALL_TOP = 3;
+    WALL_BOTTOM = NUM_ROWS - WALL_TOP;
+
+    walls = new Array(NUM_ROWS);
+    wallGroup = this.game.add.group();
+    for (var y = WALL_TOP; y <= WALL_BOTTOM; y++) {
+      walls[y] = new Array(NUM_COLS);
+      for (var x = WALL_LEFT; x <= WALL_RIGHT; x++) {
+        if (y == WALL_TOP || y == WALL_BOTTOM || x == WALL_LEFT || x == WALL_RIGHT) {
+          walls[y].push(wallGroup.create(x*GRID_SIZE,y*GRID_SIZE,'wall'));
+        }
+      }
+    }
+  },
+
+  createSnake: function () {
+    // Create the snake
+    snake = [];
+    snakeGroup = this.game.add.group();
+
+    head = this.game.add.sprite(5*GRID_SIZE,10*GRID_SIZE,'head',snakeGroup);
+    snake.unshift(head);
+
+    for (var i = 0; i < SNAKE_START_LENGTH; i++) {
+      var snakeBit = snakeGroup.create(-(i+1)*GRID_SIZE,0,'body');
+      snake.unshift(snakeBit);
+    }
+  },
+
+  createApple: function () {
+    apple = this.game.add.sprite(10*GRID_SIZE,10*GRID_SIZE,'apple');
+  },
+
+  createInput: function () {
+    cursors = this.game.input.keyboard.createCursorKeys();
+    next = new Phaser.Point(GRID_SIZE,0);
+  },
+
+  createText: function () {
+    text = [];
+    textGroup = this.game.add.group();
+    for (var y = 0; y < NUM_ROWS; y++) {
+      text.push([]);
+      for (var x = 0; x < NUM_COLS; x++) {
+        var charSize = 24;
+        var char = this.game.add.bitmapText(GRID_SIZE/2 + x*GRID_SIZE, y*GRID_SIZE, 'atari','',charSize,textGroup);
+        char.anchor.x = 0.5;
+        char.tint = 0xffffff;
+        char.scale.y = 24/charSize;
+        text[y].push(char);
+      }
+    }
   },
 
   update: function () {
@@ -149,6 +176,7 @@ BasicGame.Snake.prototype = {
     this.updateSnakePosition();
     this.checkAppleCollision();
     this.checkBodyCollision();
+    this.checkWallCollision();
   },
 
   addBodyPieces: function () {
@@ -169,12 +197,16 @@ BasicGame.Snake.prototype = {
 
   checkAppleCollision: function () {
     if (head.position.equals(apple.position)) {
-      apple.x = Math.floor(Math.random() * (this.game.width/GRID_SIZE)) * GRID_SIZE;
-      apple.y = Math.floor(Math.random() * (this.game.height/GRID_SIZE)) * GRID_SIZE;
+      this.repositionApple();
       bodyPiecesToAdd += NEW_BODY_PIECES_PER_APPLE;
       score += APPLE_SCORE;
       this.setScoreText(score.toString());
     }
+  },
+
+  repositionApple: function () {
+    apple.x = (WALL_LEFT+1)*GRID_SIZE + Math.floor(Math.random() * ((WALL_RIGHT - WALL_LEFT - 1))) * GRID_SIZE;
+    apple.y = (WALL_TOP+1)*GRID_SIZE + Math.floor(Math.random() * (WALL_BOTTOM - WALL_TOP - 1)) * GRID_SIZE;
   },
 
   checkBodyCollision: function () {
@@ -183,6 +215,14 @@ BasicGame.Snake.prototype = {
         this.die();
       }
     }
+  },
+
+  checkWallCollision: function () {
+    wallGroup.forEach(function (wall) {
+      if (head.x == wall.x && head.y == wall.y) {
+        this.die();
+      }
+    },this);
   },
 
   die: function () {
