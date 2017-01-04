@@ -29,7 +29,7 @@ BasicGame.Snake = function (game) {
 
 var GRID_SIZE = 20;
 var SNAKE_START_LENGTH = 4;
-var SNAKE_TICK = 0.075;
+var SNAKE_TICK = 0.1;//0.075;
 var NEW_BODY_PIECES_PER_APPLE = 3;
 var SNAKE_FLICKER_SPEED = 0.2;
 var APPLE_SCORE = 10;
@@ -47,6 +47,10 @@ BasicGame.Snake.prototype = {
 
     NUM_ROWS = this.game.height/GRID_SIZE;
     NUM_COLS = this.game.width/GRID_SIZE;
+
+    dead = false;
+    next = new Phaser.Point(GRID_SIZE,0);
+    score = 0;
 
     this.createWalls();
     this.createSnake();
@@ -112,8 +116,12 @@ BasicGame.Snake.prototype = {
   },
 
   createInput: function () {
-
-    swipe = new Swipe(this.game);
+    if (this.game.device.desktop) {
+      cursors = this.game.input.keyboard.createCursorKeys();
+    }
+    else {
+      swipe = new Swipe(this.game);
+    }
 
     // cursors = this.game.input.keyboard.createCursorKeys();
     next = new Phaser.Point(GRID_SIZE,0);
@@ -136,7 +144,12 @@ BasicGame.Snake.prototype = {
   },
 
   update: function () {
-    this.handleInput();
+    if (this.game.device.desktop) {
+      this.handleKeyboardInput();
+    }
+    else {
+      this.handleTouchInput();
+    }
   },
 
   setScoreText: function (scoreString) {
@@ -242,27 +255,51 @@ BasicGame.Snake.prototype = {
   },
 
   gotoMenu: function () {
-    this.game.state.start('MainMenu');
+    this.game.state.start('Snake');
   },
 
-  handleInput: function () {
+  handleKeyboardInput: function () {
     if (dead) return;
 
     // Check which key is down and set the next direction appropriately
+    if (cursors.left.isDown && next.x == 0) {
+      next = new Phaser.Point(-GRID_SIZE,0);
+    }
+    else if (cursors.right.isDown && next.x == 0) {
+      next = new Phaser.Point(GRID_SIZE,0);
+    }
+    if (cursors.up.isDown && next.y == 0) {
+      next = new Phaser.Point(0,-GRID_SIZE);
+    }
+    else if (cursors.down.isDown && next.y == 0) {
+      next = new Phaser.Point(0,GRID_SIZE);
+    }
+  },
+
+
+  handleTouchInput: function () {
+    if (dead) return;
+
+    // Check which for swipes and set the next direction appropriately
     var d = swipe.check();
     if (!d) return;
 
-    if (d.direction == swipe.DIRECTION_LEFT && next.x == 0) {
-      next = new Phaser.Point(-GRID_SIZE,0);
-    }
-    else if (d.direction == swipe.DIRECTION_RIGHT && next.x == 0) {
-      next = new Phaser.Point(GRID_SIZE,0);
-    }
-    else if (d.direction == swipe.DIRECTION_UP && next.y == 0) {
-      next = new Phaser.Point(0,-GRID_SIZE);
-    }
-    else if (d.direction == swipe.DIRECTION_DOWN && next.y == 0) {
-      next = new Phaser.Point(0,GRID_SIZE);
+    switch (d.direction) {
+      case swipe.DIRECTION_LEFT:
+      if (next.x <= 0) next = new Phaser.Point(-GRID_SIZE,0);
+      break;
+
+      case swipe.DIRECTION_RIGHT:
+      if (next.x == 0) next = new Phaser.Point(GRID_SIZE,0);
+      break;
+
+      case swipe.DIRECTION_UP:
+      if (next.y == 0) next = new Phaser.Point(0,-GRID_SIZE);
+      break;
+
+      case swipe.DIRECTION_DOWN:
+      if (next.y == 0) next = new Phaser.Point(0,GRID_SIZE);
+      break;
     }
   },
 };
