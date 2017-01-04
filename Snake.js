@@ -121,6 +121,7 @@ BasicGame.Snake.prototype = {
     }
     else {
       swipe = new Swipe(this.game);
+      swipe.diagonalDisabled = true;
     }
 
     // cursors = this.game.input.keyboard.createCursorKeys();
