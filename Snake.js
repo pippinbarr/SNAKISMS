@@ -60,7 +60,6 @@ BasicGame.Snake.prototype = {
     this.createText();
 
     // Set up for score
-    score = 1000;
     scoreX = NUM_COLS - 2;
     scoreY = 1;
     this.setScoreText(score.toString());

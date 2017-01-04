@@ -11,6 +11,7 @@ BasicGame.MainMenu.prototype = {
 	create: function () {
 
 		this.stage.backgroundColor = "#ccc";
+		this.setScoreText(score.toString());
 
 	},
 
