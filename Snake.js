@@ -43,14 +43,19 @@ BasicGame.Snake.prototype = {
 
   create: function () {
 
+    NUM_ROWS = this.game.height/GRID_SIZE;
+    NUM_COLS = this.game.width/GRID_SIZE;
+
     // Create the snake
     snake = [];
+    snakeGroup = this.game.add.group();
 
-    head = this.game.add.sprite(0,0,'head');
+    head = this.game.add.sprite(0,0,'head',snakeGroup);
     snake.unshift(head);
 
     for (var i = 0; i < SNAKE_START_LENGTH; i++) {
-      snake.unshift(this.game.add.sprite(-(i+1)*GRID_SIZE,0,'body'));
+      var snakeBit = snakeGroup.create(-(i+1)*GRID_SIZE,0,'body');
+      snake.unshift(snakeBit);
     }
 
     walls = [];
@@ -62,18 +67,35 @@ BasicGame.Snake.prototype = {
     cursors = this.game.input.keyboard.createCursorKeys();
     next = new Phaser.Point(GRID_SIZE,0);
 
-    // Set up for score
-    score = 0;
-    scoreText = new Array(MAX_SCORE_LENGTH);
-    scoreString = pad(score,MAX_SCORE_LENGTH);
+    // Set up for text
 
-    for (var i = 0; i < scoreText.length; i++) {
-      scoreText[i] = this.game.add.bitmapText(this.game.width - 1.5*GRID_SIZE - (scoreText.length - i)*GRID_SIZE, GRID_SIZE, 'atari','',40);
-      scoreText[i].anchor.x = 0.5;
-      scoreText[i].tint = 0xffffff;
-      scoreText[i].scale.y = 24/40;
+    text = [];
+    textGroup = this.game.add.group();
+    for (var y = 0; y < NUM_ROWS; y++) {
+      text.push([]);
+      for (var x = 0; x < NUM_COLS; x++) {
+        var charSize = 24;
+        var char = this.game.add.bitmapText(GRID_SIZE/2 + x*GRID_SIZE, y*GRID_SIZE, 'atari','',charSize,textGroup);
+        char.anchor.x = 0.5;
+        char.tint = 0xffffff;
+        char.scale.y = 24/charSize;
+        text[y].push(char);
+      }
     }
-    this.setScoreText();
+
+    // Set up for score
+    score = 1000;
+    scoreX = NUM_COLS - 2;
+    scoreY = 1;
+    this.setScoreText(score.toString());
+
+    // Set up for game over
+    gameOverX = 10;
+    gameOverY = Math.floor(NUM_ROWS/2) - 2;
+    gameOverPointsX = 10;
+    gameOverPointsY = gameOverY + 2;
+    gameOverResultX = 10;
+    gameOverResultY = gameOverPointsY + 2;
 
     // Create the update tick
     ticker = this.game.time.create(false);
@@ -85,20 +107,31 @@ BasicGame.Snake.prototype = {
     this.handleInput();
   },
 
-  setScoreText: function () {
-    scoreString = pad(score,MAX_SCORE_LENGTH);
-
-    nonZeroSeen = false;
-    for (var i = 0; i < scoreString.length; i++) {
-      var scoreNum = scoreString.charAt(i)
-      if (scoreNum == 0 && !nonZeroSeen) {
-        scoreText[i].text = '';
-        continue;
-      }
-      nonZeroSeen = true;
-      scoreText[i].text = scoreNum;
+  setScoreText: function (scoreString) {
+    var loc = scoreX;
+    for (var i = scoreString.length - 1; i >= 0; i--) {
+      var scoreNum = scoreString.charAt(i);
+      text[scoreY][loc].text = scoreNum;
+      loc--;
     }
-    if (!nonZeroSeen) scoreText[scoreText.length-1].text = '0';
+  },
+
+  setGameOverText: function (gameOverString,gameOverPointsString,gameOverResultString) {
+    var loc = gameOverX;
+    for (var i = 0; i < gameOverString.length; i++) {
+      text[gameOverY][loc].text = gameOverString[i];
+      loc++;
+    }
+    loc = gameOverPointsX;
+    for (var i = 0; i < gameOverPointsString.length; i++) {
+      text[gameOverPointsY][loc].text = gameOverPointsString[i];
+      loc++;
+    }
+    loc = gameOverResultX;
+    for (var i = 0; i < gameOverResultString.length; i++) {
+      text[gameOverResultY][loc].text = gameOverResultString[i];
+      loc++;
+    }
   },
 
   tick: function () {
@@ -120,7 +153,7 @@ BasicGame.Snake.prototype = {
 
   addBodyPieces: function () {
     if (bodyPiecesToAdd > 0) {
-      snake.unshift(this.game.add.sprite(0,0,'body'))
+      snake.unshift(snakeGroup.create(0,0,'body'))
       bodyPiecesToAdd = Math.max(0,bodyPiecesToAdd-1);
     }
   },
@@ -140,7 +173,7 @@ BasicGame.Snake.prototype = {
       apple.y = Math.floor(Math.random() * (this.game.height/GRID_SIZE)) * GRID_SIZE;
       bodyPiecesToAdd += NEW_BODY_PIECES_PER_APPLE;
       score += APPLE_SCORE;
-      this.setScoreText();
+      this.setScoreText(score.toString());
     }
   },
 
@@ -155,6 +188,16 @@ BasicGame.Snake.prototype = {
   die: function () {
     dead = true;
     next = new Phaser.Point(0,0);
+    this.game.time.events.add(Phaser.Timer.SECOND * SNAKE_TICK * 30, this.gameOver, this);
+  },
+
+  gameOver: function () {
+    this.setGameOverText("GAME OVER",score.toString()+" POINTS","");
+    this.game.time.events.add(Phaser.Timer.SECOND * SNAKE_TICK * 30, this.gotoMenu, this);
+  },
+
+  gotoMenu: function () {
+    this.game.state.start('MainMenu');
   },
 
   handleInput: function () {
@@ -177,7 +220,7 @@ BasicGame.Snake.prototype = {
 };
 
 function pad(num, size) {
-    var s = num+"";
-    while (s.length < size) s = "0" + s;
-    return s;
+  var s = num+"";
+  while (s.length < size) s = "0" + s;
+  return s;
 }
