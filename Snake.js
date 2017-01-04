@@ -25,6 +25,8 @@ BasicGame.Snake = function (game) {
 
 };
 
+// var Swipe = require('phaser-swipe');
+
 var GRID_SIZE = 20;
 var SNAKE_START_LENGTH = 4;
 var SNAKE_TICK = 0.075;
@@ -110,7 +112,10 @@ BasicGame.Snake.prototype = {
   },
 
   createInput: function () {
-    cursors = this.game.input.keyboard.createCursorKeys();
+
+    swipe = new Swipe(this.game);
+
+    // cursors = this.game.input.keyboard.createCursorKeys();
     next = new Phaser.Point(GRID_SIZE,0);
   },
 
@@ -244,16 +249,19 @@ BasicGame.Snake.prototype = {
     if (dead) return;
 
     // Check which key is down and set the next direction appropriately
-    if (cursors.left.isDown && next.x == 0) {
+    var d = swipe.check();
+    if (!d) return;
+
+    if (d.direction == swipe.DIRECTION_LEFT && next.x == 0) {
       next = new Phaser.Point(-GRID_SIZE,0);
     }
-    else if (cursors.right.isDown && next.x == 0) {
+    else if (d.direction == swipe.DIRECTION_RIGHT && next.x == 0) {
       next = new Phaser.Point(GRID_SIZE,0);
     }
-    else if (cursors.up.isDown && next.y == 0) {
+    else if (d.direction == swipe.DIRECTION_UP && next.y == 0) {
       next = new Phaser.Point(0,-GRID_SIZE);
     }
-    else if (cursors.down.isDown && next.y == 0) {
+    else if (d.direction == swipe.DIRECTION_DOWN && next.y == 0) {
       next = new Phaser.Point(0,GRID_SIZE);
     }
   },
