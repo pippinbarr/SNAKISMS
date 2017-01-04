@@ -29,7 +29,7 @@ BasicGame.Snake = function (game) {
 
 var GRID_SIZE = 20;
 var SNAKE_START_LENGTH = 4;
-var SNAKE_TICK = 0.1;//0.075;
+var SNAKE_TICK = 0.15;//0.075;
 var NEW_BODY_PIECES_PER_APPLE = 3;
 var SNAKE_FLICKER_SPEED = 0.2;
 var APPLE_SCORE = 10;
@@ -50,6 +50,7 @@ BasicGame.Snake.prototype = {
 
     dead = false;
     next = new Phaser.Point(GRID_SIZE,0);
+    prev = new Phaser.Point(GRID_SIZE,0);
     score = 0;
 
     this.createWalls();
@@ -181,8 +182,9 @@ BasicGame.Snake.prototype = {
   },
 
   tick: function () {
-    // Call next tick
     ticker.add(Phaser.Timer.SECOND * SNAKE_TICK, this.tick, this);
+
+    prev = new Phaser.Point(next.x,next.y);
 
     if (dead) {
       snake.forEach(function (bit) {
@@ -263,17 +265,17 @@ BasicGame.Snake.prototype = {
     if (dead) return;
 
     // Check which key is down and set the next direction appropriately
-    if (cursors.left.isDown && next.x == 0) {
-      next = new Phaser.Point(-GRID_SIZE,0);
+    if (cursors.left.isDown) {
+      this.left();
     }
-    else if (cursors.right.isDown && next.x == 0) {
-      next = new Phaser.Point(GRID_SIZE,0);
+    else if (cursors.right.isDown) {
+      this.right();
     }
-    if (cursors.up.isDown && next.y == 0) {
-      next = new Phaser.Point(0,-GRID_SIZE);
+    if (cursors.up.isDown) {
+      this.up();
     }
-    else if (cursors.down.isDown && next.y == 0) {
-      next = new Phaser.Point(0,GRID_SIZE);
+    else if (cursors.down.isDown) {
+      this.down();
     }
   },
 
@@ -287,22 +289,41 @@ BasicGame.Snake.prototype = {
 
     switch (d.direction) {
       case swipe.DIRECTION_LEFT:
-      if (next.x <= 0) next = new Phaser.Point(-GRID_SIZE,0);
+      this.left();
       break;
 
       case swipe.DIRECTION_RIGHT:
-      if (next.x == 0) next = new Phaser.Point(GRID_SIZE,0);
+      this.right();
       break;
 
       case swipe.DIRECTION_UP:
-      if (next.y == 0) next = new Phaser.Point(0,-GRID_SIZE);
+      this.up();
       break;
 
       case swipe.DIRECTION_DOWN:
-      if (next.y == 0) next = new Phaser.Point(0,GRID_SIZE);
+      this.down();
       break;
     }
   },
+
+  left: function () {
+    if (prev.x == 0) next = new Phaser.Point(-GRID_SIZE,0);
+  },
+
+  right: function () {
+    if (prev.x == 0) next = new Phaser.Point(GRID_SIZE,0);
+  },
+
+  up: function () {
+    if (prev.y == 0) next = new Phaser.Point(0,-GRID_SIZE);
+  },
+
+  down: function () {
+    if (prev.y == 0) next = new Phaser.Point(0,GRID_SIZE);
+  },
+
+
+
 };
 
 function pad(num, size) {
