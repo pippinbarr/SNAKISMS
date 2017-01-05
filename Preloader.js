@@ -25,7 +25,7 @@ BasicGame.Preloader.prototype = {
 		if (this.ready == false)
 		{
 			this.ready = true;
-			this.state.start('Extensionism');
+			this.state.start('MainMenu');
 		}
 
 	}
