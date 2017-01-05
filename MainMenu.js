@@ -7,6 +7,7 @@ BasicGame.MainMenu = function (game) {
 };
 
 games = [
+	"Snake",
 	"Anthropomorphicism",
 	"Apocalypticism",
 	"Asceticism",
@@ -69,8 +70,15 @@ BasicGame.MainMenu.prototype = {
 		var gameName = game.toUpperCase();
 		for (var i = 0; i < gameName.length; i++) {
 			text[y][x].text = gameName.charAt(i);
+			text[y][x].name = game;
+			text[y][x].inputEnabled = true;
+			text[y][x].events.onInputDown.add(this.menuItemSelected,this);
 			x++;
 		}
+	},
+
+	menuItemSelected: function (item) {
+		this.game.state.start(item.name);
 	},
 
 	createTextSpace: function () {
