@@ -20,7 +20,7 @@ BasicGame.Boot.prototype = {
             this.scale.pageAlignHorizontally = true;
             this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
             // this.scale.setMinMax(480, 260, 800, 600);
-            this.scale.setMinMax(260, 480, 600, 800);
+            this.scale.setMinMax(260, 480, 480, 640);
         }
         else
         {

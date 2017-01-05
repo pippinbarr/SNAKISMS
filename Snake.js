@@ -47,6 +47,7 @@ BasicGame.Snake.prototype = {
 
     NUM_ROWS = this.game.height/GRID_SIZE;
     NUM_COLS = this.game.width/GRID_SIZE;
+    SNAKE_TICK = 0.15;
 
     dead = false;
     next = new Phaser.Point(GRID_SIZE,0);

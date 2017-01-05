@@ -38,14 +38,24 @@ BasicGame.MainMenu.prototype = {
 		NUM_ROWS = this.game.height/GRID_SIZE;
     NUM_COLS = this.game.width/GRID_SIZE;
 
+		if (this.game.device.desktop) {
+			console.log("Keyboard setup...");
+			this.upKey = this.game.input.keyboard.addKey(Phaser.Keyboard.UP);
+			this.downKey = this.game.input.keyboard.addKey(Phaser.Keyboard.DOWN);
+			this.enterKey = this.game.input.keyboard.addKey(Phaser.Keyboard.ENTER);
+    }
+
 		this.createTextSpace();
 		this.addTitle();
 		this.addGames();
+		this.createSnake();
 
 	},
 
 	update: function () {
-
+		if (this.game.device.desktop) {
+			this.handleKeyboardInput();
+		}
 	},
 
 	addTitle: function() {
@@ -59,13 +69,15 @@ BasicGame.MainMenu.prototype = {
 	},
 
 	addGames: function () {
+		menuTop = 4;
 		for (var i = 0; i < games.length; i++) {
 			this.addGame(games[i],i);
 		}
+		menuBottom = menuTop + games.length - 1;
 	},
 
 	addGame: function (game,index) {
-		var y = 4 + index;
+		var y = menuTop + index;
 		var x = 2;
 		var gameName = game.toUpperCase();
 		for (var i = 0; i < gameName.length; i++) {
@@ -96,5 +108,41 @@ BasicGame.MainMenu.prototype = {
       }
     }
 	},
+
+	createSnake: function () {
+		// Create the snake
+		snake = [];
+		snakeGroup = this.game.add.group();
+
+		var headX = 0;
+		if (!this.game.device.desktop) {
+			headX = -1*GRID_SIZE;
+		}
+
+		head = this.game.add.sprite(headX,4*GRID_SIZE,'head',snakeGroup);
+		snake.unshift(head);
+
+		for (var i = 0; i < SNAKE_START_LENGTH; i++) {
+			var snakeBit = snakeGroup.create(-(i+1)*GRID_SIZE,0,'body');
+			snake.unshift(snakeBit);
+		}
+	},
+
+	handleKeyboardInput: function (event) {
+		if (this.upKey.downDuration(10)) {
+			if (head.y/GRID_SIZE > menuTop) head.y -= GRID_SIZE;
+		}
+		else if (this.downKey.downDuration(10)) {
+			if (head.y/GRID_SIZE < menuBottom) head.y += GRID_SIZE;
+		}
+		else if (this.enterKey.downDuration(10)) {
+			this.selectMenuItem(head.y)
+		}
+	},
+
+	selectMenuItem: function (y) {
+		this.game.state.start(games[head.y/GRID_SIZE-menuTop])
+	},
+
 
 };

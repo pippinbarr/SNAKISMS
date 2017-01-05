@@ -11,6 +11,7 @@
 	<script src="MainMenu.js"></script>
 	<script src="Snake.js"></script>
 	<script src="Extensionism.js"></script>
+	<script src="Menu.js"></script>
 </head>
 <style>
 body {
@@ -36,6 +37,7 @@ window.onload = function() {
 	game.state.add('MainMenu', BasicGame.MainMenu);
 	game.state.add('Snake', BasicGame.Snake);
 	game.state.add('Extensionism', BasicGame.Extensionism);
+	game.state.add('Menu', BasicGame.Menu);
 
 	//	Now start the Boot state.
 	game.state.start('Boot');
