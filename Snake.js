@@ -65,9 +65,9 @@ BasicGame.Snake.prototype = {
     this.setScoreText(score.toString());
 
     // Set up for game over
-    gameOverX = 10;
+    gameOverX = 3;
     gameOverY = Math.floor(NUM_ROWS/2) - 2;
-    gameOverPointsX = 10;
+    gameOverPointsX = gameOverX;
     gameOverPointsY = gameOverY + 2;
     gameOverResultX = 10;
     gameOverResultY = gameOverPointsY + 2;
