@@ -1,7 +1,6 @@
-## PRODUCING THE ISMS
-
-
 ## Continuing to dos
+
+* Add apple background to menu items to make them easier to tap?
 
 * ~~Make sure you can extend current Snake to other Snakes easily~~
 * ~~Fix swipe lag? (Roll my own?)~~

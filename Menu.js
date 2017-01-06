@@ -11,7 +11,19 @@ BasicGame.Menu.prototype.create = function () {
 
   SNAKE_TICK = 0.02;
 
+  apples = new Array(NUM_ROWS);
+  for (var i = 0; i < apples.length; i++) {
+    apples[i] = new Array(NUM_COLS);
+  }
+
   this.createMenu();
+
+  for (var y = 0; y < NUM_ROWS; y++) {
+    for (var x = 0; x < NUM_COLS; x++) {
+      if (text[y][x].text != '') {
+      }
+    }
+  }
 
   head.y = menuTop*GRID_SIZE;
   if (this.game.device.desktop) {
@@ -27,6 +39,7 @@ BasicGame.Menu.prototype.create = function () {
   next = new Phaser.Point(0,0);
   prev = new Phaser.Point(0,0);
   selected = undefined;
+
 };
 
 games = [
@@ -56,6 +69,16 @@ games = [
 
 
 BasicGame.Menu.prototype.createMenu = function () {
+
+  var title = "SNAKISMS";
+  var y = 2
+  var x = 2;
+  for (var i = 0; i < title.length; i++) {
+    text[y][x].text = title.charAt(i);
+    x++;
+  }
+
+
   menuTop = 4;
   for (var i = 0; i < games.length; i++) {
     var y = menuTop + i;
@@ -63,9 +86,14 @@ BasicGame.Menu.prototype.createMenu = function () {
 		var gameName = games[i].toUpperCase();
 		for (var j = 0; j < gameName.length; j++) {
 			text[y][x].text = gameName.charAt(j);
-			text[y][x].name = games[i];
-			text[y][x].inputEnabled = true;
-			text[y][x].events.onInputDown.add(this.menuItemTouched,this);
+
+      apples[y][x] = textGroup.create(x*GRID_SIZE,y*GRID_SIZE,'black');
+      apples[y][x].name = games[i];
+      apples[y][x].inputEnabled = true;
+      apples[y][x].events.onInputDown.add(this.menuItemTouched,this);
+
+      textGroup.swap(apples[y][x],text[y][x]);
+
 			x++;
 		}
   }
@@ -123,6 +151,7 @@ BasicGame.Menu.prototype.checkMenuCollision = function () {
   if (head.x >= this.game.width) return;
   if (text[head.y/GRID_SIZE][head.x/GRID_SIZE].text != '') {
     text[head.y/GRID_SIZE][head.x/GRID_SIZE].text = '';
+    apples[head.y/GRID_SIZE][head.x/GRID_SIZE].visible = false;
     bodyPiecesToAdd += 1;
   }
 };

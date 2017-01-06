@@ -14,6 +14,7 @@ BasicGame.Preloader.prototype = {
 		this.load.image('body','assets/images/body.png');
 		this.load.image('apple','assets/images/apple.png');
 		this.load.image('wall','assets/images/wall.png');
+		this.load.image('black','assets/images/black.png');
 	},
 
 	create: function () {
