@@ -1,47 +1,3 @@
-BasicGame.Menu = function (game) {
-  BasicGame.Snake.call(this,game);
-};
-
-BasicGame.Menu.prototype = Object.create(BasicGame.Snake.prototype);
-BasicGame.Menu.prototype.constructor = BasicGame.Snake;
-
-
-BasicGame.Menu.prototype.create = function () {
-  BasicGame.Snake.prototype.create.call(this);
-
-  SNAKE_TICK = 0.02;
-
-  apples = new Array(NUM_ROWS);
-  for (var i = 0; i < apples.length; i++) {
-    apples[i] = new Array(NUM_COLS);
-  }
-
-  this.createMenu();
-
-  for (var y = 0; y < NUM_ROWS; y++) {
-    for (var x = 0; x < NUM_COLS; x++) {
-      if (text[y][x].text != '') {
-      }
-    }
-  }
-
-  head.y = menuTop*GRID_SIZE;
-  if (this.game.device.desktop) {
-    head.x = 0;
-    this.upKey = this.game.input.keyboard.addKey(Phaser.Keyboard.UP);
-    this.downKey = this.game.input.keyboard.addKey(Phaser.Keyboard.DOWN);
-    this.enterKey = this.game.input.keyboard.addKey(Phaser.Keyboard.ENTER);
-  }
-  else {
-    head.x = -1*GRID_SIZE;
-  }
-
-  next = new Phaser.Point(0,0);
-  prev = new Phaser.Point(0,0);
-  selected = undefined;
-
-};
-
 games = [
 	"Snake",
 	"Anthropomorphicism",
@@ -67,36 +23,59 @@ games = [
 	"Utilitarianism",
 ];
 
+BasicGame.Menu = function (game) {
+  BasicGame.Snake.call(this,game);
+};
+
+BasicGame.Menu.prototype = Object.create(BasicGame.Snake.prototype);
+
+BasicGame.Menu.prototype.create = function () {
+  BasicGame.Snake.prototype.create.call(this);
+
+  this.TITLE = "SNAKISMS";
+  this.SNAKE_TICK = 0.02;
+
+  // apples = new Array(this.NUM_ROWS);
+  // for (var i = 0; i < apples.length; i++) {
+  //   apples[i] = new Array(this.NUM_COLS);
+  // }
+
+  this.createMenu();
+
+  this.snakeHead.y = menuTop*this.GRID_SIZE;
+  if (this.game.device.desktop) {
+    this.snakeHead.x = 0;
+    this.upKey = this.game.input.keyboard.addKey(Phaser.Keyboard.UP);
+    this.downKey = this.game.input.keyboard.addKey(Phaser.Keyboard.DOWN);
+    this.enterKey = this.game.input.keyboard.addKey(Phaser.Keyboard.ENTER);
+  }
+  else {
+    this.snakeHead.x = -1*GRID_SIZE;
+  }
+
+  this.next = new Phaser.Point(0,0);
+  this.prev = new Phaser.Point(0,0);
+  this.selected = undefined;
+};
 
 BasicGame.Menu.prototype.createMenu = function () {
 
-  var title = "SNAKISMS";
   var y = 2
   var x = 2;
-  for (var i = 0; i < title.length; i++) {
-    text[y][x].text = title.charAt(i);
-    x++;
-  }
 
+  this.addTextToGrid(x,y,[this.TITLE]);
+
+  var uppercaseGameNames = games.slice(0);
+  uppercaseGameNames.forEach(function(element,index,array) {
+    array[index] = element.toUpperCase();
+  });
 
   menuTop = 4;
-  for (var i = 0; i < games.length; i++) {
-    var y = menuTop + i;
-		var x = 2;
-		var gameName = games[i].toUpperCase();
-		for (var j = 0; j < gameName.length; j++) {
-			text[y][x].text = gameName.charAt(j);
+  x = 2;
+  y = menuTop;
 
-      apples[y][x] = textGroup.create(x*GRID_SIZE,y*GRID_SIZE,'black');
-      apples[y][x].name = games[i];
-      apples[y][x].inputEnabled = true;
-      apples[y][x].events.onInputDown.add(this.menuItemTouched,this);
+  this.addTextToGrid(x,y,uppercaseGameNames);
 
-      textGroup.swap(apples[y][x],text[y][x]);
-
-			x++;
-		}
-  }
   menuBottom = menuTop + games.length - 1;
 };
 
@@ -111,29 +90,29 @@ BasicGame.Menu.prototype.menuItemTouched = function (item) {
 
 BasicGame.Menu.prototype.update = function () {
   BasicGame.Snake.prototype.update.call(this);
-  if (selected) {
+  if (this.selected) {
     this.checkMenuCollision();
-    if (snake[0].x > this.game.width) {
-      this.game.state.start(selected);
+    if (this.snake[0].x > this.game.width) {
+      this.game.state.start(this.selected);
     }
   }
 };
 
 BasicGame.Menu.prototype.handleKeyboardInput = function () {
-  if (selected) return;
+  if (this.selected) return;
   if (this.upKey.downDuration(10)) {
-    if (head.y/GRID_SIZE > menuTop) {
-      head.y -= GRID_SIZE;
-      for (var i = 0; i < snake.length; i++) {
-        if (snake[i] != head) snake[i].y -= GRID_SIZE;
+    if (this.snakeHead.y/this.GRID_SIZE > menuTop) {
+      this.snakeHead.y -= this.GRID_SIZE;
+      for (var i = 0; i < this.snake.length; i++) {
+        if (this.snake[i] != this.snakeHead) this.snake[i].y -= this.GRID_SIZE;
       }
     }
   }
   else if (this.downKey.downDuration(10)) {
-    if (head.y/GRID_SIZE < menuBottom) {
-      head.y += GRID_SIZE;
-      for (var i = 0; i < snake.length; i++) {
-        if (snake[i] != head) snake[i].y += GRID_SIZE;
+    if (this.snakeHead.y/this.GRID_SIZE < menuBottom) {
+      this.snakeHead.y += this.GRID_SIZE;
+      for (var i = 0; i < this.snake.length; i++) {
+        if (this.snake[i] != this.snakeHead) this.snake[i].y += this.GRID_SIZE;
       }
     }
   }
@@ -143,16 +122,17 @@ BasicGame.Menu.prototype.handleKeyboardInput = function () {
 };
 
 BasicGame.Menu.prototype.selectMenuItem = function () {
-    next = new Phaser.Point(GRID_SIZE,0);
-    selected = games[head.y/GRID_SIZE-menuTop];
+    this.next = new Phaser.Point(this.GRID_SIZE,0);
+    this.selected = games[this.snakeHead.y/this.GRID_SIZE-menuTop];
 };
 
 BasicGame.Menu.prototype.checkMenuCollision = function () {
-  if (head.x >= this.game.width) return;
-  if (text[head.y/GRID_SIZE][head.x/GRID_SIZE].text != '') {
-    text[head.y/GRID_SIZE][head.x/GRID_SIZE].text = '';
-    apples[head.y/GRID_SIZE][head.x/GRID_SIZE].visible = false;
-    bodyPiecesToAdd += 1;
+  if (this.snakeHead.x >= this.game.width) return;
+  var x = this.snakeHead.x/this.GRID_SIZE;
+  var y = this.snakeHead.y/this.GRID_SIZE;
+  if (this.textGrid[y][x].text != '') {
+    this.textGrid[y][x].text = '';
+    this.snakeBitsToAdd += 1;
   }
 };
 
@@ -163,7 +143,9 @@ BasicGame.Menu.prototype.createApple = function () {
 };
 
 BasicGame.Menu.prototype.createInstructions = function () {
+};
 
+BasicGame.Menu.prototype.createControls = function () {
 };
 
 BasicGame.Menu.prototype.handleTouchInput = function () {
@@ -183,3 +165,5 @@ BasicGame.Menu.prototype.checkBodyCollision = function () {
 
 BasicGame.Menu.prototype.setScoreText = function () {
 };
+
+BasicGame.Menu.prototype.constructor = BasicGame.Snake;

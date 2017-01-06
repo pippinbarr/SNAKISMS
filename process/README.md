@@ -1,8 +1,11 @@
+
+
 ## Continuing to dos
 
-* ~~Add a timer to the apple so it doesn't instantly reappear~~
-* ~~Add pre-instructions to game~~
-* ~~Add restart/menu options to game~~
+* ~~Refactor snake code for readability and extension~~ 2017-01-06
+* ~~Add a timer to the apple so it doesn't instantly reappear~~ 2017-01-06
+* ~~Add pre-instructions to game~~ 2017-01-06
+* ~~Add restart/menu options to game~~ 2017-01-06
 * ~~Add apple background to menu items to make them easier to tap?~~
 * ~~Convert menu to full Snake~~
 * ~~Make sure you can extend current Snake to other Snakes easily~~
