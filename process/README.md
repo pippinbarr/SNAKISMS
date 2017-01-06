@@ -1,6 +1,6 @@
 ## Continuing to dos
 
-* Add a timer to the apple so it doesn't instantly reappear
+* ~~Add a timer to the apple so it doesn't instantly reappear~~
 * ~~Add pre-instructions to game~~
 * ~~Add restart/menu options to game~~
 * ~~Add apple background to menu items to make them easier to tap?~~
