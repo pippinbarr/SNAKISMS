@@ -58,7 +58,9 @@ BasicGame.Snake.prototype = {
     this.createSnake();
     this.createApple();
     this.createInput();
+    instructions = this.game.add.group();
     this.createText();
+    this.createInstructions();
 
     // Set up for score
     scoreX = NUM_COLS - 2;
@@ -66,7 +68,7 @@ BasicGame.Snake.prototype = {
     this.setScoreText(score.toString());
 
     // Set up for game over
-    gameOverX = 3;
+    gameOverX = 4;
     gameOverY = Math.floor(NUM_ROWS/2) - 2;
     gameOverPointsX = gameOverX;
     gameOverPointsY = gameOverY + 2;
@@ -84,7 +86,7 @@ BasicGame.Snake.prototype = {
     WALL_LEFT = 1;
     WALL_RIGHT = NUM_COLS-2;
     WALL_TOP = 3;
-    WALL_BOTTOM = NUM_ROWS - WALL_TOP;
+    WALL_BOTTOM = NUM_ROWS - WALL_TOP - 1;
 
     walls = new Array(NUM_ROWS);
     wallGroup = this.game.add.group();
@@ -119,6 +121,10 @@ BasicGame.Snake.prototype = {
   createInput: function () {
     if (this.game.device.desktop) {
       cursors = this.game.input.keyboard.createCursorKeys();
+      this.rKey = this.game.input.keyboard.addKey(Phaser.Keyboard.R);
+      this.mKey = this.game.input.keyboard.addKey(Phaser.Keyboard.M);
+      this.game.input.keyboard.removeKeyCapture(Phaser.Keyboard.R)
+      this.game.input.keyboard.removeKeyCapture(Phaser.Keyboard.M)
     }
     else {
       swipe = new Swipe(this.game);
@@ -143,6 +149,34 @@ BasicGame.Snake.prototype = {
         text[y].push(char);
       }
     }
+  },
+
+  createInstructions: function () {
+    var restartString = "R=RESTART";
+    var menuString = "M=MENU"
+    if (!this.game.device.desktop) {
+      restartString = "RESTART";
+      menuString = "MENU";
+    }
+    var instructionsY = NUM_ROWS - 2;
+    var instructionsX = 1;
+    var x = instructionsX;
+    for (var i = 0; i < restartString.length; i++) {
+      text[instructionsY][x].text = restartString.charAt(i);
+      var sprite = instructions.create(x*GRID_SIZE,instructionsY*GRID_SIZE,'black');
+      sprite.inputEnabled = true;
+      sprite.events.onInputDown.add(this.restart,this);
+      x++;
+    }
+    x++;
+    for (var i = 0; i < menuString.length; i++) {
+      text[instructionsY][x].text = menuString.charAt(i);
+      var sprite = instructions.create(x*GRID_SIZE,instructionsY*GRID_SIZE,'black');
+      sprite.inputEnabled = true;
+      sprite.events.onInputDown.add(this.gotoMenu,this);
+      x++;
+    }
+
   },
 
   update: function () {
@@ -254,14 +288,28 @@ BasicGame.Snake.prototype = {
 
   gameOver: function () {
     this.setGameOverText("GAME OVER",score.toString()+" POINTS","");
-    this.game.time.events.add(Phaser.Timer.SECOND * SNAKE_TICK * 30, this.gotoMenu, this);
+    // this.game.time.events.add(Phaser.Timer.SECOND * SNAKE_TICK * 30, this.gotoMenu, this);
   },
 
   gotoMenu: function () {
+    this.game.state.start('Menu');
+  },
+
+  restart: function () {
     this.game.state.start('Snake');
   },
 
+
+
   handleKeyboardInput: function () {
+
+    if (this.rKey.isDown) {
+      this.restart();
+    }
+    else if (this.mKey.isDown) {
+      this.gotoMenu();
+    }
+
     if (dead) return;
 
     // Check which key is down and set the next direction appropriately
@@ -321,9 +369,6 @@ BasicGame.Snake.prototype = {
   down: function () {
     if (prev.y == 0) next = new Phaser.Point(0,GRID_SIZE);
   },
-
-
-
 };
 
 function pad(num, size) {

@@ -1,5 +1,8 @@
 ## Continuing to dos
 
+* Add pre-instructions to game (only the first time? every level?)
+
+* ~~Add restart/menu options to game~~
 * ~~Add apple background to menu items to make them easier to tap?~~
 * ~~Convert menu to full Snake~~
 * ~~Make sure you can extend current Snake to other Snakes easily~~

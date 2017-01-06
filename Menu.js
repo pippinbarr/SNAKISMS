@@ -162,6 +162,10 @@ BasicGame.Menu.prototype.createInput = function () {
 BasicGame.Menu.prototype.createApple = function () {
 };
 
+BasicGame.Menu.prototype.createInstructions = function () {
+
+};
+
 BasicGame.Menu.prototype.handleTouchInput = function () {
 };
 
