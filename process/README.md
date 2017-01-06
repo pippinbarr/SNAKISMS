@@ -1,7 +1,7 @@
 ## Continuing to dos
 
-* Add pre-instructions to game (only the first time? every level?)
-
+* Add a timer to the apple so it doesn't instantly reappear
+* ~~Add pre-instructions to game~~
 * ~~Add restart/menu options to game~~
 * ~~Add apple background to menu items to make them easier to tap?~~
 * ~~Convert menu to full Snake~~

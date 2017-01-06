@@ -34,6 +34,7 @@ var NEW_BODY_PIECES_PER_APPLE = 3;
 var SNAKE_FLICKER_SPEED = 0.2;
 var APPLE_SCORE = 10;
 var MAX_SCORE_LENGTH = 10;
+var APPLE_DELAY = 1500;
 
 var next;
 var bodyPiecesToAdd = 0;
@@ -50,17 +51,19 @@ BasicGame.Snake.prototype = {
     SNAKE_TICK = 0.15;
 
     dead = false;
-    next = new Phaser.Point(GRID_SIZE,0);
-    prev = new Phaser.Point(GRID_SIZE,0);
+    next = new Phaser.Point(0,0);
+    prev = new Phaser.Point(0,0);
     score = 0;
 
     this.createWalls();
     this.createSnake();
     this.createApple();
     this.createInput();
-    instructions = this.game.add.group();
+    instructionsGroup = this.game.add.group();
+    controlsGroup = this.game.add.group();
     this.createText();
     this.createInstructions();
+    this.createControls();
 
     // Set up for score
     scoreX = NUM_COLS - 2;
@@ -105,17 +108,19 @@ BasicGame.Snake.prototype = {
     snake = [];
     snakeGroup = this.game.add.group();
 
-    head = this.game.add.sprite(5*GRID_SIZE,10*GRID_SIZE,'head',snakeGroup);
+    head = this.game.add.sprite(11*GRID_SIZE,11*GRID_SIZE,'head',snakeGroup);
     snake.unshift(head);
 
-    for (var i = 0; i < SNAKE_START_LENGTH; i++) {
-      var snakeBit = snakeGroup.create(-(i+1)*GRID_SIZE,0,'body');
-      snake.unshift(snakeBit);
-    }
+    bodyPiecesToAdd = 3;
+
+    // for (var i = 0; i < SNAKE_START_LENGTH; i++) {
+    //   var snakeBit = snakeGroup.create(-(i+1)*GRID_SIZE,0,'body');
+    //   snake.unshift(snakeBit);
+    // }
   },
 
   createApple: function () {
-    apple = this.game.add.sprite(10*GRID_SIZE,10*GRID_SIZE,'apple');
+    apple = this.game.add.sprite(-10*GRID_SIZE,-10*GRID_SIZE,'apple');
   },
 
   createInput: function () {
@@ -130,9 +135,6 @@ BasicGame.Snake.prototype = {
       swipe = new Swipe(this.game);
       swipe.diagonalDisabled = true;
     }
-
-    // cursors = this.game.input.keyboard.createCursorKeys();
-    next = new Phaser.Point(GRID_SIZE,0);
   },
 
   createText: function () {
@@ -163,7 +165,7 @@ BasicGame.Snake.prototype = {
     var x = instructionsX;
     for (var i = 0; i < restartString.length; i++) {
       text[instructionsY][x].text = restartString.charAt(i);
-      var sprite = instructions.create(x*GRID_SIZE,instructionsY*GRID_SIZE,'black');
+      var sprite = instructionsGroup.create(x*GRID_SIZE,instructionsY*GRID_SIZE,'black');
       sprite.inputEnabled = true;
       sprite.events.onInputDown.add(this.restart,this);
       x++;
@@ -171,12 +173,34 @@ BasicGame.Snake.prototype = {
     x++;
     for (var i = 0; i < menuString.length; i++) {
       text[instructionsY][x].text = menuString.charAt(i);
-      var sprite = instructions.create(x*GRID_SIZE,instructionsY*GRID_SIZE,'black');
+      var sprite = instructionsGroup.create(x*GRID_SIZE,instructionsY*GRID_SIZE,'black');
       sprite.inputEnabled = true;
       sprite.events.onInputDown.add(this.gotoMenu,this);
       x++;
     }
+  },
 
+  createControls: function () {
+    var controls = [];
+    if (this.game.device.desktop) {
+      controls = ["ARROWS","CONTROL","SNAKE"];
+    }
+    else {
+      controls = ["SWIPES","CONTROL","SNAKE"];
+    }
+    var controlsStartX = 8;
+    var y = 7;
+    var x = controlsStartX;
+    for (var i = 0; i < controls.length; i++) {
+      for (var j = 0; j < controls[i].length; j++) {
+        text[y][x].text = controls[i].charAt(j);
+        controlsGroup.add(text[y][x]);
+        x++;
+      }
+      y++;
+      x = controlsStartX;
+
+    }
   },
 
   update: function () {
@@ -235,6 +259,7 @@ BasicGame.Snake.prototype = {
   },
 
   addBodyPieces: function () {
+    if (next.x == 0 && next.y == 0) return;
     if (bodyPiecesToAdd > 0) {
       snake.unshift(snakeGroup.create(0,0,'body'))
       bodyPiecesToAdd = Math.max(0,bodyPiecesToAdd-1);
@@ -252,7 +277,9 @@ BasicGame.Snake.prototype = {
 
   checkAppleCollision: function () {
     if (head.position.equals(apple.position)) {
-      this.repositionApple();
+      apple.x = -1000;
+      apple.y = -1000;
+      this.startAppleTimer();
       bodyPiecesToAdd += NEW_BODY_PIECES_PER_APPLE;
       score += APPLE_SCORE;
       this.setScoreText(score.toString());
@@ -312,6 +339,12 @@ BasicGame.Snake.prototype = {
 
     if (dead) return;
 
+
+    if (controlsGroup.visible && (cursors.left.isDown || cursors.right.isDown || cursors.up.isDown || cursors.down.isDown)) {
+      this.hideControls();
+      this.startAppleTimer();
+    }
+
     // Check which key is down and set the next direction appropriately
     if (cursors.left.isDown) {
       this.left();
@@ -327,6 +360,21 @@ BasicGame.Snake.prototype = {
     }
   },
 
+  hideControls: function () {
+    if (next.x == 0 && next.y == 0) {
+      controlsGroup.forEach(function (letter) {
+        letter.text = '';
+      });
+      controlsGroup.visible = false;
+    }
+  },
+
+  startAppleTimer: function () {
+    setTimeout(function () {
+      this.repositionApple();
+    }.bind(this),APPLE_DELAY);
+  },
+
 
   handleTouchInput: function () {
     if (dead) return;
@@ -334,6 +382,11 @@ BasicGame.Snake.prototype = {
     // Check which for swipes and set the next direction appropriately
     var d = swipe.check();
     if (!d) return;
+
+    if (controlsGroup.visible) {
+      this.hideControls();
+      this.startAppleTimer();
+    }
 
     switch (d.direction) {
       case swipe.DIRECTION_LEFT:
