@@ -1,3 +1,31 @@
+## Making the Snakisms
+
+### Anthropomorphicism
+### Apocalypticism
+### Asceticism
+### Capitalism
+### Casualism
+### Conservatism
+### Determinism
+### Dualism
+### Existentialism
+### Holisticism
+### Idealism
+### Monism
+* Should the body bits be edible as well? If so what happens to the bits behind them?
+* Should the eaten elements be replaced somewhere else on the screen? Probably yes? Yikes... oh dear... this is more complex than I was thinking... hmmmmmmmmmm shit. Still that's why they play the game.
+* ~~Make all the bits worth points~~
+* ~~**ACTUALLY JUST EDITED THE RELEVANT GROUPS DIRECTLY**Make edibles group and add all elements to it (score, walls, body?, menu, restart)~~
+* ~~Implement a check for edibles and remove on eaten~~
+### Nihilism
+### Optimism
+### Pessimism
+### Positivism
+### Post-apocalypticism
+### Romanticism
+### Stoicism
+### Subjectivism
+### Utilitarianism
 
 
 ## Continuing to dos

@@ -77,11 +77,13 @@ BasicGame.Snake.prototype = {
     for (var y = WALL_TOP; y <= WALL_BOTTOM; y++) {
       for (var x = WALL_LEFT; x <= WALL_RIGHT; x++) {
         if (y == WALL_TOP || y == WALL_BOTTOM || x == WALL_LEFT || x == WALL_RIGHT) {
+          // var wall = this.wallGroup.create(x*this.GRID_SIZE,y*this.GRID_SIZE,'wall')
           var wall = this.wallGroup.create(x*this.GRID_SIZE,y*this.GRID_SIZE,'wall')
-          this.game.physics.enable(wall, Phaser.Physics.ARCADE);
+          // this.game.physics.enable(wall, Phaser.Physics.ARCADE);
         }
       }
     }
+    console.log(this.wallGroup.length);
   },
 
   createSnake: function () {
@@ -125,6 +127,7 @@ BasicGame.Snake.prototype = {
   },
 
   createTextGrid: function () {
+    this.textGroup = this.game.add.group();
     for (var y = 0; y < this.NUM_ROWS; y++) {
       this.textGrid.push([]);
       for (var x = 0; x < this.NUM_COLS; x++) {
@@ -142,12 +145,12 @@ BasicGame.Snake.prototype = {
     var instructionsX = 1;
 
     if (this.game.device.desktop) {
-      this.addTextToGrid(instructionsX,instructionsY,["R=RESTART M=MENU"],this.instructionsGroup);
+      this.addTextToGrid(instructionsX,instructionsY,["R=RESTART M=MENU"],this.textGroup);
     }
     else {
       this.instructionsButtonGroup = this.game.add.group();
-      this.addTextToGrid(instructionsX,instructionsY,["RESTART"],this.instructionsGroup,this.instructionsButtonGroup,this.restart);
-      this.addTextToGrid(instructionsX+9,instructionsY,["MENU"],this.instructionsGroup,this.instructionsButtonGroup,this.gotoMenu);
+      this.addTextToGrid(instructionsX,instructionsY,["RESTART"],this.textGroup,this.instructionsButtonGroup,this.restart);
+      this.addTextToGrid(instructionsX+9,instructionsY,["MENU"],this.textGroup,this.instructionsButtonGroup,this.gotoMenu);
     }
   },
 
