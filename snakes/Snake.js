@@ -42,10 +42,10 @@ BasicGame.Snake.prototype = {
     this.NUM_COLS = this.game.width/this.GRID_SIZE;
 
     this.createWalls();
-    this.createSnake();
     this.createApple();
-    this.createInput();
     this.createTexts();
+    this.createSnake();
+    this.createInput();
 
     // Set up for score
     this.scoreX = this.NUM_COLS - 2;
