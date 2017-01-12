@@ -10,7 +10,11 @@
 * ~~Death on eating the apple~~
 * ~~**YEP** Change end message to just "YOU LOSE" if you eat the apple?~~
 
-### Capitalism
+### ~~Capitalism~~
+
+* ~~On death, report money finished with~~
+* ~~On score to zero, display info that can't afford apple~~
+* ~~Change score to $ and reduce on apple~~
 
 ### Casualism
 

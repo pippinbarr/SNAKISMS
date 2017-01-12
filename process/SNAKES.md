@@ -9,11 +9,6 @@ Could extend that to the walls and score too I guess… and the game over… no,
 
 ***The apple moves around on its own as well as the snake - you can still eat it, but it’s mobile***
 
-### Capitalist
-Maybe something with in-app purchases here? You have to buy it…? Bit simple, but might do the job… But it might be TOO simple
-
-***You start with money as your score ($ sign) and apples cost money (when you’re out, you can’t afford the apples anymore - popup when you hit them and you die ha ha)***
-
 ### Casualist
 "the belief that chance governs all things”
 
@@ -179,6 +174,13 @@ You aren’t supposed to eat the apple, it’s game over if you do, you just gli
 Points go up while not eating? But that’s a form of pleasure perhaps, so no points and don’t eat the apple…?
 
 ***avoid the apple, you lose when you eat it (plausibly getting points to indicate the goal)***
+
+### Capitalist
+Maybe something with in-app purchases here? You have to buy it…? Bit simple, but might do the job… But it might be TOO simple
+
+***You start with money as your score ($ sign) and apples cost money (when you’re out, you can’t afford the apples anymore - popup when you hit them and you die ha ha)***
+
+*This idea got changed for the first version so that you don't die on collision with an apple you can't afford, you just don't eat it and have to die on your own sometime.*
 
 ### Conservative
 Just Snake. I think the joke fits best here right?

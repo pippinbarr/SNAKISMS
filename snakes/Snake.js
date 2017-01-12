@@ -211,8 +211,8 @@ BasicGame.Snake.prototype = {
     this.addTextToGrid(this.scoreX-scoreString.length,this.scoreY,[scoreString]);
   },
 
-  setGameOverText: function (gameOverString,gameOverPointsString,gameOverResultString) {
-    this.addTextToGrid(gameOverX,gameOverY,[gameOverString,gameOverPointsString,gameOverResultString]);
+  setGameOverText: function (gameOverString,spacing,gameOverPointsString,spacing,gameOverResultString) {
+    this.addTextToGrid(gameOverX,gameOverY,[gameOverString,spacing,gameOverPointsString,spacing,gameOverResultString]);
   },
 
   tick: function () {
