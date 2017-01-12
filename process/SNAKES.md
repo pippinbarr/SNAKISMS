@@ -1,4 +1,4 @@
-# A list of all the Snakes, with accepted at the start
+# To Implement
 
 ### Anthropomorphic
 "attribution of human qualities to non-human things"
@@ -8,19 +8,6 @@ This can be the apple running around having a “life of its own”
 Could extend that to the walls and score too I guess… and the game over… no, too much.
 
 ***The apple moves around on its own as well as the snake - you can still eat it, but it’s mobile***
-
-### Apocalyptic
-The game just abruptly ends after some (short) period of time…
-Maybe with some suitably spectacular ending… loud drones, screenshake, blackness
-
-***Game ends suddenly without warning and randomly at some set point***
-
-### Ascetic
-You aren’t supposed to eat the apple, it’s game over if you do, you just glide around not eating (and NOT getting any points either) until you die or eat the apple. Just GAME OVER on apple eat.
-
-Points go up while not eating? But that’s a form of pleasure perhaps, so no points and don’t eat the apple…?
-
-***avoid the apple, you lose when you eat it (plausibly getting points to indicate the goal)***
 
 ### Capitalist
 Maybe something with in-app purchases here? You have to buy it…? Bit simple, but might do the job… But it might be TOO simple
@@ -36,13 +23,6 @@ This has potential as the major insanity version? I kind of like it…
 Hard to determine what the specific behaviours are? A wall can’t really have a “random behaviour”? So yeah, as above it’ll be randomly choosing
 
 ***everything behaves randomly according to its ‘nature’, maybe on some cycle***
-
-### Conservative
-Just Snake. I think the joke fits best here right?
-
-"belief in maintaining political and social traditions”
-
-***just snake***
 
 ### Determinist
 An easy one I think… a pre-mapped set of moves and outcomes that just plays itself each time you go through. No input from the player.
@@ -84,20 +64,6 @@ I really like the potential to this… that you view Snake as a whole system and
 There’s something here…
 
 ***keys move everything (and turn the snake) so the world moves on the screen***
-
-### Idealist
-"In philosophy, idealism is the group of philosophies which assert that reality, or reality as we can know it, is fundamentally mental, mentally constructed, or otherwise immaterial.”
-
-Maybe this could involve the game just telling you to imagine that you are playing a game of snake? Maybe it even supports this somehow?
-
-***“Imagine you are playing a game of snake."***
-
-### Monist
-"belief that all things can be placed in one category"
-
-You can eat absolutely everything, from the score to the apples to the walls (it’s all within the same category)
-
-***everything is essentially an apple***
 
 ### Nihilist
 "denial of all reality; extreme scepticism"
@@ -189,7 +155,67 @@ So you can WIN or LOSE this version of the game, rather than just have a GAME OV
 
 
 
-# REJECTED / QUESTIONABLE
+
+
+
+
+
+
+
+
+------------------------------------------------------------------
+
+# Implemented
+
+### Apocalyptic
+The game just abruptly ends after some (short) period of time…
+Maybe with some suitably spectacular ending… loud drones, screenshake, blackness
+
+***Game ends suddenly without warning and randomly at some set point***
+
+### Ascetic
+You aren’t supposed to eat the apple, it’s game over if you do, you just glide around not eating (and NOT getting any points either) until you die or eat the apple. Just GAME OVER on apple eat.
+
+Points go up while not eating? But that’s a form of pleasure perhaps, so no points and don’t eat the apple…?
+
+***avoid the apple, you lose when you eat it (plausibly getting points to indicate the goal)***
+
+### Conservative
+Just Snake. I think the joke fits best here right?
+
+"belief in maintaining political and social traditions”
+
+***just snake***
+
+### Idealist
+"In philosophy, idealism is the group of philosophies which assert that reality, or reality as we can know it, is fundamentally mental, mentally constructed, or otherwise immaterial.”
+
+Maybe this could involve the game just telling you to imagine that you are playing a game of snake? Maybe it even supports this somehow?
+
+***“Imagine you are playing a game of snake."***
+
+### Monist
+"belief that all things can be placed in one category"
+
+You can eat absolutely everything, from the score to the apples to the walls (it’s all within the same category)
+
+***everything is essentially an apple***
+
+
+
+
+
+
+
+
+
+
+
+
+
+------------------------------------------------------------------
+
+# Rejected / Questionable
 
 
 ### Libertarian
