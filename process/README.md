@@ -45,7 +45,10 @@
 
 ### Optimism
 
-### Pessimism
+### ~~Pessimism~~
+* ~~Fix positioning of texts relative to wall area~~
+* ~~Apple only outside the wall area~~
+* ~~Smaller wall area~~
 
 ### Positivism
 
@@ -53,7 +56,9 @@
 
 ### Romanticism
 
-### Stoicism
+### ~~Stoicism~~
+* ~~Rewrite so that snake stops before collision and stays put (maybe with imagined "ouch" sound on collision) but can then just keep going after~~
+* ~~Rewrite body collision to just stay put and not die~~
 
 ### Subjectivism
 

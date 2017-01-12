@@ -20,7 +20,7 @@ Hard to determine what the specific behaviours are? A wall can’t really have a
 ***everything behaves randomly according to its ‘nature’, maybe on some cycle***
 
 ### Determinist
-An easy one I think… a pre-mapped set of moves and outcomes that just plays itself each time you go through. No input from the player.
+An easy one I think… a pre-mapped set of moves and outcomes that just plays itself each time you go through. No input from the player. Apple positioning needs to be determinist too.
 
 ***no input, always the same sequence (though see anarchist…)***
 
@@ -73,13 +73,6 @@ Apples regenerate quickly, you just get many many points
 
 ***apples everywhere, you don’t get bigger, you get lots of points, can still die***
 
-### Pessimist
-"doctrine that the universe is essentially evil”
-
-Poisoned apples? Struck by lightning? Falling blocks that kill you? A wall? The apple is outside the walls? You are stuck in a tiny space and the apple moves around outside the walls
-
-***you are in a smaller space and the apple is outside the walls***
-
 ### Positivist
 "doctrine that that which is not observable is not knowable"
 
@@ -102,16 +95,6 @@ Be kind of fun if the landscape was infinite? Or at least really big? If there�
 Expressive music? Poetry coming up as you play in little titles in cursive… the pain and beauty of being alive, of death…
 
 ***emotional music, title appear with emotional story of snake’s life, joy, and eventual death***
-
-### Stoic
-"the endurance of pain or hardship without a display of feelings and without complaint."
-
-When you die (by colliding with yourself), you just kind of stay there, not actually dying of it…
-
-So no flashing body for example, just a stoic acceptance of collision… no acknowledgment that something bad happened (not even an acknowledgment of death?) (or just continual flashing and “hurt” sound but no end?)
-Probably better with the sound and flash because otherwise you won’t really understand what’s happening
-
-***when you die you just flash and have dying sound forever as you “put up with it"***
 
 ### Subjectivist
 "doctrine that all knowledge is subjective"
@@ -205,7 +188,24 @@ Ultimately it’ll be the nothing right?
 
 ***there is nothing at all***
 
+### Pessimist
+"doctrine that the universe is essentially evil”
 
+Poisoned apples? Struck by lightning? Falling blocks that kill you? A wall? The apple is outside the walls? You are stuck in a tiny space and the apple moves around outside the walls
+
+***you are in a smaller space and the apple is outside the walls***
+
+### Stoic
+"the endurance of pain or hardship without a display of feelings and without complaint."
+
+When you die (by colliding with yourself), you just kind of stay there, not actually dying of it…
+
+So no flashing body for example, just a stoic acceptance of collision… no acknowledgment that something bad happened (not even an acknowledgment of death?) (or just continual flashing and “hurt” sound but no end?)
+Probably better with the sound and flash because otherwise you won’t really understand what’s happening
+
+***when you die you just flash and have dying sound forever as you “put up with it"***
+
+Or should it be that you hit the thing and then it just waits until you're ready move in an available direction?
 
 
 

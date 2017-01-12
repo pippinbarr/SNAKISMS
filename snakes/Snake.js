@@ -38,9 +38,13 @@ BasicGame.Snake.prototype = {
     this.textGrid = [];
     this.dead = false;
     this.stateName = 'Snake';
+    this.inputEnabled = true;
 
     this.NUM_ROWS = this.game.height/this.GRID_SIZE;
     this.NUM_COLS = this.game.width/this.GRID_SIZE;
+
+    this.CONTROLS_X = 8;
+    this.CONTROLS_Y = 7;
 
     this.createWalls();
     this.createApple();
@@ -55,12 +59,8 @@ BasicGame.Snake.prototype = {
     this.setScoreText(this.score.toString());
 
     // Set up for game over
-    gameOverX = 4;
-    gameOverY = Math.floor(this.NUM_ROWS/2) - 2;
-    gameOverPointsX = gameOverX;
-    gameOverPointsY = gameOverY + 2;
-    gameOverResultX = 10;
-    gameOverResultY = gameOverPointsY + 2;
+    this.GAME_OVER_X = 4;
+    this.GAME_OVER_Y = Math.floor(this.NUM_ROWS/2) - 2;
 
     // Create the update tick
     ticker = this.game.time.create(false);
@@ -85,7 +85,6 @@ BasicGame.Snake.prototype = {
         }
       }
     }
-    console.log(this.wallGroup.length);
   },
 
   createSnake: function () {
@@ -143,6 +142,28 @@ BasicGame.Snake.prototype = {
     }
   },
 
+  addTextToGrid(startX,startY,text,group,buttonGroup,callback) {
+    var x = startX;
+    var y = startY;
+
+    for (var i = 0; i < text.length; i++) {
+      x = startX;
+      for (var j = 0; j < text[i].length; j++) {
+        this.textGrid[y][x].text = text[i].charAt(j);
+        if (group) {
+          group.add(this.textGrid[y][x]);
+        }
+        if (buttonGroup) {
+          var sprite = buttonGroup.create(x*this.GRID_SIZE,y*this.GRID_SIZE,'black');
+          sprite.inputEnabled = true;
+          sprite.events.onInputDown.add(callback,this);
+        }
+        x++;
+      }
+      y++;
+    }
+  },
+
   createInstructions: function () {
     var instructionsY = this.NUM_ROWS - 2;
     var instructionsX = 1;
@@ -158,9 +179,6 @@ BasicGame.Snake.prototype = {
   },
 
   createControls: function () {
-    var controlsX = 8;
-    var controlsY = 7;
-
     var controlsStrings = [];
     if (this.game.device.desktop) {
       controlsStrings = ["ARROWS","CONTROL","SNAKE"];
@@ -169,29 +187,8 @@ BasicGame.Snake.prototype = {
       controlsStrings = ["SWIPES","CONTROL","SNAKE"];
     }
 
-    this.addTextToGrid(controlsX,controlsY,controlsStrings,this.controlsGroup);
-  },
-
-  addTextToGrid(startX,startY,text,group,buttonGroup,callback) {
-    var x = startX;
-    var y = startY;
-
-    for (var i = 0; i < text.length; i++) {
-      var x = startX;
-      for (var j = 0; j < text[i].length; j++) {
-        this.textGrid[y][x].text = text[i].charAt(j);
-        if (group) {
-          group.add(this.textGrid[y][x]);
-        }
-        if (buttonGroup) {
-          var sprite = buttonGroup.create(x*this.GRID_SIZE,y*this.GRID_SIZE,'black');
-          sprite.inputEnabled = true;
-          sprite.events.onInputDown.add(callback,this);
-        }
-        x++;
-      }
-      y++;
-    }
+    this.addTextToGrid(this.CONTROLS_X,this.CONTROLS_Y,controlsStrings,this.controlsGroup);
+    this.controlsVisible = true;
   },
 
   update: function () {
@@ -211,8 +208,8 @@ BasicGame.Snake.prototype = {
     this.addTextToGrid(this.scoreX-scoreString.length,this.scoreY,[scoreString]);
   },
 
-  setGameOverText: function (gameOverString,spacing,gameOverPointsString,spacing,gameOverResultString) {
-    this.addTextToGrid(gameOverX,gameOverY,[gameOverString,spacing,gameOverPointsString,spacing,gameOverResultString]);
+  setGameOverText: function (gameOverString,spacing,gameOverPointsString,spacing2,gameOverResultString) {
+    this.addTextToGrid(this.GAME_OVER_X,this.GAME_OVER_Y,[gameOverString,spacing,gameOverPointsString,spacing2,gameOverResultString]);
   },
 
   tick: function () {
@@ -319,8 +316,9 @@ BasicGame.Snake.prototype = {
     }
 
     if (this.dead) return;
+    if (!this.inputEnabled) return;
 
-    if (this.controlsGroup.visible && (this.cursors.left.isDown || this.cursors.right.isDown || this.cursors.up.isDown || this.cursors.down.isDown)) {
+    if (this.controlsVisible && (this.cursors.left.isDown || this.cursors.right.isDown || this.cursors.up.isDown || this.cursors.down.isDown)) {
       this.hideControls();
       this.startAppleTimer();
     }
@@ -345,7 +343,8 @@ BasicGame.Snake.prototype = {
       this.controlsGroup.forEach(function (letter) {
         letter.text = '';
       });
-      this.controlsGroup.visible = false;
+      this.controlsVisible = false;
+      console.log("Hid controls");
     }
   },
 
@@ -358,11 +357,12 @@ BasicGame.Snake.prototype = {
 
   handleTouchInput: function () {
     if (this.dead) return;
+    if (!this.inputEnabled) return;
 
     var d = this.swipe.check();
     if (!d) return;
 
-    if (this.controlsGroup.visible) {
+    if (this.controlsVisible) {
       this.hideControls();
       this.startAppleTimer();
     }
