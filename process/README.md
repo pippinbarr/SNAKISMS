@@ -40,7 +40,8 @@
 * ~~**ACTUALLY JUST EDITED THE RELEVANT GROUPS DIRECTLY**Make edibles group and add all elements to it (score, walls, body?, menu, restart)~~
 * ~~Implement a check for edibles and remove on eaten~~
 
-### Nihilism
+### ~~Nihilism~~
+* ~~Display nothing, no controls, just nothing~~
 
 ### Optimism
 

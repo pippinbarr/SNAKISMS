@@ -29,6 +29,8 @@ Two snakes, one a ghostly mind snake, you control both
 
 What happens when the mind snake hits a wall or an apple? (Maybe it wraps actually that would make some sense. Nice.
 
+HOW can independent control work with swipes?!
+
 ***Two snakes, a semi-transparent mind one, and a body one, mind snake wraps, independent control***
 
 ### Existentialist
@@ -59,24 +61,6 @@ I really like the potential to this… that you view Snake as a whole system and
 There’s something here…
 
 ***keys move everything (and turn the snake) so the world moves on the screen***
-
-### Nihilist
-"denial of all reality; extreme scepticism"
-
-Plausibly this could involve absolutely NOTHING on the screen at all
-or it could just be the snake in a black void and eventually it could just go off the screen
-
-It’s most of all that life is meaningless, right? So what creates meaning in Snake? The points mostly… just is it just no points? And the apple, so no apple… and then what? There is still death presumable.
-
-Technically Nihilism is usually just a denial of meaning, but it can be believe in absolutely nothing being real at all (metaphysical)
-
-So the options are:
-* absolutely nothing at all on the screen (probably the funniest)
-* just the snake I guess… or just no points (the ‘meaning’)…
-
-Ultimately it’ll be the nothing right?
-
-***there is nothing at all***
 
 ### Optimist
 "doctrine that we live in the best of all possible worlds”
@@ -203,6 +187,23 @@ You can eat absolutely everything, from the score to the apples to the walls (it
 
 ***everything is essentially an apple***
 
+### Nihilist
+"denial of all reality; extreme scepticism"
+
+Plausibly this could involve absolutely NOTHING on the screen at all
+or it could just be the snake in a black void and eventually it could just go off the screen
+
+It’s most of all that life is meaningless, right? So what creates meaning in Snake? The points mostly… just is it just no points? And the apple, so no apple… and then what? There is still death presumable.
+
+Technically Nihilism is usually just a denial of meaning, but it can be believe in absolutely nothing being real at all (metaphysical)
+
+So the options are:
+* absolutely nothing at all on the screen (probably the funniest)
+* just the snake I guess… or just no points (the ‘meaning’)…
+
+Ultimately it’ll be the nothing right?
+
+***there is nothing at all***
 
 
 
