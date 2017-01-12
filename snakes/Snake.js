@@ -15,7 +15,7 @@ BasicGame.Snake.prototype = {
   NEW_BODY_PIECES_PER_APPLE: 3,
   SNAKE_FLICKER_SPEED: 0.2,
   APPLE_SCORE: 10,
-  MAX_SCORE_LENGTH: 10,
+  MAX_SCORE: 9999999990,
   APPLE_DELAY: 1500,
   DEATH_DELAY: 3,
 
@@ -37,6 +37,7 @@ BasicGame.Snake.prototype = {
 
     this.textGrid = [];
     this.dead = false;
+    this.stateName = 'Snake';
 
     this.NUM_ROWS = this.game.height/this.GRID_SIZE;
     this.NUM_COLS = this.game.width/this.GRID_SIZE;
@@ -48,6 +49,7 @@ BasicGame.Snake.prototype = {
     this.createInput();
 
     // Set up for score
+    this.score = 9999999900;
     this.scoreX = this.NUM_COLS - 2;
     this.scoreY = 1;
     this.setScoreText(this.score.toString());
@@ -201,6 +203,10 @@ BasicGame.Snake.prototype = {
   },
 
   setScoreText: function (scoreString) {
+    if (scoreString.length < this.MAX_SCORE.toString().length) {
+      var spacesToAdd = (this.MAX_SCORE.toString().length - scoreString.length)+1;
+      scoreString = Array(spacesToAdd).join(" ") + scoreString;
+    }
     this.addTextToGrid(this.scoreX-scoreString.length,this.scoreY,[scoreString]);
   },
 
@@ -253,9 +259,13 @@ BasicGame.Snake.prototype = {
       this.apple.y = -1000;
       this.startAppleTimer();
       this.snakeBitsToAdd += this.NEW_BODY_PIECES_PER_APPLE;
-      this.score += this.APPLE_SCORE;
-      this.setScoreText(this.score.toString());
+      this.addToScore(this.APPLE_SCORE);
     }
+  },
+
+  addToScore: function (amount) {
+    this.score = Math.min(this.score + amount,this.MAX_SCORE);
+    this.setScoreText(this.score.toString());
   },
 
   repositionApple: function () {
@@ -288,7 +298,7 @@ BasicGame.Snake.prototype = {
   },
 
   gameOver: function () {
-    this.setGameOverText("GAME OVER","",this.score.toString()+" POINTS","","");
+    this.setGameOverText("GAME OVER","",this.score+" POINTS","","");
   },
 
   gotoMenu: function () {
@@ -296,7 +306,7 @@ BasicGame.Snake.prototype = {
   },
 
   restart: function () {
-    this.game.state.start('Snake');
+    this.game.state.start(this.stateName);
   },
 
   handleKeyboardInput: function () {

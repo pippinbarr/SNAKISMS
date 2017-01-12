@@ -6,9 +6,10 @@ BasicGame.Monism.prototype = Object.create(BasicGame.Snake.prototype);
 BasicGame.Monism.prototype.constructor = BasicGame.Snake;
 
 BasicGame.Monism.prototype.create = function () {
-  this.edibles = this.game.add.group();
-
   BasicGame.Snake.prototype.create.call(this);
+
+  this.edibles = this.game.add.group();
+  this.stateName = "Monism";
 };
 
 BasicGame.Monism.prototype.update = function () {
@@ -77,8 +78,7 @@ BasicGame.Monism.prototype.repositionEdible = function (edible) {
 
 BasicGame.Monism.prototype.eat = function (edible) {
   this.snakeBitsToAdd = this.NEW_BODY_PIECES_PER_APPLE;
-  this.score += this.APPLE_SCORE;
-  this.setScoreText(this.score.toString());
+  this.addToScore(this.APPLE_SCORE);
 
   if (edible.text && edible.text != '') {
     edible.eatenText = edible.text;

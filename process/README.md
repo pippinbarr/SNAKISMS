@@ -5,6 +5,9 @@
 ### Apocalypticism
 
 ### Asceticism
+* ~~**TRYING IT FOR NOW** Points for duration of not eating the apple?~~
+* ~~Death on eating the apple~~
+* ~~**YEP** Change end message to just "YOU LOSE" if you eat the apple?~~
 
 ### Capitalism
 
