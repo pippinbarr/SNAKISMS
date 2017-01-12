@@ -53,17 +53,6 @@ There’s something here…
 
 ***keys move everything (and turn the snake) so the world moves on the screen***
 
-### Optimist
-"doctrine that we live in the best of all possible worlds”
-
-It’s all apples and you never get any longer (or at least cannot hit yourself?)
-
-Apples regenerate quickly, you just get many many points
-
-(Maybe you can still die though? You don’t have to believe in non-death to be an optimist?)
-
-***apples everywhere, you don’t get bigger, you get lots of points, can still die***
-
 ### Positivist
 "doctrine that that which is not observable is not knowable"
 
@@ -187,6 +176,17 @@ So the options are:
 Ultimately it’ll be the nothing right?
 
 ***there is nothing at all***
+
+### Optimist
+"doctrine that we live in the best of all possible worlds”
+
+It’s all apples and you never get any longer (or at least cannot hit yourself?)
+
+Apples regenerate quickly, you just get many many points
+
+(Maybe you can still die though? You don’t have to believe in non-death to be an optimist?)
+
+***apples everywhere, you don’t get bigger, you get lots of points, can still die***
 
 ### Pessimist
 "doctrine that the universe is essentially evil”

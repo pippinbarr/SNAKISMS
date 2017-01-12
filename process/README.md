@@ -44,7 +44,8 @@
 ### ~~Nihilism~~
 * ~~Display nothing, no controls, just nothing~~
 
-### Optimism
+### ~~Optimism~~
+* ~~Apples appear constantly and you never get longer~~
 
 ### ~~Pessimism~~
 * ~~Fix positioning of texts relative to wall area~~
