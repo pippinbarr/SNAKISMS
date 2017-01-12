@@ -25,7 +25,8 @@
 
 ### Holisticism
 
-### Idealism
+### ~~Idealism~~
+* ~~Just display instructions to imagine snake + instructions for restart and menu and that's all~~
 
 ### ~~Monism~~
 * ~~Implement eaten objects being repositioned on screen in the same way as apple (will have to make sure we don't put them behind any other object or text sadly, but it's just a fiddle)~~
