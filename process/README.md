@@ -1,16 +1,28 @@
 ## Making the Snakisms
 
 ### Anthropomorphicism
+
 ### Apocalypticism
+
 ### Asceticism
+
 ### Capitalism
+
 ### Casualism
-### Conservatism
+
+### ~~Conservatism~~
+* ~~Literally just extend Snake and don't change anything~~
+
 ### Determinism
+
 ### Dualism
+
 ### Existentialism
+
 ### Holisticism
+
 ### Idealism
+
 ### ~~Monism~~
 * ~~Implement eaten objects being repositioned on screen in the same way as apple (will have to make sure we don't put them behind any other object or text sadly, but it's just a fiddle)~~
 * ~~**YES**Should the eaten elements be replaced somewhere else on the screen? Probably yes? Yikes... oh dear... this is more complex than I was thinking... hmmmmmmmmmm shit. Still that's why they play the game.~~
@@ -20,13 +32,21 @@
 * ~~Implement a check for edibles and remove on eaten~~
 
 ### Nihilism
+
 ### Optimism
+
 ### Pessimism
+
 ### Positivism
+
 ### Post-apocalypticism
+
 ### Romanticism
+
 ### Stoicism
+
 ### Subjectivism
+
 ### Utilitarianism
 
 
