@@ -49,7 +49,7 @@ BasicGame.Snake.prototype = {
     this.createInput();
 
     // Set up for score
-    this.score = 9999999900;
+    this.score = 0;
     this.scoreX = this.NUM_COLS - 2;
     this.scoreY = 1;
     this.setScoreText(this.score.toString());
@@ -116,6 +116,7 @@ BasicGame.Snake.prototype = {
       this.swipe = new Swipe(this.game);
       this.swipe.diagonalDisabled = true;
     }
+    this.next = new Phaser.Point(0,0);
   },
 
   createTexts: function () {

@@ -3,6 +3,7 @@
 ### Anthropomorphicism
 
 ### Apocalypticism
+* ~~Add a timer that gets rid of everything except instructions and just says "GAME OVER"~~
 
 ### Asceticism
 * ~~**TRYING IT FOR NOW** Points for duration of not eating the apple?~~
