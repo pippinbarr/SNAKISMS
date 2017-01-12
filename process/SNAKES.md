@@ -1,14 +1,5 @@
 # To Implement
 
-### Anthropomorphic
-"attribution of human qualities to non-human things"
-
-This can be the apple running around having a “life of its own”
-(it could even conceivably eat the snake? though how would that make sense?)
-Could extend that to the walls and score too I guess… and the game over… no, too much.
-
-***The apple moves around on its own as well as the snake - you can still eat it, but it’s mobile***
-
 ### Casualist
 "the belief that chance governs all things”
 
@@ -128,6 +119,15 @@ So you can WIN or LOSE this version of the game, rather than just have a GAME OV
 ------------------------------------------------------------------
 
 # Implemented
+
+### Anthropomorphic
+"attribution of human qualities to non-human things"
+
+This can be the apple running around having a “life of its own”
+(it could even conceivably eat the snake? though how would that make sense?)
+Could extend that to the walls and score too I guess… and the game over… no, too much.
+
+***The apple moves around on its own as well as the snake - you can still eat it, but it’s mobile***
 
 ### Apocalyptic
 The game just abruptly ends after some (short) period of time…

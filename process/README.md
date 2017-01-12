@@ -1,6 +1,7 @@
 ## Making the Snakisms
 
-### Anthropomorphicism
+### ~~Anthropomorphicism~~
+* ~~Make the apple move around on tick, collide with walls and body~~
 
 ### ~~Apocalypticism~~
 * ~~Add a timer that gets rid of everything except instructions and just says "GAME OVER"~~
@@ -57,6 +58,7 @@
 ### Romanticism
 
 ### ~~Stoicism~~
+* Add sound effect of "hit" one time on collision to emphasis something happened
 * ~~Rewrite so that snake stops before collision and stays put (maybe with imagined "ouch" sound on collision) but can then just keep going after~~
 * ~~Rewrite body collision to just stay put and not die~~
 

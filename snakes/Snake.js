@@ -255,6 +255,7 @@ BasicGame.Snake.prototype = {
     if (this.snakeHead.position.equals(this.apple.position)) {
       this.apple.x = -1000;
       this.apple.y = -1000;
+      this.apple.visible = false;
       this.startAppleTimer();
       this.snakeBitsToAdd += this.NEW_BODY_PIECES_PER_APPLE;
       this.addToScore(this.APPLE_SCORE);
@@ -267,6 +268,7 @@ BasicGame.Snake.prototype = {
   },
 
   repositionApple: function () {
+    this.apple.visible = true;
     this.apple.x = (WALL_LEFT+1)*this.GRID_SIZE + Math.floor(Math.random() * ((WALL_RIGHT - WALL_LEFT - 1))) * this.GRID_SIZE;
     this.apple.y = (WALL_TOP+1)*this.GRID_SIZE + Math.floor(Math.random() * (WALL_BOTTOM - WALL_TOP - 1)) * this.GRID_SIZE;
   },
