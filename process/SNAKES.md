@@ -21,6 +21,7 @@ Two snakes, one a ghostly mind snake, you control both
 What happens when the mind snake hits a wall or an apple? (Maybe it wraps actually that would make some sense. Nice.
 
 HOW can independent control work with swipes?!
+(Control the mind snake with... your mind?!?!?!?!?! OMG.)
 
 ***Two snakes, a semi-transparent mind one, and a body one, mind snake wraps, independent control***
 
