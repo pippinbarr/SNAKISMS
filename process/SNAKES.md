@@ -10,17 +10,6 @@ Hard to determine what the specific behaviours are? A wall can’t really have a
 
 ***everything behaves randomly according to its ‘nature’, maybe on some cycle***
 
-### Dualism
-Two snakes, one a ghostly mind snake, you control both
-
-What happens when the mind snake hits a wall or an apple? (Maybe it wraps actually that would make some sense. Nice.
-
-HOW can independent control work with swipes?!
-(Control the mind snake with... your mind?!?!?!?!?! OMG.)
-(Follow-up question: if you control it with your mind, should it move occasionally as if you did it, or just wrap forever, not changing because you can't control it with your mind?)
-
-***Two snakes, a semi-transparent mind one, and a body one, mind snake wraps, independent control***
-
 ### Holistic
 "doctrine that parts of any thing must be understood in relation to the whole"
 
@@ -118,6 +107,17 @@ Just Snake. I think the joke fits best here right?
 An easy one I think… a pre-mapped set of moves and outcomes that just plays itself each time you go through. No input from the player. Apple positioning needs to be determinist too.
 
 ***no input, always the same sequence (though see anarchist…)***
+
+### Dualism
+Two snakes, one a ghostly mind snake, you control both
+
+What happens when the mind snake hits a wall or an apple? (Maybe it wraps actually that would make some sense. Nice.
+
+HOW can independent control work with swipes?!
+(Control the mind snake with... your mind?!?!?!?!?! OMG.)
+(Follow-up question: if you control it with your mind, should it move occasionally as if you did it, or just wrap forever, not changing because you can't control it with your mind?)
+
+***Two snakes, a semi-transparent mind one, and a body one, mind snake wraps, independent control***
 
 ### Existentialist
 ""the existential attitude", or a sense of disorientation, confusion, or dread in the face of an apparently meaningless or absurd world."

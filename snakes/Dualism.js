@@ -1,0 +1,28 @@
+BasicGame.Dualism = function (game) {
+  BasicGame.Snake.call(this,game);
+};
+
+BasicGame.Dualism.prototype = Object.create(BasicGame.Snake.prototype);
+BasicGame.Dualism.prototype.constructor = BasicGame.Snake;
+
+BasicGame.Dualism.prototype.create = function () {
+  BasicGame.Snake.prototype.create.call(this);
+
+  this.stateName = "Dualism";
+
+  this.createMindSnake();
+};
+
+BasicGame.Dualism.prototype.createMindSnake = function () {
+  this.mindSnakeHead = this.game.add.sprite(this.SNAKE_START_X*this.GRID_SIZE,this.SNAKE_START_Y*this.GRID_SIZE,'head');
+  this.mindSnakeHead.alpha = 0.5;
+};
+
+BasicGame.Dualism.prototype.createControls = function () {
+  BasicGame.Snake.prototype.createControls.call(this);
+
+  controlsStrings = ["MIND","CONTROLS","MIND SNAKE"];
+
+  this.addTextToGrid(this.CONTROLS_X,this.CONTROLS_Y+6,controlsStrings);
+  this.controlsVisible = true;
+};
