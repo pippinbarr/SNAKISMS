@@ -359,7 +359,6 @@ BasicGame.Snake.prototype = {
         letter.text = '';
       });
       this.controlsVisible = false;
-      console.log("Hid controls");
     }
   },
 
