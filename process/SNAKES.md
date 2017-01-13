@@ -22,28 +22,9 @@ What happens when the mind snake hits a wall or an apple? (Maybe it wraps actual
 
 HOW can independent control work with swipes?!
 (Control the mind snake with... your mind?!?!?!?!?! OMG.)
+(Follow-up question: if you control it with your mind, should it move occasionally as if you did it, or just wrap forever, not changing because you can't control it with your mind?)
 
 ***Two snakes, a semi-transparent mind one, and a body one, mind snake wraps, independent control***
-
-### Existentialist
-""the existential attitude", or a sense of disorientation, confusion, or dread in the face of an apparently meaningless or absurd world."
-
-"The notion of the Absurd contains the idea that there is no meaning in the world beyond what meaning we give it. This meaninglessness also encompasses the amorality or "unfairness" of the world.”
-
-""the existential attitude", or a sense of disorientation, confusion, or dread in the face of an apparently meaningless or absurd world.”
-
-"existential dread, anxiety, or anguish, is a term that is common to many existentialist thinkers. It is generally held to be a negative feeling arising from the experience of human freedom and responsibility."
-
-Random point values, random assignment of controls. Randomness = meaninglessness. Random effect of controls? Don’t always die on impacts… how randomised can one get?
-
-(Problematically similar to Casualist? I’ll move them together.)
-Not impossible to have this be the one with no walls - the freedom to do what you want and the weird fear of being outside the screen?
-
-"This meaninglessness also encompasses the amorality or "unfairness" of the world.”
-
-Could have a wall just suddenly appear in front of you (bad things just happen) - e.g. it’s just fundamentally unfair. And there are no points - it’s also meaningless even when you get the apple - and no ending just blackness. It is over
-
-***walls and apple randomly appear on screen, no points, no ending screen text***
 
 ### Holistic
 "doctrine that parts of any thing must be understood in relation to the whole"
@@ -137,6 +118,26 @@ Just Snake. I think the joke fits best here right?
 "belief in maintaining political and social traditions”
 
 ***just snake***
+
+### Existentialist
+""the existential attitude", or a sense of disorientation, confusion, or dread in the face of an apparently meaningless or absurd world."
+
+"The notion of the Absurd contains the idea that there is no meaning in the world beyond what meaning we give it. This meaninglessness also encompasses the amorality or "unfairness" of the world.”
+
+""the existential attitude", or a sense of disorientation, confusion, or dread in the face of an apparently meaningless or absurd world.”
+
+"existential dread, anxiety, or anguish, is a term that is common to many existentialist thinkers. It is generally held to be a negative feeling arising from the experience of human freedom and responsibility."
+
+Random point values, random assignment of controls. Randomness = meaninglessness. Random effect of controls? Don’t always die on impacts… how randomised can one get?
+
+(Problematically similar to Casualist? I’ll move them together.)
+Not impossible to have this be the one with no walls - the freedom to do what you want and the weird fear of being outside the screen?
+
+"This meaninglessness also encompasses the amorality or "unfairness" of the world.”
+
+Could have a wall just suddenly appear in front of you (bad things just happen) - e.g. it’s just fundamentally unfair. And there are no points - it’s also meaningless even when you get the apple - and no ending just blackness. It is over
+
+***walls and apple randomly appear on screen, no points, no ending screen text***
 
 ### Idealist
 "In philosophy, idealism is the group of philosophies which assert that reality, or reality as we can know it, is fundamentally mental, mentally constructed, or otherwise immaterial.”

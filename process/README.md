@@ -26,7 +26,11 @@
 
 ### Dualism
 
-### Existentialism
+### ~~Existentialism~~
+* ~~Implement wrap for game edges (in Snake)~~
+* ~~On game over no message~~
+* ~~Snake long enough to suicide~~
+* ~~No walls, no score, no instructions, no apple~~
 
 ### Holisticism
 

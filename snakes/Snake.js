@@ -249,6 +249,19 @@ BasicGame.Snake.prototype = {
     }
     this.snakeHead.x += this.next.x;
     this.snakeHead.y += this.next.y;
+
+    if (this.snakeHead.x >= this.game.width) {
+      this.snakeHead.x = 0;
+    }
+    else if (this.snakeHead.x < 0) {
+      this.snakeHead.x = this.game.width - this.GRID_SIZE;
+    }
+    if (this.snakeHead.y >= this.game.height) {
+      this.snakeHead.y = 0;
+    }
+    else if (this.snakeHead.y < 0) {
+      this.snakeHead.y = this.game.height - this.GRID_SIZE;
+    }
   },
 
   checkAppleCollision: function () {
