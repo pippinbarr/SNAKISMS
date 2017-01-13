@@ -85,14 +85,6 @@ What is an apple worth? What is this apple worth?
 
 ***game asks you the points value of each apple (test repetition)***
 
-### Utilitarian
-You have two branches (defined with walls) and as a utilitarian you should go down the one with the most apples because it’s the greatest “good”…
-So you can WIN or LOSE this version of the game, rather than just have a GAME OVER
-
-* “You WIN, you ate FIVE APPLES”
-* “You LOSE, you only ate ONE APPLE”
-
-***two branches, choose to eat one apple (lose) or three apples (win) (or die, which would lose too)***
 
 
 
@@ -207,6 +199,14 @@ Probably better with the sound and flash because otherwise you won’t really un
 
 Or should it be that you hit the thing and then it just waits until you're ready move in an available direction?
 
+### Utilitarian
+You have two branches (defined with walls) and as a utilitarian you should go down the one with the most apples because it’s the greatest “good”…
+So you can WIN or LOSE this version of the game, rather than just have a GAME OVER
+
+* “You WIN, you ate FIVE APPLES”
+* “You LOSE, you only ate ONE APPLE”
+
+***two branches, choose to eat one apple (lose) or three apples (win) (or die, which would lose too)***
 
 
 

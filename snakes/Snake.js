@@ -11,6 +11,8 @@ BasicGame.Snake.prototype = {
   NUM_COLS: 0,
   FONT_SIZE: 24,
   SNAKE_START_LENGTH: 4,
+  SNAKE_START_X: 11,
+  SNAKE_START_Y: 11,
   SNAKE_TICK: 0.15,
   NEW_BODY_PIECES_PER_APPLE: 3,
   SNAKE_FLICKER_SPEED: 0.2,
@@ -42,7 +44,6 @@ BasicGame.Snake.prototype = {
 
     this.NUM_ROWS = this.game.height/this.GRID_SIZE;
     this.NUM_COLS = this.game.width/this.GRID_SIZE;
-
     this.CONTROLS_X = 8;
     this.CONTROLS_Y = 7;
 
@@ -88,10 +89,9 @@ BasicGame.Snake.prototype = {
   },
 
   createSnake: function () {
-    // Create the snake
     this.snake = [];
     this.snakeBodyGroup = this.game.add.group();
-    this.snakeHead = this.game.add.sprite(11*this.GRID_SIZE,11*this.GRID_SIZE,'head');
+    this.snakeHead = this.game.add.sprite(this.SNAKE_START_X*this.GRID_SIZE,this.SNAKE_START_Y*this.GRID_SIZE,'head');
     this.game.physics.enable(this.snakeHead, Phaser.Physics.ARCADE);
     this.snake.unshift(this.snakeHead);
 

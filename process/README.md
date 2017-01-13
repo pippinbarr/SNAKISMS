@@ -65,8 +65,11 @@
 
 ### Subjectivism
 
-### Utilitarianism
-
+### ~~Utilitarianism~~
+* **Question**: Should we reinterpret the apples as deaths as per the Trolley problem? In which case negative scoring?
+* ~~Alter game over text to be win and lose according to utilitarian choice~~
+* ~~Place appropriate number of apples in branches~~
+* ~~Make screen with branching options in walls~~
 
 ## ~~Continuing to dos~~
 
