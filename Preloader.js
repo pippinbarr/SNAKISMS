@@ -26,7 +26,7 @@ BasicGame.Preloader.prototype = {
 		if (this.ready == false)
 		{
 			this.ready = true;
-			this.state.start('Existentialism');
+			this.state.start('Determinism');
 		}
 
 	}

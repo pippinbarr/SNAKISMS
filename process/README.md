@@ -1,3 +1,6 @@
+## Bugs
+* Possible to Restart while apple off screen and have timeout trigger on refreshed game
+
 ## Making the Snakisms
 
 ### ~~Anthropomorphicism~~
@@ -22,7 +25,9 @@
 ### ~~Conservatism~~
 * ~~Literally just extend Snake and don't change anything~~
 
-### Determinism
+### ~~Determinism~~
+* ~~Play back the playthrough (no controls help, no input except r and m)~~
+* ~~Record a deterministic playthrough (with deterministic apple positions)~~
 
 ### Dualism
 

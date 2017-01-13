@@ -10,11 +10,6 @@ Hard to determine what the specific behaviours are? A wall can’t really have a
 
 ***everything behaves randomly according to its ‘nature’, maybe on some cycle***
 
-### Determinist
-An easy one I think… a pre-mapped set of moves and outcomes that just plays itself each time you go through. No input from the player. Apple positioning needs to be determinist too.
-
-***no input, always the same sequence (though see anarchist…)***
-
 ### Dualism
 Two snakes, one a ghostly mind snake, you control both
 
@@ -118,6 +113,11 @@ Just Snake. I think the joke fits best here right?
 "belief in maintaining political and social traditions”
 
 ***just snake***
+
+### Determinist
+An easy one I think… a pre-mapped set of moves and outcomes that just plays itself each time you go through. No input from the player. Apple positioning needs to be determinist too.
+
+***no input, always the same sequence (though see anarchist…)***
 
 ### Existentialist
 ""the existential attitude", or a sense of disorientation, confusion, or dread in the face of an apparently meaningless or absurd world."
