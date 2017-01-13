@@ -1,5 +1,4 @@
 games = [
-	"Snake",
 	"Anthropomorphicism",
 	"Apocalypticism",
 	"Asceticism",
@@ -34,11 +33,6 @@ BasicGame.Menu.prototype.create = function () {
 
   this.TITLE = "SNAKISMS";
   this.SNAKE_TICK = 0.02;
-
-  // apples = new Array(this.NUM_ROWS);
-  // for (var i = 0; i < apples.length; i++) {
-  //   apples[i] = new Array(this.NUM_COLS);
-  // }
 
   this.createMenu();
 
@@ -134,6 +128,15 @@ BasicGame.Menu.prototype.checkMenuCollision = function () {
     this.textGrid[y][x].text = '';
     this.snakeBitsToAdd += 1;
   }
+};
+
+BasicGame.Menu.prototype.updateSnakePosition = function () {
+	for (var i = 0; i < this.snake.length - 1; i++) {
+		this.snake[i].x = this.snake[i+1].x;
+		this.snake[i].y = this.snake[i+1].y;
+	}
+	this.snakeHead.x += this.next.x;
+	this.snakeHead.y += this.next.y;
 };
 
 BasicGame.Menu.prototype.createInput = function () {
