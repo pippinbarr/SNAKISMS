@@ -27,9 +27,19 @@ BasicGame.Dualism.prototype.createMindSnake = function () {
 };
 
 BasicGame.Dualism.prototype.createControls = function () {
-  BasicGame.Snake.prototype.createControls.call(this);
+  var controlsStrings = [];
 
-  controlsStrings = ["MIND","CONTROLS","MIND SNAKE"];
+  if (this.game.device.desktop) {
+    controlsStrings = ["ARROWS","CONTROL","SNAKE BODY"];
+  }
+  else {
+    controlsStrings = ["SWIPES","CONTROL","SNAKE BODY"];
+  }
+
+  this.addTextToGrid(this.CONTROLS_X,this.CONTROLS_Y,controlsStrings,this.controlsGroup);
+  this.controlsVisible = true;
+
+  controlsStrings = ["MIND","CONTROLS","SNAKE MIND"];
 
   this.mindControlsGroup = this.game.add.group();
   this.addTextToGrid(this.CONTROLS_X,this.CONTROLS_Y+6,controlsStrings,this.mindControlsGroup);

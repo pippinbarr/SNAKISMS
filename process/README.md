@@ -30,6 +30,7 @@
 * ~~Record a deterministic playthrough (with deterministic apple positions)~~
 
 ### ~~Dualism~~
+* ~~"Body Snake" for the instructions~~
 * ~~Add instructions to control mind snake with your mind (stay on screen? **YES**)~~
 * ~~**BUT IT DOESN'T MOVE** Add mind snake (semi-transparent) that moves (and wraps) on its own~~
 

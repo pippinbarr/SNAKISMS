@@ -1,5 +1,5 @@
 games = [
-	"Anthropomorphicism",
+	"Anthropomorphism",
 	"Apocalypticism",
 	"Asceticism",
 	"Capitalism",
