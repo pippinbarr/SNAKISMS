@@ -53,6 +53,11 @@
 * ~~**ACTUALLY JUST EDITED THE RELEVANT GROUPS DIRECTLY**Make edibles group and add all elements to it (score, walls, body?, menu, restart)~~
 * ~~Implement a check for edibles and remove on eaten~~
 
+### ~~Narcissism~~
+* ~~Let snake eat texts (not including spaces) and grow on completion~~
+* ~~Make text appear like apples (account for size of screen)~~
+* ~~Add narcissistic texts array~~
+
 ### ~~Nihilism~~
 * ~~Display nothing, no controls, just nothing~~
 

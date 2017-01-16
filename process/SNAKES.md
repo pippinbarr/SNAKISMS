@@ -9,13 +9,6 @@ There’s something here…
 
 ***keys move everything (and turn the snake) so the world moves on the screen***
 
-### Narcissism
-Heavily branded as being about me and my work?
-
-Quotes about me appear on the screen as the "apples" and can be consumed for points. The snake probably gets longer and thus over time being such a "monster" consuming my praise gets out of hand and you die?
-
-***praise appears on screen as text, you eat the text, no apple***
-
 ### Positivist
 "doctrine that that which is not observable is not knowable"
 
@@ -161,6 +154,13 @@ Maybe this could involve the game just telling you to imagine that you are playi
 You can eat absolutely everything, from the score to the apples to the walls (it’s all within the same category)
 
 ***everything is essentially an apple***
+
+### Narcissism
+Heavily branded as being about me and my work?
+
+Quotes about me appear on the screen as the "apples" and can be consumed for points. The snake probably gets longer and thus over time being such a "monster" consuming my praise gets out of hand and you die?
+
+***praise appears on screen as text, you eat the text, no apple***
 
 ### Nihilist
 "denial of all reality; extreme scepticism"
