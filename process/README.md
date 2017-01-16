@@ -15,12 +15,12 @@
 * ~~**YEP** Change end message to just "YOU LOSE" if you eat the apple?~~
 
 ### ~~Capitalism~~
-
 * ~~On death, report money finished with~~
 * ~~On score to zero, display info that can't afford apple~~
 * ~~Change score to $ and reduce on apple~~
 
-### Casualism
+### ~~Casualism~~
+* ~~First stab is just to randomly generate every tile with a random image/character and let it be like static~~
 
 ### ~~Conservatism~~
 * ~~Literally just extend Snake and don't change anything~~

@@ -1,15 +1,5 @@
 # To Implement
 
-### Casualist
-"the belief that chance governs all things”
-
-Which would be potentially very funny, but then how does one distinguish it from this constellation involving existential and absurdist? What’s the difference between meaninglessness and “chance governs” that can be communicated? Just “every frame a random action is taken by every object in the game from a shared pool”? Or every frame every element takes a random action from the pool of possible actions it has? Or every second or? e.g. the score would go up at random, the snake would turn or die at random, the apple would spawn or “be eaten” at random… so it would just look like a mess. How would this differ?
-
-This has potential as the major insanity version? I kind of like it…
-Hard to determine what the specific behaviours are? A wall can’t really have a “random behaviour”? So yeah, as above it’ll be randomly choosing
-
-***everything behaves randomly according to its ‘nature’, maybe on some cycle***
-
 ### Holistic
 "doctrine that parts of any thing must be understood in relation to the whole"
 
@@ -102,6 +92,18 @@ Maybe something with in-app purchases here? You have to buy it…? Bit simple, b
 ***You start with money as your score ($ sign) and apples cost money (when you’re out, you can’t afford the apples anymore - popup when you hit them and you die ha ha)***
 
 *This idea got changed for the first version so that you don't die on collision with an apple you can't afford, you just don't eat it and have to die on your own sometime.*
+
+### Casualist
+"the belief that chance governs all things”
+
+Which would be potentially very funny, but then how does one distinguish it from this constellation involving existential and absurdist? What’s the difference between meaninglessness and “chance governs” that can be communicated? Just “every frame a random action is taken by every object in the game from a shared pool”? Or every frame every element takes a random action from the pool of possible actions it has? Or every second or? e.g. the score would go up at random, the snake would turn or die at random, the apple would spawn or “be eaten” at random… so it would just look like a mess. How would this differ?
+
+This has potential as the major insanity version? I kind of like it…
+Hard to determine what the specific behaviours are? A wall can’t really have a “random behaviour”? So yeah, as above it’ll be randomly choosing
+
+***everything behaves randomly according to its ‘nature’, maybe on some cycle***
+
+***Ended up with: every tile is randomised every tick...***
 
 ### Conservative
 Just Snake. I think the joke fits best here right?
