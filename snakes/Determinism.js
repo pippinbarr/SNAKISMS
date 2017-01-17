@@ -3,7 +3,7 @@ BasicGame.Determinism = function (game) {
 };
 
 BasicGame.Determinism.prototype = Object.create(BasicGame.Snake.prototype);
-BasicGame.Determinism.prototype.constructor = BasicGame.Snake;
+BasicGame.Determinism.prototype.constructor = BasicGame.Determinism;
 
 var L = 0;
 var R = 1;

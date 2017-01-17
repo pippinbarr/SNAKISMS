@@ -3,7 +3,7 @@ BasicGame.Stoicism = function (game) {
 };
 
 BasicGame.Stoicism.prototype = Object.create(BasicGame.Snake.prototype);
-BasicGame.Stoicism.prototype.constructor = BasicGame.Snake;
+BasicGame.Stoicism.prototype.constructor = BasicGame.Stoicism;
 
 BasicGame.Stoicism.prototype.create = function () {
   BasicGame.Snake.prototype.create.call(this);

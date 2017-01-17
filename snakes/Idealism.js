@@ -3,7 +3,7 @@ BasicGame.Idealism = function (game) {
 };
 
 BasicGame.Idealism.prototype = Object.create(BasicGame.Snake.prototype);
-BasicGame.Idealism.prototype.constructor = BasicGame.Snake;
+BasicGame.Idealism.prototype.constructor = BasicGame.Idealism;
 
 BasicGame.Idealism.prototype.create = function () {
   this.stateName = "Idealism";

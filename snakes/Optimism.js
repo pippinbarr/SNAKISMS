@@ -3,7 +3,7 @@ BasicGame.Optimism = function (game) {
 };
 
 BasicGame.Optimism.prototype = Object.create(BasicGame.Snake.prototype);
-BasicGame.Optimism.prototype.constructor = BasicGame.Snake;
+BasicGame.Optimism.prototype.constructor = BasicGame.Optimism;
 
 BasicGame.Optimism.prototype.create = function () {
   this.apples = this.game.add.group();

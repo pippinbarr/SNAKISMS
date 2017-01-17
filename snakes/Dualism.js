@@ -3,7 +3,7 @@ BasicGame.Dualism = function (game) {
 };
 
 BasicGame.Dualism.prototype = Object.create(BasicGame.Snake.prototype);
-BasicGame.Dualism.prototype.constructor = BasicGame.Snake;
+BasicGame.Dualism.prototype.constructor = BasicGame.Dualism;
 
 BasicGame.Dualism.prototype.create = function () {
   BasicGame.Snake.prototype.create.call(this);

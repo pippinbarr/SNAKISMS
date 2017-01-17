@@ -3,7 +3,7 @@ BasicGame.Nihilism = function (game) {
 };
 
 BasicGame.Nihilism.prototype = Object.create(BasicGame.Snake.prototype);
-BasicGame.Nihilism.prototype.constructor = BasicGame.Snake;
+BasicGame.Nihilism.prototype.constructor = BasicGame.Nihilism;
 
 BasicGame.Nihilism.prototype.create = function () {
 };

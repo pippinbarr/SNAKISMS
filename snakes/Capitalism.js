@@ -3,7 +3,7 @@ BasicGame.Capitalism = function (game) {
 };
 
 BasicGame.Capitalism.prototype = Object.create(BasicGame.Snake.prototype);
-BasicGame.Capitalism.prototype.constructor = BasicGame.Snake;
+BasicGame.Capitalism.prototype.constructor = BasicGame.Capitalism;
 
 BasicGame.Capitalism.prototype.create = function () {
   BasicGame.Snake.prototype.create.call(this);

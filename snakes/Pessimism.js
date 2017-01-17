@@ -3,7 +3,7 @@ BasicGame.Pessimism = function (game) {
 };
 
 BasicGame.Pessimism.prototype = Object.create(BasicGame.Snake.prototype);
-BasicGame.Pessimism.prototype.constructor = BasicGame.Snake;
+BasicGame.Pessimism.prototype.constructor = BasicGame.Pessimism;
 
 BasicGame.Pessimism.prototype.create = function () {
   BasicGame.Snake.prototype.create.call(this);

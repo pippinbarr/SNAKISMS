@@ -3,7 +3,7 @@ BasicGame.Casualism = function (game) {
 };
 
 BasicGame.Casualism.prototype = Object.create(BasicGame.Snake.prototype);
-BasicGame.Casualism.prototype.constructor = BasicGame.Snake;
+BasicGame.Casualism.prototype.constructor = BasicGame.Casualism;
 
 BasicGame.Casualism.prototype.create = function () {
   this.NUM_ROWS = this.game.height/this.GRID_SIZE;

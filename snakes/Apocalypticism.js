@@ -3,7 +3,7 @@ BasicGame.Apocalypticism = function (game) {
 };
 
 BasicGame.Apocalypticism.prototype = Object.create(BasicGame.Snake.prototype);
-BasicGame.Apocalypticism.prototype.constructor = BasicGame.Snake;
+BasicGame.Apocalypticism.prototype.constructor = BasicGame.Apocalypticism;
 
 BasicGame.Apocalypticism.prototype.create = function () {
   BasicGame.Snake.prototype.create.call(this);

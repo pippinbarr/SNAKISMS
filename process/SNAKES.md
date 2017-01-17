@@ -1,14 +1,5 @@
 # To Implement
 
-### Holistic
-"doctrine that parts of any thing must be understood in relation to the whole"
-
-I really like the potential to this… that you view Snake as a whole system and not as just distinct parts, but how could that be reflected in the actual experience of or implementation of the game… maybe everything reacts to your key presses? So the apple moves, the walls move, the score moves (or rotates or goes up and down or…)
-
-There’s something here…
-
-***keys move everything (and turn the snake) so the world moves on the screen***
-
 ### Positivist
 "doctrine that that which is not observable is not knowable"
 
@@ -140,6 +131,15 @@ Not impossible to have this be the one with no walls - the freedom to do what yo
 Could have a wall just suddenly appear in front of you (bad things just happen) - e.g. it’s just fundamentally unfair. And there are no points - it’s also meaningless even when you get the apple - and no ending just blackness. It is over
 
 ***walls and apple randomly appear on screen, no points, no ending screen text***
+
+### Holism
+"doctrine that parts of any thing must be understood in relation to the whole"
+
+I really like the potential to this… that you view Snake as a whole system and not as just distinct parts, but how could that be reflected in the actual experience of or implementation of the game… maybe everything reacts to your key presses? So the apple moves, the walls move, the score moves (or rotates or goes up and down or…)
+
+There’s something here…
+
+***keys move everything (and turn the snake) so the world moves on the screen***
 
 ### Idealist
 "In philosophy, idealism is the group of philosophies which assert that reality, or reality as we can know it, is fundamentally mental, mentally constructed, or otherwise immaterial.”

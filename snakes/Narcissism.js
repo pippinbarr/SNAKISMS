@@ -3,7 +3,7 @@ BasicGame.Narcissism = function (game) {
 };
 
 BasicGame.Narcissism.prototype = Object.create(BasicGame.Snake.prototype);
-BasicGame.Narcissism.prototype.constructor = BasicGame.Snake;
+BasicGame.Narcissism.prototype.constructor = BasicGame.Narcissism;
 
 BasicGame.Narcissism.prototype.create = function () {
   this.currentTexts = this.game.add.group();

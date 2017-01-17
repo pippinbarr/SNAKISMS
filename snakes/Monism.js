@@ -3,7 +3,7 @@ BasicGame.Monism = function (game) {
 };
 
 BasicGame.Monism.prototype = Object.create(BasicGame.Snake.prototype);
-BasicGame.Monism.prototype.constructor = BasicGame.Snake;
+BasicGame.Monism.prototype.constructor = BasicGame.Monism;
 
 BasicGame.Monism.prototype.create = function () {
   BasicGame.Snake.prototype.create.call(this);

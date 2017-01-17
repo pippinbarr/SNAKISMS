@@ -3,7 +3,7 @@ BasicGame.Existentialism = function (game) {
 };
 
 BasicGame.Existentialism.prototype = Object.create(BasicGame.Snake.prototype);
-BasicGame.Existentialism.prototype.constructor = BasicGame.Snake;
+BasicGame.Existentialism.prototype.constructor = BasicGame.Existentialism;
 
 BasicGame.Existentialism.prototype.create = function () {
   BasicGame.Snake.prototype.create.call(this);

@@ -3,7 +3,7 @@ BasicGame.Asceticism = function (game) {
 };
 
 BasicGame.Asceticism.prototype = Object.create(BasicGame.Snake.prototype);
-BasicGame.Asceticism.prototype.constructor = BasicGame.Snake;
+BasicGame.Asceticism.prototype.constructor = BasicGame.Asceticism;
 
 BasicGame.Asceticism.prototype.create = function () {
   BasicGame.Snake.prototype.create.call(this);

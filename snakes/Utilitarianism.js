@@ -3,7 +3,7 @@ BasicGame.Utilitarianism = function (game) {
 };
 
 BasicGame.Utilitarianism.prototype = Object.create(BasicGame.Snake.prototype);
-BasicGame.Utilitarianism.prototype.constructor = BasicGame.Snake;
+BasicGame.Utilitarianism.prototype.constructor = BasicGame.Utilitarianism;
 
 BasicGame.Utilitarianism.prototype.create = function () {
   this.SNAKE_START_X = 3;

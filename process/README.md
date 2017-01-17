@@ -1,5 +1,5 @@
 ## Bugs
-* Possible to Restart while apple off screen and have timeout trigger on refreshed game
+* Possible to Restart while apple off screen and have timeout trigger on refreshed game (check on restarts and timers generally)
 
 ## Making the Snakisms
 
@@ -40,7 +40,9 @@
 * ~~Snake long enough to suicide~~
 * ~~No walls, no score, no instructions, no apple~~
 
-### Holisticism
+### ~~Holism~~
+* ~~Update whole group position on tick with the same movement as the snake~~
+* ~~Add a "whole" group that contains all sprites and text~~
 
 ### ~~Idealism~~
 * ~~Just display instructions to imagine snake + instructions for restart and menu and that's all~~

@@ -3,7 +3,7 @@ BasicGame.Anthropomorphism = function (game) {
 };
 
 BasicGame.Anthropomorphism.prototype = Object.create(BasicGame.Snake.prototype);
-BasicGame.Anthropomorphism.prototype.constructor = BasicGame.Snake;
+BasicGame.Anthropomorphism.prototype.constructor = BasicGame.Anthropomorphism;
 
 BasicGame.Anthropomorphism.prototype.create = function () {
   BasicGame.Snake.prototype.create.call(this);
