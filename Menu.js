@@ -15,7 +15,7 @@ games = [
 	"Optimism",
 	"Pessimism",
 	"Positivism",
-	"Post-apocalypticism",
+	"Post-Apocalypticism",
 	"Romanticism",
 	"Stoicism",
 	"Subjectivism",
@@ -87,7 +87,12 @@ BasicGame.Menu.prototype.update = function () {
   if (this.selected) {
     this.checkMenuCollision();
     if (this.snake[0].x > this.game.width) {
-      this.game.state.start(this.selected);
+			if (this.selected == "Post-Apocalypticism") {
+				this.game.state.start("PostApocalypticism")
+			}
+			else {
+      	this.game.state.start(this.selected);
+			}
     }
   }
 };
