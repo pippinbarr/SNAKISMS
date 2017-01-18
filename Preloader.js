@@ -26,7 +26,7 @@ BasicGame.Preloader.prototype = {
 		if (this.ready == false)
 		{
 			this.ready = true;
-			this.state.start('Holism');
+			this.state.start('Positivism');
 		}
 
 	}

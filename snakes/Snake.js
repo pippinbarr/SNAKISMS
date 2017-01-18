@@ -218,9 +218,7 @@ BasicGame.Snake.prototype = {
     this.prev = new Phaser.Point(this.next.x,this.next.y);
 
     if (this.dead) {
-      this.snake.forEach(function (bit) {
-        bit.visible = !bit.visible;
-      });
+      this.flashSnake();
       return;
     }
 
@@ -229,6 +227,12 @@ BasicGame.Snake.prototype = {
     this.checkAppleCollision();
     this.checkBodyCollision();
     this.checkWallCollision();
+  },
+
+  flashSnake: function () {
+    this.snake.forEach(function (bit) {
+      bit.visible = !bit.visible;
+    });
   },
 
   addSnakeBits: function () {
@@ -306,6 +310,7 @@ BasicGame.Snake.prototype = {
 
   die: function () {
     this.dead = true;
+    this.lastNext = new Phaser.Point(this.next.x,this.next.y);
     this.next = new Phaser.Point(0,0);
     this.game.time.events.add(Phaser.Timer.SECOND * this.DEATH_DELAY, this.gameOver, this);
   },

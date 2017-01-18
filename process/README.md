@@ -72,6 +72,8 @@
 * ~~Smaller wall area~~
 
 ### Positivism
+* ~~Make all elements of game visible/invisible based on cone of vision of the snake head.~~
+* ~~How the hell am I going to do this? And does it even make sense? Yes.~~
 
 ### Post-apocalypticism
 

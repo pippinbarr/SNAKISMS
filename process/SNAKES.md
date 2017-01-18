@@ -1,12 +1,5 @@
 # To Implement
 
-### Positivist
-"doctrine that that which is not observable is not knowable"
-
-Have it so that the snake has a cone of vision and you can’t see anything outside it, it effectively stops existing for that period of time
-
-***only tiles “viewable” by the snake are visible***
-
 ### Post-apocalyptic
 Some kind of joke about the popularity of this theme in videogames? Everything is grey…
 
@@ -197,6 +190,13 @@ Apples regenerate quickly, you just get many many points
 Poisoned apples? Struck by lightning? Falling blocks that kill you? A wall? The apple is outside the walls? You are stuck in a tiny space and the apple moves around outside the walls
 
 ***you are in a smaller space and the apple is outside the walls***
+
+### Positivist
+"doctrine that that which is not observable is not knowable"
+
+Have it so that the snake has a cone of vision and you can’t see anything outside it, it effectively stops existing for that period of time? Or rather just that you can't see it and thus don't "know" it? But it still exists, right? It's not about what exists or not, just what is known... really it's a poor interpretation of the philosophy in the end, but maybe kind of funny. Like a mishearing.
+
+***only tiles “viewable” by the snake are visible***
 
 ### Stoic
 "the endurance of pain or hardship without a display of feelings and without complaint."
