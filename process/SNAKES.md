@@ -1,14 +1,5 @@
 # To Implement
 
-### Post-apocalyptic
-Some kind of joke about the popularity of this theme in videogames? Everything is grey…
-
-No apple in such a wasteland? If a wasteland then maybe it’s a bit terrain rather than an enclosed space?
-
-Be kind of fun if the landscape was infinite? Or at least really big? If there’s no apple, then you don’t need to worry about the snake getting too big and you could wrap at some point without them noticing…
-
-***“Infinite” (wrapping) grey landscape and grey snake, no apples***
-
 ### Romantic
 "belief in sentimental feeling in artistic expression”
 
@@ -190,6 +181,15 @@ Apples regenerate quickly, you just get many many points
 Poisoned apples? Struck by lightning? Falling blocks that kill you? A wall? The apple is outside the walls? You are stuck in a tiny space and the apple moves around outside the walls
 
 ***you are in a smaller space and the apple is outside the walls***
+
+### Post-apocalyptic
+Some kind of joke about the popularity of this theme in videogames? Everything is grey…
+
+No apple in such a wasteland? If a wasteland then maybe it’s a bit terrain rather than an enclosed space?
+
+Be kind of fun if the landscape was infinite? Or at least really big? If there’s no apple, then you don’t need to worry about the snake getting too big and you could wrap at some point without them noticing…
+
+***“Infinite” (wrapping) grey landscape and grey snake, no apples***
 
 ### Positivist
 "doctrine that that which is not observable is not knowable"

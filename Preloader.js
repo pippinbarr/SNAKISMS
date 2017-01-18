@@ -15,6 +15,11 @@ BasicGame.Preloader.prototype = {
 		this.load.image('apple','assets/images/apple.png');
 		this.load.image('wall','assets/images/wall.png');
 		this.load.image('black','assets/images/black.png');
+		this.load.image('postapocalyptic01','assets/images/postapocalyptic01.png');
+		this.load.image('postapocalyptic02','assets/images/postapocalyptic02.png');
+		this.load.image('postapocalyptic03','assets/images/postapocalyptic03.png');
+		this.load.image('postapocalyptic04','assets/images/postapocalyptic04.png');
+		this.load.image('postapocalyptic05','assets/images/postapocalyptic05.png');
 	},
 
 	create: function () {
@@ -26,7 +31,7 @@ BasicGame.Preloader.prototype = {
 		if (this.ready == false)
 		{
 			this.ready = true;
-			this.state.start('Positivism');
+			this.state.start('PostApocalypticism');
 		}
 
 	}

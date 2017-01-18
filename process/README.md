@@ -71,11 +71,16 @@
 * ~~Apple only outside the wall area~~
 * ~~Smaller wall area~~
 
-### Positivism
+### ~~Positivism~~
 * ~~Make all elements of game visible/invisible based on cone of vision of the snake head.~~
 * ~~How the hell am I going to do this? And does it even make sense? Yes.~~
 
-### Post-apocalypticism
+### ~~Post-apocalypticism~~
+* ~~Just add a drab deconstructed world (random walls and greyscale variable ground tiles and no apple)~~
+* ~~**ALREADY DID** World wraps on the edges~~
+* ~~**NAH** Score (always 0) and restart/menu are like a HUD (follow)~~
+* ~~**NAH** Camera follows the snake head~~
+* ~~**NAH. JUST ONE SCREEN** On start, generate N screens worth of terrain by just applying a random selection of ground textures or a wall for each grid item~~
 
 ### Romanticism
 
