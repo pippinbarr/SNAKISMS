@@ -47,6 +47,8 @@ BasicGame.Snake.prototype = {
     this.CONTROLS_X = 8;
     this.CONTROLS_Y = 7;
 
+    this.instructionsButtonGroup = this.game.add.group();
+
     this.createWalls();
     this.createApple();
     this.createTexts();
@@ -162,6 +164,7 @@ BasicGame.Snake.prototype = {
         if (buttonGroup) {
           var sprite = buttonGroup.create(x*this.GRID_SIZE,y*this.GRID_SIZE,'black');
           sprite.inputEnabled = true;
+          sprite.name = text;
           sprite.events.onInputDown.add(callback,this);
         }
         x++;
@@ -178,7 +181,6 @@ BasicGame.Snake.prototype = {
       this.addTextToGrid(instructionsX,instructionsY,["R=RESTART M=MENU"],this.textGroup);
     }
     else {
-      this.instructionsButtonGroup = this.game.add.group();
       this.addTextToGrid(instructionsX,instructionsY,["RESTART"],this.textGroup,this.instructionsButtonGroup,this.restart);
       this.addTextToGrid(instructionsX+9,instructionsY,["MENU"],this.textGroup,this.instructionsButtonGroup,this.gotoMenu);
     }

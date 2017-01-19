@@ -4,6 +4,12 @@
 ## Making the Snakisms
 
 ### Snake
+* Remember to add tracking information to the game
+* Play every version and make sure sound, timing, etc. in place
+
+* ~~Re-add touch-based instructions to Snake (where the fuck did it go?)~~
+* ~~Add instructions to menu at bottom~~
+* ~~Fix broken touch menu (where the fuck did it go?)~~
 * ~~Add SFX for move, apple, collision~~
 
 ### ~~Anthropomorphicism~~
