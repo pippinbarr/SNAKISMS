@@ -54,6 +54,7 @@ BasicGame.Stoicism.prototype.checkWallCollision = function () {
 
 BasicGame.Stoicism.prototype.die = function () {
   this.next = new Phaser.Point(0,0);
+  this.hitSFX.play();
 };
 
 BasicGame.Stoicism.prototype.updateSnakePosition = function () {

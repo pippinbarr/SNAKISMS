@@ -19,5 +19,5 @@ BasicGame.Apocalypticism.prototype.create = function () {
     this.dead = true;
     this.setScoreText("");
     this.setGameOverText("GAME OVER","","","","");
-  }.bind(this),Math.floor(Math.random() * 60000))
+  }.bind(this),Math.floor(Math.random() * 30000))
 };

@@ -2,21 +2,21 @@
 * ~~Possible to Restart while apple off screen and have timeout trigger on refreshed game (check on restarts and timers generally)~~
 
 ## Fixes/considerations
-* ~~**THEY SEND ME AN EMAIL** Narcissism feels wrong tonally - attribution? Change it to trigger an email/tweet/facebook?~~
-* Anthropomorphism seems like people find the apple hard to catch/deal with - make the apple not move if the player is within one grid of eating it
-* Reduce starting score in Capitalism
-
-## Making the Snakisms
-
-### Snake
 * Remember to add tracking information to the game
-* Play every version and make sure sound, timing, etc. in place
-* Why doesn't the progress bar go all the way across? God damnit!
+* Disallow apple placement under snake body (determine if there are levels this won't work for, like Optimism or Monism)
 
+* ~~Add SFX to Casualism~~
+* ~~Play every version and make sure sound, timing, etc. in place~~
+* ~~Anthropomorphism seems like people find the apple hard to catch/deal with - make the apple not move if the player is within one grid of eating it~~
+* ~~Reduce starting score in Capitalism~~
+* ~~Why doesn't the progress bar go all the way across? God damnit!~~
+* ~~**THEY SEND ME AN EMAIL** Narcissism feels wrong tonally - attribution? Change it to trigger an email/tweet/facebook?~~
 * ~~Re-add touch-based instructions to Snake (where the fuck did it go?)~~
 * ~~Add instructions to menu at bottom~~
 * ~~Fix broken touch menu (where the fuck did it go?)~~
 * ~~Add SFX for move, apple, collision~~
+
+## Making the Snakisms
 
 ### ~~Anthropomorphicism~~
 * ~~Make the apple move around on tick, collide with walls and body~~

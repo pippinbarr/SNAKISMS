@@ -118,6 +118,7 @@ BasicGame.Menu.prototype.handleKeyboardInput = function () {
 	if (this.selected) return;
 
 	if (this.upKey.downDuration(10)) {
+		this.moveSFX.play();
 		if (this.snakeHead.y/this.GRID_SIZE > menuTop) {
 			this.snakeHead.y -= this.GRID_SIZE;
 		}
@@ -126,6 +127,7 @@ BasicGame.Menu.prototype.handleKeyboardInput = function () {
 		}
 	}
 	else if (this.downKey.downDuration(10)) {
+		this.moveSFX.play();
 		if (this.snakeHead.y/this.GRID_SIZE < menuBottom) {
 			this.snakeHead.y += this.GRID_SIZE;
 		}

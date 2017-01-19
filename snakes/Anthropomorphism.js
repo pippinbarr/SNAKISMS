@@ -21,7 +21,14 @@ BasicGame.Anthropomorphism.prototype.tick = function () {
 BasicGame.Anthropomorphism.prototype.updateApple = function () {
   if (!this.apple.visible) return;
 
+  var xDist = Math.abs(this.apple.x - this.snakeHead.x);
+  var yDist = Math.abs(this.apple.y - this.snakeHead.y);
+  if ((xDist == this.GRID_SIZE && yDist == 0) || (yDist ==this.GRID_SIZE && xDist == 0)) {
+    return;
+  }
+
   this.getAppleNext();
+
   var nextApplePos = new Phaser.Point(this.apple.x+this.appleNext.x,this.apple.y+this.appleNext.y);
   var hitWall = false;
   this.wallGroup.forEach(function (wall) {

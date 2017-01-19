@@ -22,6 +22,10 @@ BasicGame.Casualism.prototype.create = function () {
 
   this.stateName = "Casualism";
 
+  this.moveSFX = this.game.add.audio('move',0.2);
+  this.hitSFX = this.game.add.audio('hit',0.2);
+  this.appleSFX = this.game.add.audio('apple',0.2);
+
   ticker = this.game.time.create(false);
   ticker.add(Phaser.Timer.SECOND * this.SNAKE_TICK, this.tick, this);
   ticker.start();
@@ -45,6 +49,17 @@ BasicGame.Casualism.prototype.update = function () {
 
 
 BasicGame.Casualism.prototype.tick = function () {
+  var r = Math.random();
+  if (r < 0.2) {
+    this.moveSFX.play();
+  }
+  else if (r < 0.4) {
+    this.hitSFX.play();
+  }
+  else if (r < 0.6) {
+    this.appleSFX.play();
+  }
+
   for (var y = 0; y < this.NUM_ROWS; y++) {
     for (var x = 0; x < this.NUM_COLS; x++) {
       this.textGrid[y][x].visible = false;

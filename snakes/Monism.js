@@ -77,6 +77,9 @@ BasicGame.Monism.prototype.repositionEdible = function (edible) {
 };
 
 BasicGame.Monism.prototype.eat = function (edible) {
+
+  this.appleSFX.play();
+
   this.snakeBitsToAdd = this.NEW_BODY_PIECES_PER_APPLE;
   this.addToScore(this.APPLE_SCORE);
 

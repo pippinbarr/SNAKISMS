@@ -10,7 +10,7 @@ BasicGame.Positivism.prototype.create = function () {
 
   this.stateName = "Positivism";
 
-  this.snakeBitsToAdd = 20;
+  // this.snakeBitsToAdd = 3;
 
   this.flashVisible = true;
 

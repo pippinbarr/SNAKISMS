@@ -73,6 +73,7 @@ BasicGame.Utilitarianism.prototype.createWalls = function () {
 BasicGame.Utilitarianism.prototype.checkAppleCollision = function () {
   this.apples.forEach(function (apple) {
     if (this.snakeHead.position.equals(apple.position)) {
+      this.appleSFX.play();
       apple.x = -1000;
       apple.y = -1000;
       apple.visible = false;

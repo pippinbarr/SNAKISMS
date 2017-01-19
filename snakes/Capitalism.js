@@ -9,7 +9,7 @@ BasicGame.Capitalism.prototype.create = function () {
   BasicGame.Snake.prototype.create.call(this);
 
   this.stateName = "Capitalism";
-  this.addToScore(150);
+  this.addToScore(50);
 };
 
 BasicGame.Capitalism.prototype.setScoreText = function (scoreString) {
@@ -25,6 +25,7 @@ BasicGame.Capitalism.prototype.setScoreText = function (scoreString) {
 BasicGame.Capitalism.prototype.checkAppleCollision = function () {
   if (this.snakeHead.position.equals(this.apple.position)) {
     if (this.score > 0) {
+      this.appleSFX.play();
       this.apple.x = -1000;
       this.apple.y = -1000;
       this.startAppleTimer();
