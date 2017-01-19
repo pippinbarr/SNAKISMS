@@ -1,6 +1,11 @@
 ## Bugs
 * ~~Possible to Restart while apple off screen and have timeout trigger on refreshed game (check on restarts and timers generally)~~
 
+## Fixes/considerations
+* ~~**THEY SEND ME AN EMAIL** Narcissism feels wrong tonally - attribution? Change it to trigger an email/tweet/facebook?~~
+* Anthropomorphism seems like people find the apple hard to catch/deal with - make the apple not move if the player is within one grid of eating it
+* Reduce starting score in Capitalism
+
 ## Making the Snakisms
 
 ### Snake
