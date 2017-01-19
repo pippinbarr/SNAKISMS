@@ -25,10 +25,6 @@ BasicGame.Preloader.prototype = {
 		this.load.audio('hit','assets/sounds/hit.wav');
 		this.load.audio('apple','assets/sounds/apple.wav');
 		this.load.audio('move','assets/sounds/move.wav');
-
-		// this.load.audio('hit',['assets/sounds/hit.mp3','assets/sounds/hit.ogg']);
-		// this.load.audio('apple',['assets/sounds/apple.mp3','assets/sounds/apple.ogg']);
-		// this.load.audio('move',['assets/sounds/move.mp3','assets/sounds/move.ogg']);
 	},
 
 	create: function () {

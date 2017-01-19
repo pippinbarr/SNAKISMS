@@ -14,6 +14,8 @@ BasicGame.Romanticism.prototype.create = function () {
 
   BasicGame.Snake.prototype.create.call(this);
 
+  // this.moveSFX = this.game.add.audio('move',0.0);
+
   this.createTitleGrid();
 
   this.stateName = "Romanticism";
@@ -131,14 +133,8 @@ BasicGame.Romanticism.prototype.hideControls = function () {
 };
 
 BasicGame.Romanticism.prototype.checkAppleCollision = function () {
-  if (this.snakeHead.position.equals(this.apple.position)) {
-    this.apple.x = -1000;
-    this.apple.y = -1000;
-    this.apple.visible = false;
-    this.startAppleTimer();
-    this.snakeBitsToAdd += this.NEW_BODY_PIECES_PER_APPLE;
-    this.addToScore(this.APPLE_SCORE);
 
+  if (this.snakeHead.position.equals(this.apple.position)) {
     this.displayTitle(appleTexts[this.appleIndex]);
     this.appleIndex++;
     if (this.appleIndex == appleTexts.length) {
@@ -148,6 +144,8 @@ BasicGame.Romanticism.prototype.checkAppleCollision = function () {
     this.titleTimer.add(Phaser.Timer.SECOND * this.TITLE_DISPLAY_TIME, this.hideTitle, this);
     this.titleTimer.start();
   }
+
+  BasicGame.Snake.prototype.checkAppleCollision.call(this);
 };
 
 BasicGame.Romanticism.prototype.die = function () {

@@ -124,6 +124,7 @@ BasicGame.Menu.prototype.handleKeyboardInput = function () {
 BasicGame.Menu.prototype.selectMenuItem = function () {
     this.next = new Phaser.Point(this.GRID_SIZE,0);
     this.selected = games[this.snakeHead.y/this.GRID_SIZE-menuTop];
+		this.appleSFX.play();
 };
 
 BasicGame.Menu.prototype.checkMenuCollision = function () {

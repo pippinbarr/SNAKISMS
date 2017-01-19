@@ -53,6 +53,10 @@ BasicGame.Snake.prototype = {
     this.createSnake();
     this.createInput();
 
+    this.moveSFX = this.game.add.audio('move',0.2);
+    this.hitSFX = this.game.add.audio('hit',0.2);
+    this.appleSFX = this.game.add.audio('apple',0.2);
+
     // Set up for score
     this.score = 0;
     this.scoreX = this.NUM_COLS - 2;
@@ -249,6 +253,12 @@ BasicGame.Snake.prototype = {
   },
 
   updateSnakePosition: function () {
+    if (this.next.x == 0 && this.next.y == 0) {
+      return;
+    }
+
+    this.moveSFX.play();
+
     for (var i = 0; i < this.snake.length - 1; i++) {
       this.snake[i].x = this.snake[i+1].x;
       this.snake[i].y = this.snake[i+1].y;
@@ -272,6 +282,8 @@ BasicGame.Snake.prototype = {
 
   checkAppleCollision: function () {
     if (this.snakeHead.position.equals(this.apple.position)) {
+      this.appleSFX.play();
+
       this.apple.x = -1000;
       this.apple.y = -1000;
       this.apple.visible = false;
@@ -311,6 +323,7 @@ BasicGame.Snake.prototype = {
   },
 
   die: function () {
+    this.hitSFX.play();
     this.dead = true;
     this.lastNext = new Phaser.Point(this.next.x,this.next.y);
     this.next = new Phaser.Point(0,0);
