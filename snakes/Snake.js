@@ -300,10 +300,54 @@ BasicGame.Snake.prototype = {
     this.setScoreText(this.score.toString());
   },
 
-  repositionApple: function () {
-    this.apple.visible = true;
-    this.apple.x = (WALL_LEFT+1)*this.GRID_SIZE + Math.floor(Math.random() * ((WALL_RIGHT - WALL_LEFT - 1))) * this.GRID_SIZE;
-    this.apple.y = (WALL_TOP+1)*this.GRID_SIZE + Math.floor(Math.random() * (WALL_BOTTOM - WALL_TOP - 1)) * this.GRID_SIZE;
+  repositionApple: function (apple) {
+    if (!this.apple) return;
+    if (!apple) apple = this.apple;
+
+    apple.visible = true;
+    var x = this.getRandomLocationWithin(WALL_LEFT+1,WALL_RIGHT);
+    var y = this.getRandomLocationWithin(WALL_TOP+1,WALL_BOTTOM);
+    var collisionCount = 0;
+    var foundLocation = false;
+    while (!foundLocation) {
+      if (this.locationHasCollisionWithGroup(x*this.GRID_SIZE,y*this.GRID_SIZE,this.snakeBodyGroup)) {
+        collisionCount++;
+        if (collisionCount > 5) {
+          break;
+        }
+      }
+      else {
+        foundLocation = true;
+        break;
+      }
+    }
+    if (foundLocation) {
+      apple.x = x*this.GRID_SIZE;
+      apple.y = y*this.GRID_SIZE;
+      return true;
+    }
+    else {
+      this.appleTimer.add(this.SNAKE_TICK*Phaser.Timer.SECOND,function () {
+        this.repositionApple(apple);
+      },this);
+      this.appleTimer.start();
+      return false;
+    }
+  },
+
+  locationHasCollisionWithGroup: function (x,y,group) {
+    var collision = false;
+    group.forEach(function (element) {
+      if (element.x == x && element.y == y) {
+        collision = true;
+        return;
+      }
+    });
+    return collision;
+  },
+
+  getRandomLocationWithin: function(min,max) {
+    return min + (Math.floor(Math.random() * (max-min)));
   },
 
   checkBodyCollision: function () {

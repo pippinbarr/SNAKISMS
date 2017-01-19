@@ -17,6 +17,7 @@ BasicGame.Optimism.prototype.create = function () {
 BasicGame.Optimism.prototype.checkAppleCollision = function () {
   this.apples.forEach(function (apple) {
     if (this.snakeHead.position.equals(apple.position)) {
+      this.appleSFX.play();
       apple.x = -1000;
       apple.y = -1000;
       apple.visible = false;
@@ -32,19 +33,24 @@ BasicGame.Optimism.prototype.hideControls = function () {
 
 BasicGame.Optimism.prototype.startAppleTimer = function (apple) {
   if (!apple) apple = this.apple;
-  setTimeout(function () {
-    this.repositionApple(apple);
-  }.bind(this),this.APPLE_DELAY);
+  this.appleTimer.add(this.APPLE_DELAY,this.repositionApple,this,apple);
+  this.appleTimer.start();
+
+  // if (!apple) apple = this.apple;
+  // setTimeout(function () {
+  //   this.repositionApple(apple);
+  // }.bind(this),this.APPLE_DELAY);
 };
 
 BasicGame.Optimism.prototype.repositionApple = function (apple) {
-  apple.visible = true;
-  apple.x = (WALL_LEFT+1)*this.GRID_SIZE + Math.floor(Math.random() * ((WALL_RIGHT - WALL_LEFT - 1))) * this.GRID_SIZE;
-  apple.y = (WALL_TOP+1)*this.GRID_SIZE + Math.floor(Math.random() * (WALL_BOTTOM - WALL_TOP - 1)) * this.GRID_SIZE;
 
-  if (this.apples.length < 300) {
-    var apple = this.apples.create(-1000,-1000,'apple');
-    apple.visible = false;
-    this.startAppleTimer(apple);
+  var positioned = BasicGame.Snake.prototype.repositionApple.call(this,apple);
+
+  if (positioned) {
+    if (this.apples.length < 300) {
+      var newApple = this.apples.create(-1000,-1000,'apple');
+      newApple.visible = false;
+      this.startAppleTimer(newApple);
+    }
   }
 };

@@ -99,8 +99,13 @@ BasicGame.Positivism.prototype.setVisibility = function (object,next,visibility)
 };
 
 BasicGame.Positivism.prototype.repositionApple = function () {
-  this.apple.x = (WALL_LEFT+1)*this.GRID_SIZE + Math.floor(Math.random() * ((WALL_RIGHT - WALL_LEFT - 1))) * this.GRID_SIZE;
-  this.apple.y = (WALL_TOP+1)*this.GRID_SIZE + Math.floor(Math.random() * (WALL_BOTTOM - WALL_TOP - 1)) * this.GRID_SIZE;
 
-  this.setVisibility(this.apple,this.next,true);
+  var positioned = BasicGame.Snake.prototype.repositionApple.call(this);
+
+  // this.apple.x = (WALL_LEFT+1)*this.GRID_SIZE + Math.floor(Math.random() * ((WALL_RIGHT - WALL_LEFT - 1))) * this.GRID_SIZE;
+  // this.apple.y = (WALL_TOP+1)*this.GRID_SIZE + Math.floor(Math.random() * (WALL_BOTTOM - WALL_TOP - 1)) * this.GRID_SIZE;
+
+  if (positioned) {
+    this.setVisibility(this.apple,this.next,true);
+  }
 };

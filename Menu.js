@@ -72,7 +72,6 @@ BasicGame.Menu.prototype.createMenu = function () {
 	y = menuTop;
 
 	for (var i = 0; i < uppercaseGameNames.length; i++) {
-		console.log("Adding",uppercaseGameNames[i],"at",x,y);
 		this.addTextToGrid(x,y,[uppercaseGameNames[i]],this.menuText,this.menuButtons,this.menuItemTouched);
 		y++;
 	}

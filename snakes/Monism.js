@@ -24,7 +24,6 @@ BasicGame.Monism.prototype.checkEdibleCollision = function () {
   this.edibles.forEach(function (edible) {
     if (edible.text && edible.text != '') {
       if (this.snakeHead.x + this.GRID_SIZE/2 == edible.x && this.snakeHead.y == edible.y) {
-        console.log("Ate edible text");
         this.edibles.remove(edible);
         this.eat(edible);
       }
@@ -96,8 +95,7 @@ BasicGame.Monism.prototype.eat = function (edible) {
 
   this.edibles.add(edible);
 
-  setTimeout(function () {
-    console.log("eat() post timer edible",edible);
+  this.appleTimer.add(this.APPLE_DELAY,function () {
     if (edible.eatenText && edible.eatenText != '') {
       var x = (WALL_LEFT+1) + Math.floor(Math.random() * ((WALL_RIGHT - WALL_LEFT - 1)));
       var y = (WALL_TOP+1) + Math.floor(Math.random() * (WALL_BOTTOM - WALL_TOP - 1));
@@ -112,7 +110,25 @@ BasicGame.Monism.prototype.eat = function (edible) {
       edible.x = (WALL_LEFT+1)*this.GRID_SIZE + Math.floor(Math.random() * ((WALL_RIGHT - WALL_LEFT - 1))) * this.GRID_SIZE;
       edible.y = (WALL_TOP+1)*this.GRID_SIZE + Math.floor(Math.random() * (WALL_BOTTOM - WALL_TOP - 1)) * this.GRID_SIZE;
     }
-  }.bind(this),this.APPLE_DELAY);
+  },this);
+  this.appleTimer.start();
+
+  // setTimeout(function () {
+  //   if (edible.eatenText && edible.eatenText != '') {
+  //     var x = (WALL_LEFT+1) + Math.floor(Math.random() * ((WALL_RIGHT - WALL_LEFT - 1)));
+  //     var y = (WALL_TOP+1) + Math.floor(Math.random() * (WALL_BOTTOM - WALL_TOP - 1));
+  //     edible.x = this.textGrid[y][x].x;
+  //     edible.y = this.textGrid[y][x].y;
+  //     this.textGrid[y][x].x = edible.eatenX;
+  //     this.textGrid[y][x].y = edible.eatenY;
+  //     edible.text = edible.eatenText;
+  //     edible.eatenText = '';
+  //   }
+  //   else {
+  //     edible.x = (WALL_LEFT+1)*this.GRID_SIZE + Math.floor(Math.random() * ((WALL_RIGHT - WALL_LEFT - 1))) * this.GRID_SIZE;
+  //     edible.y = (WALL_TOP+1)*this.GRID_SIZE + Math.floor(Math.random() * (WALL_BOTTOM - WALL_TOP - 1)) * this.GRID_SIZE;
+  //   }
+  // }.bind(this),this.APPLE_DELAY);
 }
 
 BasicGame.Monism.prototype.checkBodyCollision = function () {

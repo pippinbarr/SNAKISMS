@@ -2,8 +2,17 @@
 * ~~Possible to Restart while apple off screen and have timeout trigger on refreshed game (check on restarts and timers generally)~~
 
 ## Fixes/considerations
-* Remember to add tracking information to the game
-* Disallow apple placement under snake body (determine if there are levels this won't work for, like Optimism or Monism)
+* Remember to add tracking information to the game (github)
+
+* ~~Work on Monism's apple placement~~
+* ~~Work on Optimism's apple placement~~
+* ~~Work on Positivism's apple placement~~
+* ~~Implement "no under body" code for Snake apple placement~~
+* ~~**DONE A BUNCH OF THIS** Disallow apple placement under snake body (determine if there are levels this won't work for, like Optimism or Monism)~~
+  * ~~The calculation. Total grid squares: 640/20*420/20 == 768.~~
+  * ~~Monism starts with 22+22+... no wait...~~
+  * ~~Monism can clearly fill the entire screen given that eating one body = one extra body on the screen (the added one + the relocated one), so that's an infinite generation process. So at some point you'd have to place new items on screen under the snake's body. As it stands it looks kind of fine anyway, I don't think you particularly notice. Maybe there could be a cut-off?~~
+  * ~~Optimism has an arbitrary limit of 300 apples, and there are 20*24==480 squares to place them in. BUT if the snake keeps eating them, it will eventually be sufficiently long that you would have to place apples under its body. OR you could do something where it tries for a set amount of time, then gives up and tries on the next tick...~~
 
 * ~~Add SFX to Casualism~~
 * ~~Play every version and make sure sound, timing, etc. in place~~
