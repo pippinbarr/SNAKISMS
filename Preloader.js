@@ -8,6 +8,11 @@ BasicGame.Preloader = function (game) {
 BasicGame.Preloader.prototype = {
 
 	preload: function () {
+
+		this.preloadBar = this.add.sprite(0, 0, 'preloaderBar');
+		this.preloadBar.y = this.game.canvas.height/2 - this.preloadBar.height/2;
+		this.load.setPreloadSprite(this.preloadBar);
+
 		this.load.bitmapFont('atari', 'assets/fonts/atari.png', 'assets/fonts/atari.xml');
 
 		this.load.image('head','assets/images/head.png');
@@ -28,7 +33,7 @@ BasicGame.Preloader.prototype = {
 	},
 
 	create: function () {
-
+		this.preloadBar.cropEnabled = false;
 	},
 
 	update: function () {
@@ -36,7 +41,7 @@ BasicGame.Preloader.prototype = {
 		if (this.cache.isSoundDecoded('romanticmusic') && this.ready == false)
 		{
 			this.ready = true;
-			this.state.start('Romanticism');
+			this.state.start('Menu');
 		}
 
 	}
