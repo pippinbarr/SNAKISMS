@@ -1,10 +1,10 @@
 ## Bugs
-* Possible to Restart while apple off screen and have timeout trigger on refreshed game (check on restarts and timers generally)
+* ~~Possible to Restart while apple off screen and have timeout trigger on refreshed game (check on restarts and timers generally)~~
 
 ## Making the Snakisms
 
 ### Snake
-* Add SFX for move, apple, collision
+* ~~Add SFX for move, apple, collision~~
 
 ### ~~Anthropomorphicism~~
 * ~~Make the apple move around on tick, collide with walls and body~~
