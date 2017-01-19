@@ -11,6 +11,7 @@ games = [
 	"Holisticism",
 	"Idealism",
 	"Monism",
+	"Narcissism",
 	"Nihilism",
 	"Optimism",
 	"Pessimism",

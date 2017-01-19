@@ -3,6 +3,9 @@
 
 ## Making the Snakisms
 
+### Snake
+* Add SFX for move, apple, collision
+
 ### ~~Anthropomorphicism~~
 * ~~Make the apple move around on tick, collide with walls and body~~
 
@@ -82,14 +85,17 @@
 * ~~**NAH** Camera follows the snake head~~
 * ~~**NAH. JUST ONE SCREEN** On start, generate N screens worth of terrain by just applying a random selection of ground textures or a wall for each grid item~~
 
-### Romanticism
+### ~~Romanticism~~
+* ~~Generate enough titles for the situations for it to be funny~~
+* ~~**ENDED UP JUST HAVING TITLE ON APPLE AND DEATH** Add title popup on a timer~~
+* ~~Add ability to display a title~~
+* ~~Play mp3 over game~~
+* ~~Get mp3 of sad piano and violin from https://www.youtube.com/watch?v=TZTtvwpXReA~~
 
 ### ~~Stoicism~~
 * Add sound effect of "hit" one time on collision to emphasis something happened
 * ~~Rewrite so that snake stops before collision and stays put (maybe with imagined "ouch" sound on collision) but can then just keep going after~~
 * ~~Rewrite body collision to just stay put and not die~~
-
-### Subjectivism
 
 ### ~~Utilitarianism~~
 * **Question**: Should we reinterpret the apples as deaths as per the Trolley problem? In which case negative scoring?

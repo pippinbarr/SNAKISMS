@@ -1,30 +1,5 @@
 # To Implement
 
-### Romantic
-"belief in sentimental feeling in artistic expression”
-
-Expressive music? Poetry coming up as you play in little titles in cursive… the pain and beauty of being alive, of death…
-
-***emotional music, title appear with emotional story of snake’s life, joy, and eventual death***
-
-### Subjectivist
-"doctrine that all knowledge is subjective"
-
-Maybe define the value of apples/events yourself?
-
-What is an apple worth? What is this apple worth?
-
-***game asks you the points value of each apple (test repetition)***
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -198,6 +173,13 @@ Have it so that the snake has a cone of vision and you can’t see anything outs
 
 ***only tiles “viewable” by the snake are visible***
 
+### Romanticism
+"belief in sentimental feeling in artistic expression”
+
+Expressive music? Poetry coming up as you play in little titles in cursive… the pain and beauty of being alive, of death…
+
+***emotional music, title appear with emotional story of snake’s life, joy, and eventual death***
+
 ### Stoic
 "the endurance of pain or hardship without a display of feelings and without complaint."
 
@@ -339,6 +321,15 @@ What is pleasure in the world of Snake? seems like it’s eating the apple (for 
 
 (Again we’re seeing this idea of distinguishing the “location” of the philosophical/idea… like is it for the snake, for the player, in the “nature” of the game…)
 
+
+### Subjectivist
+"doctrine that all knowledge is subjective"
+
+Maybe define the value of apples/events yourself?
+
+What is an apple worth? What is this apple worth?
+
+***game asks you the points value of each apple (test repetition)***
 
 ### Occultism
 ### Esotericism

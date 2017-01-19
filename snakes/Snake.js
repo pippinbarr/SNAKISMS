@@ -63,6 +63,8 @@ BasicGame.Snake.prototype = {
     this.GAME_OVER_X = 4;
     this.GAME_OVER_Y = Math.floor(this.NUM_ROWS/2) - 2;
 
+    this.appleTimer = this.game.time.create(false);
+
     // Create the update tick
     ticker = this.game.time.create(false);
     ticker.add(Phaser.Timer.SECOND * this.SNAKE_TICK, this.tick, this);
@@ -368,9 +370,8 @@ BasicGame.Snake.prototype = {
   },
 
   startAppleTimer: function () {
-    setTimeout(function () {
-      this.repositionApple();
-    }.bind(this),this.APPLE_DELAY);
+    this.appleTimer.add(this.APPLE_DELAY,this.repositionApple,this);
+    this.appleTimer.start();
   },
 
 

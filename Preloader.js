@@ -20,6 +20,15 @@ BasicGame.Preloader.prototype = {
 		this.load.image('postapocalyptic03','assets/images/postapocalyptic03.png');
 		this.load.image('postapocalyptic04','assets/images/postapocalyptic04.png');
 		this.load.image('postapocalyptic05','assets/images/postapocalyptic05.png');
+
+		this.load.audio('romanticmusic',['assets/sounds/romanticmusic.mp3','assets/sounds/romanticmusic.ogg']);
+		this.load.audio('hit','assets/sounds/hit.wav');
+		this.load.audio('apple','assets/sounds/apple.wav');
+		this.load.audio('move','assets/sounds/move.wav');
+
+		// this.load.audio('hit',['assets/sounds/hit.mp3','assets/sounds/hit.ogg']);
+		// this.load.audio('apple',['assets/sounds/apple.mp3','assets/sounds/apple.ogg']);
+		// this.load.audio('move',['assets/sounds/move.mp3','assets/sounds/move.ogg']);
 	},
 
 	create: function () {
@@ -28,10 +37,10 @@ BasicGame.Preloader.prototype = {
 
 	update: function () {
 
-		if (this.ready == false)
+		if (this.cache.isSoundDecoded('romanticmusic') && this.ready == false)
 		{
 			this.ready = true;
-			this.state.start('PostApocalypticism');
+			this.state.start('Romanticism');
 		}
 
 	}
