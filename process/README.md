@@ -6,6 +6,7 @@
 ### Snake
 * Remember to add tracking information to the game
 * Play every version and make sure sound, timing, etc. in place
+* Why doesn't the progress bar go all the way across? God damnit!
 
 * ~~Re-add touch-based instructions to Snake (where the fuck did it go?)~~
 * ~~Add instructions to menu at bottom~~

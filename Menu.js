@@ -8,7 +8,7 @@ games = [
 	"Determinism",
 	"Dualism",
 	"Existentialism",
-	"Holisticism",
+	"Holism",
 	"Idealism",
 	"Monism",
 	"Narcissism",
