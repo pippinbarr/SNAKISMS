@@ -9,7 +9,7 @@ BasicGame.Capitalism.prototype.create = function () {
   BasicGame.Snake.prototype.create.call(this);
 
   this.stateName = "Capitalism";
-  this.addToScore(50);
+  this.addToScore(10);
 };
 
 BasicGame.Capitalism.prototype.setScoreText = function (scoreString) {
@@ -33,7 +33,11 @@ BasicGame.Capitalism.prototype.checkAppleCollision = function () {
       this.addToScore(-this.APPLE_SCORE);
     }
     else {
-      this.addTextToGrid(3,5,["YOU CAN'T AFFORD","THE APPLE"])
+      this.addTextToGrid(3,5,["YOU CAN'T AFFORD","THE APPLE"]);
+      this.hitSFX.play();
+      this.game.time.events.add(Phaser.Timer.SECOND * this.SNAKE_TICK * 10,function () {
+        this.addTextToGrid(3,5,["                ","         "]);
+      },this);
     }
   }
 };

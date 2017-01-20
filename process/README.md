@@ -2,8 +2,9 @@
 * ~~Possible to Restart while apple off screen and have timeout trigger on refreshed game (check on restarts and timers generally)~~
 
 ## Fixes/considerations
-* Remember to add tracking information to the game (github)
-
+* ~~Capitalism: Make afford text disappear after a bit so it can redisplay on hit for more impact~~
+* ~~Capitalism: Make hit sound play on apple you can't afford~~
+* ~~Remember to add tracking information to the game (github)~~
 * ~~Work on Monism's apple placement~~
 * ~~Work on Optimism's apple placement~~
 * ~~Work on Positivism's apple placement~~
