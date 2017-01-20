@@ -1,9 +1,9 @@
-# SNAKISMS
+# [Play SNAKISMS](http://pippinbarr.github.io/SNAKISMS/)
 
-This repository of SNAKISMS is playable here:
+It's browser-based and is mobile- and tablet-friendly.
 
-http://pippinbarr.github.io/SNAKISMS/
+## License
 
-But it would be better to play it here:
+SNAKISMS is licensed under a [Creative Commons Attribution-NonCommercial 3.0 Unported License](http://creativecommons.org/licenses/by-nc/3.0/).
 
-http://www.pippinbarr.com/games/snakisms/
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/3.0/88x31.png" /></a>
