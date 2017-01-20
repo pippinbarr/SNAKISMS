@@ -38,7 +38,7 @@ This idea of multiple versions of a simple, retro arcade game is not especially 
 
 ## Videos
 
-### SNAKISMS Trailer
+### [SNAKISMS Trailer](https://www.youtube.com/watch?v=p9MS7ERVLGA)
 
 [![SNAKISMS Trailer](https://img.youtube.com/vi/p9MS7ERVLGA/0.jpg)](https://www.youtube.com/watch?v=p9MS7ERVLGA)
 
