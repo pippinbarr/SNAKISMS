@@ -1,10 +1,10 @@
 ## Release process
 * Release
+* Open source
 * Email mailing list
 * Send to press
 * Update press list
-* Open source
-* Make website page
+* ~~Make website page~~
 * ~~Make press kit (on github?)~~
 * ~~Make trailer~~
 * ~~Take screenshots~~
