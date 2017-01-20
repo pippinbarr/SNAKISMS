@@ -5,9 +5,9 @@
 * Update press list
 * Open source
 * Make website page
-* Make press kit (on github?)
-* Make trailer
-* Take screenshots
+* ~~Make press kit (on github?)~~
+* ~~Make trailer~~
+* ~~Take screenshots~~
 
 
 ## Bugs

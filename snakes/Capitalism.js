@@ -9,7 +9,7 @@ BasicGame.Capitalism.prototype.create = function () {
   BasicGame.Snake.prototype.create.call(this);
 
   this.stateName = "Capitalism";
-  this.addToScore(10);
+  this.addToScore(50);
 };
 
 BasicGame.Capitalism.prototype.setScoreText = function (scoreString) {
