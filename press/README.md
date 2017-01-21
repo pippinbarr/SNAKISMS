@@ -48,7 +48,7 @@ This idea of multiple versions of a simple, retro arcade game is not especially 
 
 ## Additional Links
 
-* [Developer blog posts about *SNAKISMS*](http://www.pippinbarr.com/tag/snakisms/)
+* [Developer blog posts about *SNAKISMS*](http://www.pippinbarr.com/tag/snakisms?order=asc)
 
 ## Credits
 

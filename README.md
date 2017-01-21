@@ -5,7 +5,7 @@
 ## Information
 
 * [Code repository](https://github.com/pippinbarr/SNAKISMS) (you're looking at it)
-* [Blog posts about *SNAKISMS*](http://www.pippinbarr.com/tag/snakisms)
+* [Blog posts about *SNAKISMS*](http://www.pippinbarr.com/tag/snakisms?order=asc)
 * [Press Kit](https://github.com/pippinbarr/SNAKISMS/tree/master/press)
 
 ## License
