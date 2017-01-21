@@ -1,6 +1,12 @@
-# [Play SNAKISMS](http://pippinbarr.github.io/SNAKISMS/)
+## The Game
 
-It's browser-based and is mobile- and tablet-friendly.
+[Play SNAKISMS](http://pippinbarr.github.io/SNAKISMS/) in your browser (mobile- and tablet-friendly)
+
+## Information
+
+* [Code repository](https://github.com/pippinbarr/SNAKISMS) (you're looking at it)
+* [Blog posts about *SNAKISMS*](http://www.pippinbarr.com/tag/snakisms)
+* [Press Kit](https://github.com/pippinbarr/SNAKISMS/tree/master/press)
 
 ## License
 

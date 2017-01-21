@@ -3,12 +3,12 @@
 * Open source
 * Email mailing list
 * Send to press
-* Update press list
+
+* ~~Update press list~~
 * ~~Make website page~~
 * ~~Make press kit (on github?)~~
 * ~~Make trailer~~
 * ~~Take screenshots~~
-
 
 ## Bugs
 * ~~Possible to Restart while apple off screen and have timeout trigger on refreshed game (check on restarts and timers generally)~~
