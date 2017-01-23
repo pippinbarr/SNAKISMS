@@ -20,6 +20,8 @@ games = [
 	"Romanticism",
 	"Stoicism",
 	"Utilitarianism",
+	"",
+	"pippinbarr.com"
 ];
 
 BasicGame.Menu = function (game) {
@@ -72,7 +74,9 @@ BasicGame.Menu.prototype.createMenu = function () {
 	y = menuTop;
 
 	for (var i = 0; i < uppercaseGameNames.length; i++) {
-		this.addTextToGrid(x,y,[uppercaseGameNames[i]],this.menuText,this.menuButtons,this.menuItemTouched);
+		if (uppercaseGameNames[i] != "") {
+			this.addTextToGrid(x,y,[uppercaseGameNames[i]],this.menuText,this.menuButtons,this.menuItemTouched);
+		}
 		y++;
 	}
 
@@ -105,6 +109,9 @@ BasicGame.Menu.prototype.update = function () {
 			if (this.selected == "Post-Apocalypticism") {
 				this.game.state.start("PostApocalypticism")
 			}
+			else if (this.selected == "pippinbarr.com") {
+				window.location = "http://www.pippinbarr.com/";
+			}
 			else {
 				this.game.state.start(this.selected);
 			}
@@ -118,7 +125,10 @@ BasicGame.Menu.prototype.handleKeyboardInput = function () {
 
 	if (this.upKey.downDuration(10)) {
 		this.moveSFX.play();
-		if (this.snakeHead.y/this.GRID_SIZE > menuTop) {
+		if (this.snakeHead.y/this.GRID_SIZE == menuTop + games.length - 1) {
+			this.snakeHead.y -= 2*this.GRID_SIZE;
+		}
+		else if (this.snakeHead.y/this.GRID_SIZE > menuTop) {
 			this.snakeHead.y -= this.GRID_SIZE;
 		}
 		else {
@@ -127,7 +137,10 @@ BasicGame.Menu.prototype.handleKeyboardInput = function () {
 	}
 	else if (this.downKey.downDuration(10)) {
 		this.moveSFX.play();
-		if (this.snakeHead.y/this.GRID_SIZE < menuBottom) {
+		if (this.snakeHead.y/this.GRID_SIZE == menuTop + games.length - 3) {
+			this.snakeHead.y += 2*this.GRID_SIZE;
+		}
+		else if (this.snakeHead.y/this.GRID_SIZE < menuBottom) {
 			this.snakeHead.y += this.GRID_SIZE;
 		}
 		else {
