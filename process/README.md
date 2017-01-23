@@ -1,9 +1,9 @@
 ## Release process
 * Release
 * Email mailing list
-* Send to press
-* Add link back to website to menu
 
+* ~~Send to press~~
+* ~~Add link back to website to menu~~
 * ~~Open source~~
 * ~~Update press list~~
 * ~~Make website page~~

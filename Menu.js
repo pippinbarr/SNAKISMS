@@ -56,6 +56,7 @@ BasicGame.Menu.prototype.create = function () {
 	this.next = new Phaser.Point(0,0);
 	this.prev = new Phaser.Point(0,0);
 	this.selected = undefined;
+	this.selectionComplete = false;
 };
 
 BasicGame.Menu.prototype.createMenu = function () {
@@ -103,18 +104,19 @@ BasicGame.Menu.prototype.menuItemTouched = function (item) {
 
 BasicGame.Menu.prototype.update = function () {
 	BasicGame.Snake.prototype.update.call(this);
-	if (this.selected) {
+	if (this.selected && !this.selectionComplete) {
 		this.checkMenuCollision();
 		if (this.snake[0].x > this.game.width) {
 			if (this.selected == "Post-Apocalypticism") {
 				this.game.state.start("PostApocalypticism")
 			}
 			else if (this.selected == "pippinbarr.com") {
-				window.location = "http://www.pippinbarr.com/";
+				window.location = "http://www.pippinbarr.com/games/";
 			}
 			else {
 				this.game.state.start(this.selected);
 			}
+			this.selectionComplete = true;
 		}
 	}
 };
