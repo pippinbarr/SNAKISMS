@@ -5,7 +5,7 @@
 ## The basics
 
 * Developer: [Pippin Barr](http://www.pippinbarr.com/)
-* Released: nth of January, 2017
+* Release: 25th of January, 2017
 * Platform: Browser (mobile- and tablet-friendly)
 * Code repository: https://www.github.com/pippinbarr/SNAKISMS/
 * Price: $0.00
