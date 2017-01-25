@@ -1,7 +1,7 @@
 ## Release process
 * Release
-* Email mailing list
 
+* ~~Email mailing list~~
 * ~~Send to press~~
 * ~~Add link back to website to menu~~
 * ~~Open source~~

@@ -94,6 +94,8 @@ BasicGame.Menu.prototype.createMenu = function () {
 };
 
 BasicGame.Menu.prototype.menuItemTouched = function (item) {
+	this.appleSFX.play();
+
 	if (this.selected) return;
 	this.snakeHead.y = item.y;
 	for (var i = 0; i < this.snake.length; i++) {
