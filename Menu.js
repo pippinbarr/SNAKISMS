@@ -37,7 +37,9 @@ BasicGame.Menu.prototype.create = function () {
 
 	BasicGame.Snake.prototype.create.call(this);
 
-	// this.game.input.onDown.add(function() { console.log("Test."); this.appleSFX.play(); },this);
+	this.game.input.onDown.add(function() {
+		this.appleSFX.play(0); 
+	},this);
 
 	this.TITLE = "SNAKISMS";
 	this.SNAKE_TICK = 0.02;
