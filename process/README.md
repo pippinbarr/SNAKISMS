@@ -1,6 +1,5 @@
 ## Release process
-* Release
-
+* ~~Release~~
 * ~~Email mailing list~~
 * ~~Send to press~~
 * ~~Add link back to website to menu~~
@@ -12,6 +11,7 @@
 * ~~Take screenshots~~
 
 ## Bugs
+* ~~**FIXED with proper file formats and an initial onTouch trigger at zero volume** No audio in iOS~~
 * ~~Possible to Restart while apple off screen and have timeout trigger on refreshed game (check on restarts and timers generally)~~
 
 ## Fixes/considerations
