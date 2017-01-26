@@ -46,6 +46,9 @@ This idea of multiple versions of a simple, retro arcade game is not especially 
 
 ![Capitalism](images/Capitalism.png) ![Monism](images/Monism.png) ![Post-Apocalypticism](images/Post-Apocalypticism.png) ![Pessimism](images/Pessimism.png) ![Casualism](images/Casualism.png) ![Utilitarianism](images/Utilitarianism.png)
 
+## Press
+* chiconuclear, [Snakes on a Plato's Cave: SNAKISMS](http://www.anaitgames.com/articulos/snakisms-pippin-barr). Anait Games. (in Spanish)
+
 ## Additional Links
 
 * [Developer blog posts about *SNAKISMS*](http://www.pippinbarr.com/tag/snakisms?order=asc)
