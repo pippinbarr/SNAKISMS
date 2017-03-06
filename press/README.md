@@ -52,6 +52,7 @@ This idea of multiple versions of a simple, retro arcade game is not especially 
 * Clementine Spiler, [Snakisms, Philosophie en 8 Bits](http://www.novaplanet.com/novamag/70861/snakisms-philosophie-en-8-bits). Nova Planet. (in French)
 * Jason Kottke, [Snakisms](http://kottke.org/17/03/snakisms). kottke.org.
 * Cory Doctorow, [Snakisms: 22 philosophies expounded through the game of Snake](http://boingboing.net/2017/03/04/nothing-sounds-quite-like-a-33-2.html). BoingBoing.
+* Clayton Purdom, [Waste some time playing 22 different philosophical versions of Snake](http://www.avclub.com/article/waste-some-time-playing-22-different-philosophical-251567). AV Club.
 
 ## Additional Links
 
