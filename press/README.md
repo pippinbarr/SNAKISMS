@@ -54,6 +54,7 @@ This idea of multiple versions of a simple, retro arcade game is not especially 
 * Cory Doctorow, [Snakisms: 22 philosophies expounded through the game of Snake](http://boingboing.net/2017/03/04/nothing-sounds-quite-like-a-33-2.html). BoingBoing.
 * Clayton Purdom, [Waste some time playing 22 different philosophical versions of Snake](http://www.avclub.com/article/waste-some-time-playing-22-different-philosophical-251567). AV Club.
 * Rob Beschizza, [Snakisms: the snake game, but now with meaning](http://boingboing.net/2017/03/06/snakisms-the-snake-game-but.html). BoingBoing.
+* Chris Priestman, [SNAKISMS (Pippin Barr)](http://warpdoor.com/2017/03/07/snakisms-pippin-barr/). Warp Door.
 
 ## Additional Links
 
