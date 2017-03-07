@@ -138,7 +138,7 @@ BasicGame.Romanticism.prototype.checkAppleCollision = function () {
     this.displayTitle(appleTexts[this.appleIndex]);
     this.appleIndex++;
     if (this.appleIndex == appleTexts.length) {
-      this.appleTexts.shuffle();
+      appleTexts.shuffle();
       this.appleIndex = 0;
     }
     this.titleTimer.add(Phaser.Timer.SECOND * this.TITLE_DISPLAY_TIME, this.hideTitle, this);
