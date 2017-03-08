@@ -1,0 +1,16 @@
+{
+  "name": "SNAKISMS",
+  "short_name": "SNAKISMS",
+  "description": "Life is meaningless! Maybe you need some kind of ism to attempt to ward off the inevitable and unavoidable despair! Here, have some isms made of snakes! Life is still meaningless but now you have a bunch of snakes as well! Thank me later!",
+  "start_url": "index.html",
+  "theme_color": "#000000",
+  "background_color": "#000000",
+  "display": "standalone",
+  "icons": [
+    {
+        "src": "press/images/SNAKISMS.png",
+        "type": "image/png",
+        "sizes": "300x300"
+    }
+  ]
+}
