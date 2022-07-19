@@ -5,9 +5,9 @@
 ## [Play Online](http://pippinbarr.github.io/SNAKISMS/) (desktop and mobile)
 
 ## Description
-*Sssnakes can do anything! Sssubdue colossssssi! Ssstamp passssssportsss! Sssweep minesss! Ssscore goalsss! Ssstop missssssiles! Circumvent ghossstsss! Ssswwoop through World 1-1! Go sssnakesss!*
+*Life is meaningless! Maybe you need some kind of ism to attempt to ward off the inevitable and unavoidable despair! Here, have some isms made of snakes! Life is still meaningless but now you have a bunch of snakes as well! Thank me later!*
 
-123
+*SNAKISMS* is an attempt to adapt the classic mobile-phone game *Snake* into a series of "philosophical positions." From a CAPITALISM version of the game to an EXISTENTIALIST version, and so on.
 
 ## Press
 * chiconuclear, [Snakes on a Plato's Cave: SNAKISMS](http://www.anaitgames.com/articulos/snakisms-pippin-barr). Anait Games. (in Spanish)
