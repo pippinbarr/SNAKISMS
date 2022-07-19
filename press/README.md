@@ -46,16 +46,6 @@ This idea of multiple versions of a simple, retro arcade game is not especially 
 
 ![Capitalism](images/Capitalism.png) ![Monism](images/Monism.png) ![Post-Apocalypticism](images/Post-Apocalypticism.png) ![Pessimism](images/Pessimism.png) ![Casualism](images/Casualism.png) ![Utilitarianism](images/Utilitarianism.png)
 
-## Press
-* chiconuclear, [Snakes on a Plato's Cave: SNAKISMS](http://www.anaitgames.com/articulos/snakisms-pippin-barr). Anait Games. (in Spanish)
-* Pierrec, [Snakisms](http://oujevipo.fr/general/5895-snakisms/). L'Oujevipo. (in French)
-* Clementine Spiler, [Snakisms, Philosophie en 8 Bits](http://www.novaplanet.com/novamag/70861/snakisms-philosophie-en-8-bits). Nova Planet. (in French)
-* Jason Kottke, [Snakisms](http://kottke.org/17/03/snakisms). kottke.org.
-* Cory Doctorow, [Snakisms: 22 philosophies expounded through the game of Snake](http://boingboing.net/2017/03/04/nothing-sounds-quite-like-a-33-2.html). BoingBoing.
-* Clayton Purdom, [Waste some time playing 22 different philosophical versions of Snake](http://www.avclub.com/article/waste-some-time-playing-22-different-philosophical-251567). AV Club.
-* Rob Beschizza, [Snakisms: the snake game, but now with meaning](http://boingboing.net/2017/03/06/snakisms-the-snake-game-but.html). BoingBoing.
-* Chris Priestman, [SNAKISMS (Pippin Barr)](http://warpdoor.com/2017/03/07/snakisms-pippin-barr/). Warp Door.
-
 ## Additional Links
 
 * [Developer blog posts about *SNAKISMS*](http://www.pippinbarr.com/tag/snakisms?order=asc)

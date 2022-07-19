@@ -1,14 +1,30 @@
-# SNAKISMS
+# *SNAKISMS*
 
-## [Play Online](http://pippinbarr.github.io/SNAKISMS/) in your browser (mobile- and tablet-friendly)
+![](images/snakisms-banner.png)
 
-## Information
+## [Play Online](http://pippinbarr.github.io/SNAKISMS/) (desktop and mobile)
 
-* [Code repository](https://github.com/pippinbarr/SNAKISMS) (you're looking at it)
-* [Press Kit](https://github.com/pippinbarr/SNAKISMS/tree/master/press)
+## Description
+*Sssnakes can do anything! Sssubdue colossssssi! Ssstamp passssssportsss! Sssweep minesss! Ssscore goalsss! Ssstop missssssiles! Circumvent ghossstsss! Ssswwoop through World 1-1! Go sssnakesss!*
+
+123
+
+## Press
+* chiconuclear, [Snakes on a Plato's Cave: SNAKISMS](http://www.anaitgames.com/articulos/snakisms-pippin-barr). Anait Games. (in Spanish)
+* Pierrec, [Snakisms](http://oujevipo.fr/general/5895-snakisms/). L'Oujevipo. (in French)
+* Clementine Spiler, [Snakisms, Philosophie en 8 Bits](http://www.novaplanet.com/novamag/70861/snakisms-philosophie-en-8-bits). Nova Planet. (in French)
+* Jason Kottke, [Snakisms](http://kottke.org/17/03/snakisms). kottke.org.
+* Cory Doctorow, [Snakisms: 22 philosophies expounded through the game of Snake](http://boingboing.net/2017/03/04/nothing-sounds-quite-like-a-33-2.html). BoingBoing.
+* Clayton Purdom, [Waste some time playing 22 different philosophical versions of Snake](http://www.avclub.com/article/waste-some-time-playing-22-different-philosophical-251567). AV Club.
+* Rob Beschizza, [Snakisms: the snake game, but now with meaning](http://boingboing.net/2017/03/06/snakisms-the-snake-game-but.html). BoingBoing.
+* Chris Priestman, [SNAKISMS (Pippin Barr)](http://warpdoor.com/2017/03/07/snakisms-pippin-barr/). Warp Door.
+
+Read the [Press Kit](../press) for press information
+
+## Documentation
+* Read the [Process Documentation](../process) for todos and design explorations
+* Read the [Commit History](https://github.com/pippinbarr/snakisms/commits/master) for detailed, moment-to-moment insights into the development process
+* Look at the [Code Repository](https://github.com/pippinbarr/snakisms) for source code etc.
 
 ## License
-
 SNAKISMS is licensed under a [Creative Commons Attribution-NonCommercial 3.0 Unported License](http://creativecommons.org/licenses/by-nc/3.0/).
-
-<a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/3.0/88x31.png" /></a>
