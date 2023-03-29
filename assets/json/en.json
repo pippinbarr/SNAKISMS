@@ -1,0 +1,127 @@
+{
+    "title": "SNAKISMS",
+    "key": "SNAKISMS",
+    "menu": {
+        "homepage": "pippinbarr.com",
+        "instructions": {
+            "keyboard": [
+                "UP/DOWN=SELECT",
+                "ENTER=PLAY"
+            ],
+            "touch": [
+                "TOUCH ITEM TO PLAY"
+            ]
+        }
+    },
+    "ui": {
+        "controls": {
+            "keyboard": [
+                "ARROWS",
+                "CONTROL",
+                "SNAKE"
+            ],
+            "touch": [
+                "SWIPES",
+                "CONTROL",
+                "SNAKE"
+            ]
+        },
+        "reset": {
+            "keyboard": [
+                "R=RESTART M=MENU"
+            ],
+            "touch": {
+                "reset": [],
+                "menu": []
+            }
+        },
+        "gameover": "GAME OVER",
+        "points": "POINTS"
+    },
+    "snakes": {
+        "Anthropomorphism": {
+            "title": "Anthropomorphism",
+            "key": "Anthropomorphism"
+        },
+        "Apocalypticism": {
+            "title": "Apocalypticism",
+            "key": "Apocalypticism"
+        },
+        "Asceticism": {
+            "title": "Asceticism",
+            "key": "Asceticism"
+        },
+        "Capitalism": {
+            "title": "Capitalism",
+            "key": "Capitalism"
+        },
+        "Casualism": {
+            "title": "Casualism",
+            "key": "Casualism"
+        },
+        "Conservatism": {
+            "title": "Conservatism",
+            "key": "Conservatism"
+        },
+        "Determinism": {
+            "title": "Determinism",
+            "key": "Determinism"
+        },
+        "Dualism": {
+            "title": "Dualism",
+            "key": "Dualism"
+        },
+        "Existentialism": {
+            "title": "Existentialism",
+            "key": "Existentialism"
+        },
+        "Holism": {
+            "title": "Holism",
+            "key": "Holism"
+        },
+        "Idealism": {
+            "title": "Idealism",
+            "key": "Idealism"
+        },
+        "Monism": {
+            "title": "Monism",
+            "key": "Monism"
+        },
+        "Narcissism": {
+            "title": "Narcissism",
+            "key": "Narcissism"
+        },
+        "Nihilism": {
+            "title": "Nihilism",
+            "key": "Nihilism"
+        },
+        "Optimism": {
+            "title": "Optimism",
+            "key": "Optimism"
+        },
+        "Pessimism": {
+            "title": "Pessimism",
+            "key": "Pessimism"
+        },
+        "Positivism": {
+            "title": "Positivism",
+            "key": "Positivism"
+        },
+        "Post-Apocalypticism": {
+            "title": "Post-Apocalypticism",
+            "key": "PostApocalypticism"
+        },
+        "Romanticism": {
+            "title": "Romanticism",
+            "key": "Romanticism"
+        },
+        "Stoicism": {
+            "title": "Stoicism",
+            "key": "Stoicism"
+        },
+        "Utilitarianism": {
+            "title": "Utilitarianism",
+            "key": "Utilitarianism"
+        }
+    }
+}
