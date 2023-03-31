@@ -1,127 +1,127 @@
 {
-    "lang": "en",
+    "lang": "cn",
     "title": "SNAKISMS",
     "key": "SNAKISMS",
     "menu": {
         "homepage": "pippinbarr.com",
         "instructions": {
             "keyboard": [
-                "UP/DOWN=SELECT",
-                "ENTER=PLAY"
+                "上/下=选择",
+                "回车=开始游戏"
             ],
             "touch": [
-                "TOUCH ITEM TO PLAY"
+                "点击项目开始游戏"
             ]
         }
     },
     "ui": {
         "controls": {
             "keyboard": [
-                "ARROWS",
-                "CONTROL",
-                "SNAKE"
+                "箭头键",
+                "CTRL键",
+                "贪吃蛇"
             ],
             "touch": [
-                "SWIPES",
-                "CONTROL",
-                "SNAKE"
+                "滑动",
+                "CTRL键",
+                "贪吃蛇"
             ]
         },
         "reset": {
             "keyboard": [
-                "R=RESTART M=MENU"
+                "R=重新开始 M=菜单"
             ],
             "touch": {
                 "reset": [],
                 "menu": []
             }
         },
-        "gameover": "GAME OVER",
-        "points": "POINTS"
+        "gameover": "游戏结束",
+        "points": "得分"
     },
     "snakes": {
         "Anthropomorphism": {
-            "title": "Anthropomorphism",
+            "title": "人性论",
             "key": "Anthropomorphism"
         },
         "Apocalypticism": {
-            "title": "Apocalypticism",
+            "title": "启示论",
             "key": "Apocalypticism"
         },
         "Asceticism": {
-            "title": "Asceticism",
+            "title": "禁欲主义",
             "key": "Asceticism"
         },
         "Capitalism": {
-            "title": "Capitalism",
+            "title": "资本主义",
             "key": "Capitalism"
         },
         "Casualism": {
-            "title": "Casualism",
+            "title": "随性主义",
             "key": "Casualism"
         },
         "Conservatism": {
-            "title": "Conservatism",
+            "title": "保守主义",
             "key": "Conservatism"
         },
         "Determinism": {
-            "title": "Determinism",
+            "title": "决定论",
             "key": "Determinism"
         },
         "Dualism": {
-            "title": "Dualism",
+            "title": "二元论",
             "key": "Dualism"
         },
         "Existentialism": {
-            "title": "Existentialism",
+            "title": "存在主义",
             "key": "Existentialism"
         },
         "Holism": {
-            "title": "Holism",
+            "title": "整体主义",
             "key": "Holism"
         },
         "Idealism": {
-            "title": "Idealism",
+            "title": "唯心主义",
             "key": "Idealism"
         },
         "Monism": {
-            "title": "Monism",
+            "title": "唯物主义",
             "key": "Monism"
         },
         "Narcissism": {
-            "title": "Narcissism",
+            "title": "自恋主义",
             "key": "Narcissism"
         },
         "Nihilism": {
-            "title": "Nihilism",
+            "title": "虚无主义",
             "key": "Nihilism"
         },
         "Optimism": {
-            "title": "Optimism",
+            "title": "乐观主义",
             "key": "Optimism"
         },
         "Pessimism": {
-            "title": "Pessimism",
+            "title": "悲观主义",
             "key": "Pessimism"
         },
         "Positivism": {
-            "title": "Positivism",
+            "title": "实证主义",
             "key": "Positivism"
         },
         "Post-Apocalypticism": {
-            "title": "Post-Apocalypticism",
+            "title": "后启示录主义",
             "key": "PostApocalypticism"
         },
         "Romanticism": {
-            "title": "Romanticism",
+            "title": "浪漫主义",
             "key": "Romanticism"
         },
         "Stoicism": {
-            "title": "Stoicism",
+            "title": "斯多葛主义",
             "key": "Stoicism"
         },
         "Utilitarianism": {
-            "title": "Utilitarianism",
+            "title": "功利主义",
             "key": "Utilitarianism"
         }
     }

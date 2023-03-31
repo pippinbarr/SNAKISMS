@@ -139,21 +139,41 @@ BasicGame.Snake.prototype = {
   },
 
   createTextGrid: function () {
+
+    var char = this.game.add.text(200, 200, '浪漫主义', {
+    });
     this.textGroup = this.game.add.group();
-    for (var y = 0; y < this.NUM_ROWS; y++) {
-      this.textGrid.push([]);
-      for (var x = 0; x < this.NUM_COLS; x++) {
-        var char = this.game.add.bitmapText(this.GRID_SIZE * 0.5 + x * this.GRID_SIZE, y * this.GRID_SIZE, 'atari', '', this.FONT_SIZE, this.textGroup);
-        char.anchor.x = 0.5;
-        char.tint = 0xffffff;
-        char.scale.y = 24 / this.FONT_SIZE;
-        this.textGrid[y].push(char);
+    if (this.strings.lang === `cn`) {
+      for (var y = 0; y < this.NUM_ROWS; y++) {
+        this.textGrid.push([]);
+        for (var x = 0; x < this.NUM_COLS; x++) {
+          var char = this.game.add.text(this.GRID_SIZE * 0.5 + x * this.GRID_SIZE, y * this.GRID_SIZE, ' ', {
+            fill: `white`,
+            fontSize: this.FONT_SIZE * 0.75
+          });
+          this.textGroup.add(char);
+          char.anchor.x = 0.5;
+          char.tint = 0xffffff;
+          char.scale.y = 24 / this.FONT_SIZE;
+          this.textGrid[y].push(char);
+        }
+      }
+    }
+    else {
+      for (var y = 0; y < this.NUM_ROWS; y++) {
+        this.textGrid.push([]);
+        for (var x = 0; x < this.NUM_COLS; x++) {
+          var char = this.game.add.bitmapText(this.GRID_SIZE * 0.5 + x * this.GRID_SIZE, y * this.GRID_SIZE, 'atari', '', this.FONT_SIZE, this.textGroup);
+          char.anchor.x = 0.5;
+          char.tint = 0xffffff;
+          char.scale.y = 24 / this.FONT_SIZE;
+          this.textGrid[y].push(char);
+        }
       }
     }
   },
 
   addTextToGrid(startX, startY, text, group, buttonGroup, callback) {
-    console.log(text);
     var x = startX;
     var y = startY;
 

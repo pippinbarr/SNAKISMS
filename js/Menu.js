@@ -12,11 +12,18 @@ BasicGame.Menu.prototype.create = function () {
 	const keys = Object.keys(this.strings.snakes);
 	keys.sort();
 	games = [];
+	this.menuItems = [];
 	for (let i = 0; i < keys.length; i++) {
 		games.push(this.strings.snakes[keys[i]].title);
+		this.menuItems.push(this.strings.snakes[keys[i]]);
 	}
 	games.push("");
+	this.menuItems.push({});
 	games.push(this.strings.menu.homepage);
+	this.menuItems.push({
+		title: `pippinbarr.com`,
+		url: `this.strings.menu.homepage`
+	});
 
 	console.log(games);
 	this.menuButtons = this.game.add.group();
@@ -100,11 +107,11 @@ BasicGame.Menu.prototype.update = function () {
 	if (this.selected && !this.selectionComplete) {
 		this.checkMenuCollision();
 		if (this.snake[0].x > this.game.width) {
-			if (this.selected == "pippinbarr.com") {
+			if (this.selected.title == "pippinbarr.com") {
 				window.location = "http://www.pippinbarr.com/";
 			}
 			else {
-				this.game.state.start(this.strings.snakes[this.selected].key);
+				this.game.state.start(this.selected.key);
 			}
 			this.selectionComplete = true;
 		}
@@ -150,7 +157,8 @@ BasicGame.Menu.prototype.handleKeyboardInput = function () {
 
 BasicGame.Menu.prototype.selectMenuItem = function () {
 	this.next = new Phaser.Point(this.GRID_SIZE, 0);
-	this.selected = games[this.snakeHead.y / this.GRID_SIZE - menuTop];
+	const selectedIndex = this.snakeHead.y / this.GRID_SIZE - menuTop;
+	this.selected = this.menuItems[selectedIndex];
 	this.appleSFX.play();
 };
 

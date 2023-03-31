@@ -5,6 +5,7 @@ BasicGame.Preloader = function (game) {
 
 };
 
+let lang = `en`;
 BasicGame.Preloader.prototype = {
 
 	preload: function () {
@@ -31,7 +32,10 @@ BasicGame.Preloader.prototype = {
 		this.load.audio('apple', ['assets/sounds/apple.mp3', 'assets/sounds/apple.ogg']);
 		this.load.audio('move', ['assets/sounds/move.mp3', 'assets/sounds/move.ogg']);
 
-		const lang = `en`;
+		console.log(window.location.search);
+		const params = new URLSearchParams(window.location.search);
+		console.log(params.get(`lang`))
+		const lang = params.get(`lang`) || `en`;
 		this.load.json('strings', `assets/json/${lang}.json`);
 	},
 

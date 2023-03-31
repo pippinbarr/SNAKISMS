@@ -7,6 +7,10 @@
 	<link rel="manifest" href="manifest.json">
 	<meta name="theme-color" content="#000000">
 
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@900&display=swap" rel="stylesheet">
+
 	<script src="js/libraries/phaser.min.js"></script>
 	<script src="js/libraries/swipe.js"></script>
 
@@ -36,6 +40,7 @@
 	<script src="js/snakes/Romanticism.js"></script>
 	<script src="js/snakes/Stoicism.js"></script>
 	<script src="js/snakes/Utilitarianism.js"></script>
+	<script src="js/Testing.js"></script>
 </head>
 <style>
 	body {
@@ -98,6 +103,10 @@
 			game.state.add('Romanticism', BasicGame.Romanticism);
 			game.state.add('Stoicism', BasicGame.Stoicism);
 			game.state.add('Utilitarianism', BasicGame.Utilitarianism);
+
+
+
+			game.state.add('Testing', BasicGame.Testing);
 
 			//	Now start the Boot state.
 			game.state.start('Boot');
