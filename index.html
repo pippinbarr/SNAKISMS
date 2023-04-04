@@ -58,8 +58,6 @@
 
 		window.onload = function () {
 
-			console.log(Phaser)
-
 			const config = {
 				type: Phaser.AUTO,
 				width: 480,
@@ -113,16 +111,6 @@
 
 		};
 
-		if ('serviceWorker' in navigator) {
-			navigator.serviceWorker.register('./sw.js')
-				.then(function (registration) {
-					console.log('Service Worker Registered');
-				});
-
-			navigator.serviceWorker.ready.then(function (registration) {
-				console.log('Service Worker Ready');
-			});
-		}
 
 		document.addEventListener(
 			"keydown",

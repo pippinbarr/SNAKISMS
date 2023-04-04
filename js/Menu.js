@@ -17,15 +17,17 @@ BasicGame.Menu.prototype.create = function () {
 		games.push(this.strings.snakes[keys[i]].title);
 		this.menuItems.push(this.strings.snakes[keys[i]]);
 	}
-	games.push("");
-	this.menuItems.push({});
-	games.push(this.strings.menu.homepage);
-	this.menuItems.push({
-		title: `pippinbarr.com`,
-		url: `this.strings.menu.homepage`
-	});
 
-	console.log(games);
+	if (mode !== `kiosk`) {
+		games.push("");
+		this.menuItems.push({});
+		games.push(this.strings.menu.homepage);
+		this.menuItems.push({
+			title: `pippinbarr.com`,
+			url: `this.strings.menu.homepage`
+		});
+	}
+
 	this.menuButtons = this.game.add.group();
 	this.menuText = this.game.add.group();
 
@@ -108,7 +110,7 @@ BasicGame.Menu.prototype.update = function () {
 		this.checkMenuCollision();
 		if (this.snake[0].x > this.game.width) {
 			if (this.selected.title == "pippinbarr.com") {
-				window.location = "http://www.pippinbarr.com/";
+				window.open("http://www.pippinbarr.com/", "_blank");
 			}
 			else {
 				this.game.state.start(this.selected.key);

@@ -1,5 +1,5 @@
 BasicGame.Dualism = function (game) {
-  BasicGame.Snake.call(this,game);
+  BasicGame.Snake.call(this, game);
 };
 
 BasicGame.Dualism.prototype = Object.create(BasicGame.Snake.prototype);
@@ -22,7 +22,7 @@ BasicGame.Dualism.prototype.tick = function () {
 };
 
 BasicGame.Dualism.prototype.createMindSnake = function () {
-  this.mindSnakeHead = this.game.add.sprite(this.SNAKE_START_X*this.GRID_SIZE,this.SNAKE_START_Y*this.GRID_SIZE,'head');
+  this.mindSnakeHead = this.game.add.sprite(this.SNAKE_START_X * this.GRID_SIZE, this.SNAKE_START_Y * this.GRID_SIZE, 'head');
   this.mindSnakeHead.alpha = 0.5;
 };
 
@@ -30,19 +30,19 @@ BasicGame.Dualism.prototype.createControls = function () {
   var controlsStrings = [];
 
   if (this.game.device.desktop) {
-    controlsStrings = ["ARROWS","CONTROL","SNAKE BODY"];
+    controlsStrings = this.strings.snakes.Dualism.keyboard;
   }
   else {
-    controlsStrings = ["SWIPES","CONTROL","SNAKE BODY"];
+    controlsStrings = this.strings.snakes.Dualism.touch;
   }
 
-  this.addTextToGrid(this.CONTROLS_X,this.CONTROLS_Y,controlsStrings,this.controlsGroup);
+  this.addTextToGrid(this.CONTROLS_X, this.CONTROLS_Y, controlsStrings, this.controlsGroup);
   this.controlsVisible = true;
 
-  controlsStrings = ["MIND","CONTROLS","SNAKE MIND"];
+  controlsStrings = this.strings.snakes.Dualism.mind;
 
   this.mindControlsGroup = this.game.add.group();
-  this.addTextToGrid(this.CONTROLS_X,this.CONTROLS_Y+6,controlsStrings,this.mindControlsGroup);
+  this.addTextToGrid(this.CONTROLS_X, this.CONTROLS_Y + 6, controlsStrings, this.mindControlsGroup);
   this.controlsVisible = true;
 };
 
@@ -52,5 +52,5 @@ BasicGame.Dualism.prototype.die = function () {
 
   this.mindControlsGroup.forEach(function (letter) {
     letter.text = "";
-  },this);
+  }, this);
 };

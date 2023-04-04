@@ -1,5 +1,5 @@
 BasicGame.Capitalism = function (game) {
-  BasicGame.Snake.call(this,game);
+  BasicGame.Snake.call(this, game);
 };
 
 BasicGame.Capitalism.prototype = Object.create(BasicGame.Snake.prototype);
@@ -16,10 +16,10 @@ BasicGame.Capitalism.prototype.setScoreText = function (scoreString) {
 
   scoreString = "$" + scoreString;
   if (scoreString.length < this.MAX_SCORE.toString().length) {
-    var spacesToAdd = (this.MAX_SCORE.toString().length - scoreString.length)+1;
+    var spacesToAdd = (this.MAX_SCORE.toString().length - scoreString.length) + 1;
     scoreString = Array(spacesToAdd).join(" ") + scoreString;
   }
-  this.addTextToGrid(this.scoreX-scoreString.length,this.scoreY,[scoreString]);
+  this.addTextToGrid(this.scoreX - scoreString.length, this.scoreY, [scoreString]);
 };
 
 BasicGame.Capitalism.prototype.checkAppleCollision = function () {
@@ -33,16 +33,16 @@ BasicGame.Capitalism.prototype.checkAppleCollision = function () {
       this.addToScore(-this.APPLE_SCORE);
     }
     else {
-      this.addTextToGrid(3,5,["YOU CAN'T AFFORD","THE APPLE"]);
+      this.addTextToGrid(3, 5, this.strings.snakes.Capitalism.cantafford);
       this.hitSFX.play();
-      this.game.time.events.add(Phaser.Timer.SECOND * this.SNAKE_TICK * 10,function () {
-        this.addTextToGrid(3,5,["                ","         "]);
-      },this);
+      this.game.time.events.add(Phaser.Timer.SECOND * this.SNAKE_TICK * 10, function () {
+        this.addTextToGrid(3, 5, ["                ", "         "]);
+      }, this);
     }
   }
 };
 
 BasicGame.Capitalism.prototype.gameOver = function () {
-  this.addTextToGrid(3,5,["                ","         "])
-  this.setGameOverText("GAME OVER","","DIED WITH $" + this.score,"","");
+  this.addTextToGrid(3, 5, ["                ", "         "])
+  this.setGameOverText(this.strings.ui.gameover, "", this.strings.snakes.Capitalism.diedwith + this.score, "", "");
 };

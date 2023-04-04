@@ -1,5 +1,5 @@
 BasicGame.Narcissism = function (game) {
-  BasicGame.Snake.call(this,game);
+  BasicGame.Snake.call(this, game);
 };
 
 BasicGame.Narcissism.prototype = Object.create(BasicGame.Snake.prototype);

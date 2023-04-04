@@ -1,5 +1,5 @@
 BasicGame.Romanticism = function (game) {
-  BasicGame.Snake.call(this,game);
+  BasicGame.Snake.call(this, game);
 };
 
 BasicGame.Romanticism.prototype = Object.create(BasicGame.Snake.prototype);
@@ -14,6 +14,10 @@ BasicGame.Romanticism.prototype.create = function () {
 
   BasicGame.Snake.prototype.create.call(this);
 
+  this.deathTexts = this.strings.snakes.Romanticism.deathtexts;
+
+  this.appleTexts = this.strings.snakes.Romanticism.appletexts;
+
   // this.moveSFX = this.game.add.audio('move',0.0);
 
   this.createTitleGrid();
@@ -22,27 +26,27 @@ BasicGame.Romanticism.prototype.create = function () {
 
   this.displayingTitle = false;
 
-  this.music = this.game.add.audio('romanticmusic',0.2,true);
+  this.music = this.game.add.audio('romanticmusic', 0.2, true);
   this.music.loop = true;
   this.music.loops = true;
 
-  appleTexts.shuffle();
+  this.appleTexts.shuffle();
   this.appleIndex = 0;
 };
 
 BasicGame.Romanticism.prototype.createTitleGrid = function () {
   this.titleGrid = [];
-  this.titleBG = this.game.add.sprite(0,0,'black');
+  this.titleBG = this.game.add.sprite(0, 0, 'black');
   this.titleBG.width = this.game.width;
   this.titleBG.height = this.game.height;
   this.titleGroup = this.game.add.group();
   for (var y = 0; y < this.NUM_ROWS; y++) {
     this.titleGrid.push([]);
     for (var x = 0; x < this.NUM_COLS; x++) {
-      var char = this.game.add.bitmapText(this.GRID_SIZE*0.5 + x*this.GRID_SIZE, y*this.GRID_SIZE, 'atari','',this.FONT_SIZE,this.textGroup);
+      var char = this.game.add.bitmapText(this.GRID_SIZE * 0.5 + x * this.GRID_SIZE, y * this.GRID_SIZE, 'atari', '', this.FONT_SIZE, this.textGroup);
       char.anchor.x = 0.5;
       char.tint = 0xffffff;
-      char.scale.y = 24/this.FONT_SIZE;
+      char.scale.y = 24 / this.FONT_SIZE;
       this.titleGrid[y].push(char);
       this.titleGroup.add(char);
     }
@@ -75,7 +79,7 @@ BasicGame.Romanticism.prototype.hideTitle = function () {
   }
 
   this.inputEnabled = true;
-  this.titleTimer.add(Phaser.Timer.SECOND * 1,this.restartTick,this);
+  this.titleTimer.add(Phaser.Timer.SECOND * 1, this.restartTick, this);
   this.titleTimer.start();
 };
 
@@ -103,7 +107,7 @@ BasicGame.Romanticism.prototype.displayTitle = function (text) {
   this.displayingTitle = true;
 };
 
-BasicGame.Romanticism.prototype.addTitleToGrid = function(text) {
+BasicGame.Romanticism.prototype.addTitleToGrid = function (text) {
   var theText = text.slice(0);
 
   theText.unshift("");
@@ -114,10 +118,10 @@ BasicGame.Romanticism.prototype.addTitleToGrid = function(text) {
   theText.push("------------");
 
   var x;
-  var y = Math.floor(this.NUM_ROWS/2) - Math.floor(theText.length/2);
+  var y = Math.floor(this.NUM_ROWS / 2) - Math.floor(theText.length / 2);
 
   for (var i = 0; i < theText.length; i++) {
-    x = Math.floor((this.NUM_COLS/2 - theText[i].length/2));
+    x = Math.floor((this.NUM_COLS / 2 - theText[i].length / 2));
     for (var j = 0; j < theText[i].length; j++) {
       this.titleGrid[y][x].text = theText[i].charAt(j);
       x++;
@@ -135,10 +139,10 @@ BasicGame.Romanticism.prototype.hideControls = function () {
 BasicGame.Romanticism.prototype.checkAppleCollision = function () {
 
   if (this.snakeHead.position.equals(this.apple.position)) {
-    this.displayTitle(appleTexts[this.appleIndex]);
+    this.displayTitle(this.appleTexts[this.appleIndex]);
     this.appleIndex++;
-    if (this.appleIndex == appleTexts.length) {
-      appleTexts.shuffle();
+    if (this.appleIndex == this.appleTexts.length) {
+      this.appleTexts.shuffle();
       this.appleIndex = 0;
     }
     this.titleTimer.add(Phaser.Timer.SECOND * this.TITLE_DISPLAY_TIME, this.hideTitle, this);
@@ -151,8 +155,8 @@ BasicGame.Romanticism.prototype.checkAppleCollision = function () {
 BasicGame.Romanticism.prototype.die = function () {
   BasicGame.Snake.prototype.die.call(this);
 
-  var index = Math.floor(Math.random() * deathTexts.length);
-  this.displayTitle(deathTexts[index]);
+  var index = Math.floor(Math.random() * this.deathTexts.length);
+  this.displayTitle(this.deathTexts[index]);
 
   this.titleTimer.add(Phaser.Timer.SECOND * this.TITLE_DISPLAY_TIME, this.hideTitle, this);
   this.titleTimer.start();
@@ -171,41 +175,16 @@ BasicGame.Romanticism.prototype.gotoMenu = function () {
 
 
 
-var deathTexts = [
-  ["NOW I HAVE FOUND YOU","","MY SWEET OBLIVION"],
-  ["NOW I AM WITH YOU","","MY LOVE"],
-  ["NOW WE CAN BE","","TOGETHER AT LAST"],
-  ["THE MERCY OF THIS","","SUDDEN SILENCE"],
-  ["YOU ARE WITH ME NOW","","MY ANGEL"],
-  ["THIS FINAL DARKNESS","","SUCH SWEET SOLACE"],
-  ["I SEE A LIGHT","","AND KNOW YOU ARE THERE"],
-  ["I AM COMING TO YOU NOW","","MY DARLING"],
-  ["NOW WE WILL ALWAYS","","BE AS ONE"]
-];
 
-var appleTexts = [
-  ["I THINK OF YOU","","EVERY MOMENT"],
-  ["THE PLEASURES OF EARTH","","ARE EMPTY","","WITHOUT YOUR GRACE"],
-  ["THERE WAS NO","","SWEETER APPLE","","THAN YOU, MY LOVE"],
-  ["WHAT JOY IS EATING","","WITHOUT YOU","","TO SHARE IT WITH?"],
-  ["FOOD IS LIKE ASHES","","KNOWING YOU ARE GONE"],
-  ["I MISS YOUR","","MYSTERIOUS SMILE","","SO MUCH"],
-  ["LIFE WITHOUT YOU","","IS BARELY LIVING","","AT ALL"],
-  ["I CAN BARELY EAT","","KNOWING I CANNOT","","SEE YOU AGAIN"],
-  ["WHY DID YOU LEAVE ME?","","I CANNOT STAND","","THIS EMPTY LIFE"],
-  ["THE DISTRACTIONS OF","","FOOD AND WINE","","ARE NOTHING TO ME"],
-  ["HOW CAN YOU","","BE GONE","","WHEN I NEED YOU","","WITH ME?"],
-  ["OH THAT THIS APPLE","","COULD MAKE ME SLEEP","","FOREVER"]
-];
 
-Array.prototype.shuffle = function() {
+Array.prototype.shuffle = function () {
   var i = this.length, j, temp;
-  if ( i == 0 ) return this;
-  while ( --i ) {
-     j = Math.floor( Math.random() * ( i + 1 ) );
-     temp = this[i];
-     this[i] = this[j];
-     this[j] = temp;
+  if (i == 0) return this;
+  while (--i) {
+    j = Math.floor(Math.random() * (i + 1));
+    temp = this[i];
+    this[i] = this[j];
+    this[j] = temp;
   }
   return this;
 }

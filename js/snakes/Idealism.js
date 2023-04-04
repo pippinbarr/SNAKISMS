@@ -1,5 +1,5 @@
 BasicGame.Idealism = function (game) {
-  BasicGame.Snake.call(this,game);
+  BasicGame.Snake.call(this, game);
 };
 
 BasicGame.Idealism.prototype = Object.create(BasicGame.Snake.prototype);
@@ -10,13 +10,13 @@ BasicGame.Idealism.prototype.create = function () {
 
   this.textGrid = [];
 
-  this.NUM_ROWS = this.game.height/this.GRID_SIZE;
-  this.NUM_COLS = this.game.width/this.GRID_SIZE;
+  this.NUM_ROWS = this.game.height / this.GRID_SIZE;
+  this.NUM_COLS = this.game.width / this.GRID_SIZE;
 
   this.createTextGrid();
   this.createInput();
   this.createInstructions();
   this.dead = true;
 
-  this.addTextToGrid(1,14,["IMAGINE YOU ARE", "PLAYING A GAME", "OF SNAKE"]);
+  this.addTextToGrid(1, 14, this.strings.snakes.Idealism.instruction);
 };

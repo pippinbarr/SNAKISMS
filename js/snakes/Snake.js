@@ -34,11 +34,11 @@ BasicGame.Snake.prototype = {
   wallGroup: null,
   apple: null,
 
+  init: function () {
+    this.strings = this.cache.getJSON(`strings`);
+  },
 
   create: function () {
-
-    this.strings = this.cache.getJSON(`strings`);
-
     this.textGrid = [];
     this.dead = false;
     this.stateName = 'Snake';
@@ -140,8 +140,6 @@ BasicGame.Snake.prototype = {
 
   createTextGrid: function () {
 
-    var char = this.game.add.text(200, 200, '浪漫主义', {
-    });
     this.textGroup = this.game.add.group();
     if (this.strings.lang === `cn`) {
       for (var y = 0; y < this.NUM_ROWS; y++) {
@@ -404,7 +402,6 @@ BasicGame.Snake.prototype = {
   },
 
   gotoMenu: function () {
-    console.log(`Going to menu...`)
     this.game.state.start('Menu');
   },
 

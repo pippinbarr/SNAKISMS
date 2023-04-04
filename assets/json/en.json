@@ -37,6 +37,8 @@
             }
         },
         "gameover": "GAME OVER",
+        "youwin": "YOU WIN",
+        "youlose": "YOU LOSE",
         "points": "POINTS"
     },
     "snakes": {
@@ -54,7 +56,12 @@
         },
         "Capitalism": {
             "title": "Capitalism",
-            "key": "Capitalism"
+            "key": "Capitalism",
+            "cantafford": [
+                "YOU CAN'T AFFORD",
+                "THE APPLE"
+            ],
+            "diedwith": "DIED WITH $"
         },
         "Casualism": {
             "title": "Casualism",
@@ -70,7 +77,22 @@
         },
         "Dualism": {
             "title": "Dualism",
-            "key": "Dualism"
+            "key": "Dualism",
+            "keyboard": [
+                "ARROWS",
+                "CONTROL",
+                "SNAKE BODY"
+            ],
+            "touch": [
+                "SWIPES",
+                "CONTROL",
+                "SNAKE BODY"
+            ],
+            "mind": [
+                "MIND",
+                "CONTROLS",
+                "SNAKE MIND"
+            ]
         },
         "Existentialism": {
             "title": "Existentialism",
@@ -82,7 +104,12 @@
         },
         "Idealism": {
             "title": "Idealism",
-            "key": "Idealism"
+            "key": "Idealism",
+            "instruction": [
+                "IMAGINE YOU ARE",
+                "PLAYING A GAME",
+                "OF SNAKE"
+            ]
         },
         "Monism": {
             "title": "Monism",
@@ -114,7 +141,138 @@
         },
         "Romanticism": {
             "title": "Romanticism",
-            "key": "Romanticism"
+            "key": "Romanticism",
+            "deathtexts": [
+                [
+                    "NOW I HAVE FOUND YOU",
+                    "",
+                    "MY SWEET OBLIVION"
+                ],
+                [
+                    "NOW I AM WITH YOU",
+                    "",
+                    "MY LOVE"
+                ],
+                [
+                    "NOW WE CAN BE",
+                    "",
+                    "TOGETHER AT LAST"
+                ],
+                [
+                    "THE MERCY OF THIS",
+                    "",
+                    "SUDDEN SILENCE"
+                ],
+                [
+                    "YOU ARE WITH ME NOW",
+                    "",
+                    "MY ANGEL"
+                ],
+                [
+                    "THIS FINAL DARKNESS",
+                    "",
+                    "SUCH SWEET SOLACE"
+                ],
+                [
+                    "I SEE A LIGHT",
+                    "",
+                    "AND KNOW YOU ARE THERE"
+                ],
+                [
+                    "I AM COMING TO YOU NOW",
+                    "",
+                    "MY DARLING"
+                ],
+                [
+                    "NOW WE WILL ALWAYS",
+                    "",
+                    "BE AS ONE"
+                ]
+            ],
+            "appletexts": [
+                [
+                    "I THINK OF YOU",
+                    "",
+                    "EVERY MOMENT"
+                ],
+                [
+                    "THE PLEASURES OF EARTH",
+                    "",
+                    "ARE EMPTY",
+                    "",
+                    "WITHOUT YOUR GRACE"
+                ],
+                [
+                    "THERE WAS NO",
+                    "",
+                    "SWEETER APPLE",
+                    "",
+                    "THAN YOU, MY LOVE"
+                ],
+                [
+                    "WHAT JOY IS EATING",
+                    "",
+                    "WITHOUT YOU",
+                    "",
+                    "TO SHARE IT WITH?"
+                ],
+                [
+                    "FOOD IS LIKE ASHES",
+                    "",
+                    "KNOWING YOU ARE GONE"
+                ],
+                [
+                    "I MISS YOUR",
+                    "",
+                    "MYSTERIOUS SMILE",
+                    "",
+                    "SO MUCH"
+                ],
+                [
+                    "LIFE WITHOUT YOU",
+                    "",
+                    "IS BARELY LIVING",
+                    "",
+                    "AT ALL"
+                ],
+                [
+                    "I CAN BARELY EAT",
+                    "",
+                    "KNOWING I CANNOT",
+                    "",
+                    "SEE YOU AGAIN"
+                ],
+                [
+                    "WHY DID YOU LEAVE ME?",
+                    "",
+                    "I CANNOT STAND",
+                    "",
+                    "THIS EMPTY LIFE"
+                ],
+                [
+                    "THE DISTRACTIONS OF",
+                    "",
+                    "FOOD AND WINE",
+                    "",
+                    "ARE NOTHING TO ME"
+                ],
+                [
+                    "HOW CAN YOU",
+                    "",
+                    "BE GONE",
+                    "",
+                    "WHEN I NEED YOU",
+                    "",
+                    "WITH ME?"
+                ],
+                [
+                    "OH THAT THIS APPLE",
+                    "",
+                    "COULD MAKE ME SLEEP",
+                    "",
+                    "FOREVER"
+                ]
+            ]
         },
         "Stoicism": {
             "title": "Stoicism",

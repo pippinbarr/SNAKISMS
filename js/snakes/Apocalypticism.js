@@ -1,5 +1,5 @@
 BasicGame.Apocalypticism = function (game) {
-  BasicGame.Snake.call(this,game);
+  BasicGame.Snake.call(this, game);
 };
 
 BasicGame.Apocalypticism.prototype = Object.create(BasicGame.Snake.prototype);
@@ -18,6 +18,6 @@ BasicGame.Apocalypticism.prototype.create = function () {
     this.controlsGroup.visible = false;
     this.dead = true;
     this.setScoreText("");
-    this.setGameOverText("GAME OVER","","","","");
-  }.bind(this),Math.floor(Math.random() * 30000))
+    this.setGameOverText(this.strings.ui.gameover, "", "", "", "");
+  }.bind(this), Math.floor(Math.random() * 30000))
 };

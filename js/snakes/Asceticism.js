@@ -1,5 +1,5 @@
 BasicGame.Asceticism = function (game) {
-  BasicGame.Snake.call(this,game);
+  BasicGame.Snake.call(this, game);
 };
 
 BasicGame.Asceticism.prototype = Object.create(BasicGame.Snake.prototype);
@@ -37,9 +37,9 @@ BasicGame.Asceticism.prototype.checkAppleCollision = function () {
 
 BasicGame.Asceticism.prototype.gameOver = function () {
   if (this.ateApple) {
-    this.setGameOverText("GAME OVER","","YOU LOSE","","");
+    this.setGameOverText(this.strings.ui.gameover, "", this.strings.ui.youlose, "", "");
   }
   else {
-    this.setGameOverText("GAME OVER","",this.score + " POINTS","","");
+    this.setGameOverText(this.strings.ui.gameover, "", this.score + " " + this.strings.ui.points, "", "");
   }
 };
