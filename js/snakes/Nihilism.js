@@ -7,7 +7,6 @@ BasicGame.Nihilism.prototype.constructor = BasicGame.Nihilism;
 
 BasicGame.Nihilism.prototype.create = function () {
   this.mKey = this.game.input.keyboard.addKey(Phaser.Keyboard.M);
-
 };
 
 BasicGame.Nihilism.prototype.update = function () {

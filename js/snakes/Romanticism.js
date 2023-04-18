@@ -40,15 +40,34 @@ BasicGame.Romanticism.prototype.createTitleGrid = function () {
   this.titleBG.width = this.game.width;
   this.titleBG.height = this.game.height;
   this.titleGroup = this.game.add.group();
-  for (var y = 0; y < this.NUM_ROWS; y++) {
-    this.titleGrid.push([]);
-    for (var x = 0; x < this.NUM_COLS; x++) {
-      var char = this.game.add.bitmapText(this.GRID_SIZE * 0.5 + x * this.GRID_SIZE, y * this.GRID_SIZE, 'atari', '', this.FONT_SIZE, this.textGroup);
-      char.anchor.x = 0.5;
-      char.tint = 0xffffff;
-      char.scale.y = 24 / this.FONT_SIZE;
-      this.titleGrid[y].push(char);
-      this.titleGroup.add(char);
+
+  if (this.strings.lang === `cn`) {
+    for (var y = 0; y < this.NUM_ROWS; y++) {
+      this.titleGrid.push([]);
+      for (var x = 0; x < this.NUM_COLS; x++) {
+        var char = this.game.add.text(this.GRID_SIZE * 0.5 + x * this.GRID_SIZE, y * this.GRID_SIZE, ' ', {
+          fill: `white`,
+          fontSize: this.FONT_SIZE * 0.75
+        });
+        char.anchor.x = 0.5;
+        char.tint = 0xffffff;
+        char.scale.y = 24 / this.FONT_SIZE;
+        this.titleGrid[y].push(char);
+        this.titleGroup.add(char);
+      }
+    }
+  }
+  else {
+    for (var y = 0; y < this.NUM_ROWS; y++) {
+      this.titleGrid.push([]);
+      for (var x = 0; x < this.NUM_COLS; x++) {
+        var char = this.game.add.bitmapText(this.GRID_SIZE * 0.5 + x * this.GRID_SIZE, y * this.GRID_SIZE, 'atari', '', this.FONT_SIZE, this.textGroup);
+        char.anchor.x = 0.5;
+        char.tint = 0xffffff;
+        char.scale.y = 24 / this.FONT_SIZE;
+        this.titleGrid[y].push(char);
+        this.titleGroup.add(char);
+      }
     }
   }
 
@@ -119,6 +138,7 @@ BasicGame.Romanticism.prototype.addTitleToGrid = function (text) {
 
   var x;
   var y = Math.floor(this.NUM_ROWS / 2) - Math.floor(theText.length / 2);
+
 
   for (var i = 0; i < theText.length; i++) {
     x = Math.floor((this.NUM_COLS / 2 - theText[i].length / 2));

@@ -37,6 +37,8 @@
             }
         },
         "gameover": "游戏结束",
+        "youwin": "YOU WIN",
+        "youlose": "YOU LOSE",
         "points": "得分"
     },
     "snakes": {
@@ -54,7 +56,12 @@
         },
         "Capitalism": {
             "title": "资本主义",
-            "key": "Capitalism"
+            "key": "Capitalism",
+            "cantafford": [
+                "YOU CAN'T AFFORD",
+                "THE APPLE"
+            ],
+            "diedwith": "DIED WITH $"
         },
         "Casualism": {
             "title": "随性主义",
@@ -70,7 +77,22 @@
         },
         "Dualism": {
             "title": "二元论",
-            "key": "Dualism"
+            "key": "Dualism",
+            "keyboard": [
+                "ARROWS",
+                "CONTROL",
+                "SNAKE BODY"
+            ],
+            "touch": [
+                "SWIPES",
+                "CONTROL",
+                "SNAKE BODY"
+            ],
+            "mind": [
+                "MIND",
+                "CONTROLS",
+                "SNAKE MIND"
+            ]
         },
         "Existentialism": {
             "title": "存在主义",
@@ -82,7 +104,12 @@
         },
         "Idealism": {
             "title": "唯心主义",
-            "key": "Idealism"
+            "key": "Idealism",
+            "instruction": [
+                "IMAGINE YOU ARE",
+                "PLAYING A GAME",
+                "OF SNAKE"
+            ]
         },
         "Monism": {
             "title": "唯物主义",
@@ -114,7 +141,116 @@
         },
         "Romanticism": {
             "title": "浪漫主义",
-            "key": "Romanticism"
+            "key": "Romanticism",
+            "deathtexts": [
+                [
+                    "现在我找到了你",
+                    "",
+                    "我的甜蜜遗忘"
+                ],
+                [
+                    "现在我和你在一起",
+                    "",
+                    "我的爱人"
+                ],
+                [
+                    "现在我们可以在一起了",
+                    "",
+                    "终于"
+                ],
+                [
+                    "这个突然的沉默",
+                    "",
+                    "是这样的仁慈"
+                ],
+                [
+                    "你现在和我在一起了",
+                    "",
+                    "我的天使"
+                ],
+                [
+                    "这最后的黑暗",
+                    "",
+                    "是如此甜蜜的慰藉"
+                ],
+                [
+                    "我看到了一束光",
+                    "",
+                    "我知道你在那里"
+                ],
+                [
+                    "我现在就找你",
+                    "",
+                    "亲爱的"
+                ],
+                [
+                    "现在我们将永远",
+                    "",
+                    "在一起"
+                ]
+            ],
+            "appletexts": [
+                [
+                    "我想着你",
+                    "",
+                    "每一刻"
+                ],
+                [
+                    "没有你的宠幸",
+                    "",
+                    "地球上的乐趣都是空虚的"
+                ],
+                [
+                    "没有比你更甜美的苹果",
+                    "",
+                    "我的爱人"
+                ],
+                [
+                    "没有与你的分享",
+                    "",
+                    "享用食物的乐趣又有什么意义？"
+                ],
+                [
+                    "知道你已经离去",
+                    "",
+                    "食物就像灰烬，了然无味"
+                ],
+                [
+                    "",
+                    "我太想念你神秘的微笑了",
+                    ""
+                ],
+                [
+                    "没有你的生命",
+                    "",
+                    "几乎无法生存"
+                ],
+                [
+                    "当我知道再也见不到你",
+                    "",
+                    "我茶饭不思"
+                ],
+                [
+                    "你为什么离开我？",
+                    "",
+                    "我无法忍受这种空虚的生活"
+                ],
+                [
+                    "借美食与酒消愁",
+                    "",
+                    "对我来说毫无作用"
+                ],
+                [
+                    "当我需要你的时候",
+                    "",
+                    "你为何会离开我？"
+                ],
+                [
+                    "哦，如果这个苹果",
+                    "",
+                    "能让我永远沉睡"
+                ]
+            ]
         },
         "Stoicism": {
             "title": "斯多葛主义",
