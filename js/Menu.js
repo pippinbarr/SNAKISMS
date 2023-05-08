@@ -14,8 +14,10 @@ BasicGame.Menu.prototype.create = function () {
 	games = [];
 	this.menuItems = [];
 	for (let i = 0; i < keys.length; i++) {
-		games.push(this.strings.snakes[keys[i]].title);
-		this.menuItems.push(this.strings.snakes[keys[i]]);
+		let item = this.strings.snakes[keys[i]];
+		if (mode === `kiosk` && keys[i] === `Narcissism`) continue;
+		games.push(item.title);
+		this.menuItems.push(item);
 	}
 
 	if (mode !== `kiosk`) {
