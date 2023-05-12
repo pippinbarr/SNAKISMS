@@ -8,6 +8,24 @@ BasicGame.Menu.prototype = Object.create(BasicGame.Snake.prototype);
 
 let games = [];
 BasicGame.Menu.prototype.create = function () {
+	if (mode === `kiosk`) {
+		document.addEventListener(
+			"keydown",
+			(e) => {
+				fullScreen(e);
+			},
+			false
+		);
+
+		function fullScreen(e) {
+			if (e.keyCode === 13 && !game.scale.isFullscreen) {
+
+				game.scale.fullScreenScaleMode = Phaser.ScaleManager.EXACT_FIT;
+				game.scale.startFullScreen(false);
+			}
+		}
+	}
+
 	this.strings = this.cache.getJSON(`strings`);
 	const keys = Object.keys(this.strings.snakes);
 	keys.sort();
